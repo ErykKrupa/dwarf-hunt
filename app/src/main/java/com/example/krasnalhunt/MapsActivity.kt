@@ -1,22 +1,35 @@
 package com.example.krasnalhunt
 
+import android.Manifest
+import android.app.AlertDialog
+import android.content.pm.PackageManager
+import android.location.Location
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-
+import android.support.v4.app.ActivityCompat
+import android.support.v4.content.ContextCompat
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import android.util.Log
+
+const val  PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
+    private var mLocationPermissionGranted = false
+    private var mLastKnownLocation : Location? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
+
+        getLocationPermission()
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
@@ -40,4 +53,78 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
     }
+
+    private fun getLocationPermission() {
+     /*
+     * Request location permission, so that we can get the location of the
+     * device. The result of the permission request is handled by a callback,
+     * onRequestPermissionsResult.
+     */
+        if (ContextCompat.checkSelfPermission(
+                this.applicationContext,
+                Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    Manifest.permission.ACCESS_FINE_LOCATION)) {
+//                 Show an explanation to the user *asynchronously* -- don't block
+//                 this thread waiting for the user's response! After the user
+//                 sees the explanation, try again to request the permission.
+                showPermissionDialog(getString(R.string.location_permission_alert_message)) {
+                    ActivityCompat.requestPermissions(this,
+                        arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                        PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION)
+                }
+            } else {
+                showPermissionDialog(getString(R.string.location_permission_alert_message_on_dont_show_again)) {
+                    finish()
+                }
+//                 No explanation needed, we can request the permission.
+//                ActivityCompat.requestPermissions(this,
+//                    arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+//                    PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION)
+            }
+
+        } else {
+            mLocationPermissionGranted = true
+        }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
+        mLocationPermissionGranted = false
+        when (requestCode) {
+            PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION -> {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    mLocationPermissionGranted = true
+                }
+            }
+        }
+        updateLocationUI()
+    }
+
+    private fun updateLocationUI() {
+        try {
+            if (mLocationPermissionGranted) {
+                mMap.isMyLocationEnabled = true
+                mMap.uiSettings.isMyLocationButtonEnabled = true
+            } else {
+                mMap.isMyLocationEnabled = false
+                mMap.uiSettings.isMyLocationButtonEnabled = false
+                mLastKnownLocation = null
+                getLocationPermission()
+            }
+        } catch (e: SecurityException) {
+            Log.e("Exception: %s", e.message)
+        }
+    }
+
+    private fun showPermissionDialog(message: String,handler: ()->Unit) {
+        AlertDialog.Builder(this).setTitle(R.string.location_permission_alert_title)
+            .setMessage(message)
+            .setPositiveButton(getString(R.string.positive_button_text)) { _, _ -> handler() }
+            .setCancelable(false)
+            .create().show()
+    }
+
 }
