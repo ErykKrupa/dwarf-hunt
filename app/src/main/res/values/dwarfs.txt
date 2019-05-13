@@ -1,0 +1,393 @@
+﻿51°06'26”N 17°01'55”E	Papa Krasnal	Świdnicka	Olaf Brzeski	koło przejścia podziemnego	Papa_Krasnal_(Papa_Dwarf)_Wroclaw_dwarf_03.jpg
+51°05'42”N 17°03'31”E	100matolog	Krakowska 26	Beata Zwolańska-Hołod	Wydział Lekarsko-Stomatologiczny Uniwersytetu Medycznego im. Piastów Śląskich	100matolog_(Tooth-dwarf)_Wroclaw_dwarf_01.jpg
+51°07'06”N 17°02'31”E	Adwokatka	Prusa 1/50	nieznany	CHC Kancelaria Adwokacka	Adwokatka_(Advocate)_Wroclaw_dwarf_01.jpg
+51°08'05”N 17°01'18”E	Agorek	Serbska 5A	Michał Staszczak	Centrum Kultury „Agora”	Agorek_(Agora)_Wroclaw_dwarf_01.jpg
+51°06'46”N 16°59'04”E	Głazek	Strzegomska 46-56	Tomasz Moczek	Wrocławski Park Biznesu	Alpinki_(Alpinists)_Wroclaw_dwarf_03.jpg
+51°06'46”N 16°59'04”E	Zarembek	Strzegomska 46-56	Tomasz Moczek	Wrocławski Park Biznesu	Alpinki_(Alpinists)_Wroclaw_dwarf_05.jpg
+51°06'46”N 16°59'04”E	Rutek	Strzegomska 46-56	Tomasz Moczek	Wrocławski Park Biznesu	Alpinki_(Alpinists)_Wroclaw_dwarf_05.jpg
+51°06'35”N 17°01'54”E	Głuchak	Rynek Ratusz 1	Marta Mirynowska	Muzeum Sztuki Mieszczańskiej	Głuchak_(Deafie)_Wroclaw_dwarf_01.jpg
+51°06'35”N 17°01'54”E	Ślepak	Rynek Ratusz 1	Marta Mirynowska	Muzeum Sztuki Mieszczańskiej	Slepak_(Blindie)_Wroclaw_dwarf_01.jpg
+51°06'35”N 17°01'54”E	W-Skers	Rynek Ratusz 1	Marta Mirynowska	Muzeum Sztuki Mieszczańskiej	W-Skers_(W-Skers)_Wroclaw_dwarf_01.jpg
+51°05'34”N 17°04'53”E	Amrest	Międzyrzecka 4	Grzegorz Łagowski	Pałac Hollenderów	Amrest_(Amrest)_Wroclaw_dwarf_02.jpg
+51°06'39”N 17°01'10”E	Anka	Sokolnicza 7/17 pawilon 37	Tomasz Moczek	Galeria Panny Młodej „Bellissima”	Anka_(Anne)_Wroclaw_dwarf_01.jpg
+51°06'59”N 17°03'09”E	Antonio Okulista	Sienkiewicza 33a	Jan Żelbromski	Wrocławskie Centrum Okulistyczne	Antonio_Okulista_(Antonio_the_Ophthalmologist)_Wroclaw_dwarf_02.jpg
+51°06'08”N 17°01'49”E	Antykwarek	plac Tadeusza Kościuszki 15-14	Tomasz Moczek	antykwariat „DAES”	Antykwarek_(Anitquarian)_Wroclaw_dwarf_01.jpg
+51°05'27”N 17°02'00”E	Moczypięta	Borowska 99	Tomasz Moczek	Aquapark Wrocław	Chlapibrzuch_i_Moczypieta_(Splasherbelly_and_Wetheeler)_Wroclaw_dwarf_03.jpg
+51°05'27”N 17°02'00”E	Chlapibrzuch	Borowska 99	Tomasz Moczek	Aquapark Wrocław	Chlapibrzuch_i_Moczypieta_(Splasherbelly_and_Wetheeler)_Wroclaw_dwarf_04.jpg
+51°06'50”N 17°05'04”E	Archimax	Mikołaja Kopernika 19	Beata Zwolańska-Hołod	Dom Maxa Berga	Archimax_(Archimax)_Wroclaw_dwarf_01.jpg
+51°05'37”N 17°03'31”E	Malarz	Krakowska 37-45	Tomasz Moczek	siedziba Artgeist.pl	Artgeistki_(Artgeists)_Wroclaw_dwarf_03.jpg
+51°05'37”N 17°03'31”E	Grafik	Krakowska 37-45	Tomasz Moczek	siedziba Artgeist.pl	Artgeistki_(Artgeists)_Wroclaw_dwarf_05.jpg
+51°06'44”N 17°01'49”E	Atlasik	Łaciarska 4	Tomasz Moczek	Business Centre „Save The World“	Krasnal_z_kulą_ziemską_(Dwarf_with_globe)_Wroclaw_dwarf_01.jpg
+51°06'31”N 17°03'55”E	Automatek	Łukasiewicza 7/9	Tomasz Moczek	Wydział Mechaniczny Politechniki Wrocławskiej	Automatek_(Machine-man)_Wroclaw_dwarf_01.jpg
+51°06'54”N 17°02'41”E	Bagażowy	Świętego Idziego 2	nieznany	Hotel im. Jana Pawła II	Bagazowy_(Porter)_Wroclaw_dwarf_01.jpg
+51°07'21”N 16°59'00”E	Bajkusia	Kłodnicka 22	Beata Zwolańska-Hołod	Przedszkole „Bajka”	Bajkusia_(Tale-teller)_Wroclaw_dwarf_03.jpg
+51°07'21”N 16°59'00”E	Bankomatnik	Kuźnicza 17-19	Marcin Łuczkowski	IV Oddział Banku Zachodniego WBK	Bankomatki_(Dispensers)_Wroclaw_dwarf_03.jpg
+51°07'21”N 16°59'00”E	Pinek	Kuźnicza 17-19	Marcin Łuczkowski	IV Oddział Banku Zachodniego WBK	Bankomatki_(Dispensers)_Wroclaw_dwarf_05.jpg
+51°07'21”N 16°59'00”E	Chipuś	Kuźnicza 17-19	Marcin Łuczkowski	IV Oddział Banku Zachodniego WBK	Bankomatki_(Dispensers)_Wroclaw_dwarf_05.jpg
+51°06'36”N 17°01'49”E	Bankuś Pieniążek	Rynek 9/11[50]	Beata Zwolańska–Hołod	kamienica Pod Siedmioma Elektorami	Bankus_(Banker)_Wroclaw_dwarf_01.jpg
+51°06'46”N 17°01'09”E	Barduś	Jacka Kaczmarskiego plac Solidarności 1/3/5	Beata Zwolańska–Hołod	Zarząd Regionu NSZZ Solidarność	Barduś-krasnal.jpg
+51°07'08”N 16°59'22”E	Bartek z Butolandii	Mińsk Mazowiecki gen. K. Sosnkowskiego 83	Paweł Osóbka	siedziba firmy Bartek S.A.	Bartek-krasnal.jpg
+51°06'36”N 17°01'56”E	Bartonik	Sukiennice 3/4	Beata Zwolańska–Hołod	lodziarnia „Barton”	Bartonik_(Barton)_Wroclaw_dwarf_01.jpg
+51°06'20”N 17°02'04”E	Helpik	Teatralna 10/12	Tomasz Moczek	Wrocławskie Centrum Spa basen nr 1	Krasnal_basenowy_Helpik_(Spa_dwarf_Helper)_Wroclaw_dwarf_01.jpg
+51°06'20”N 17°02'04”E	Bulbulek	Teatralna 10/12	Tomasz Moczek	Wrocławskie Centrum Spa	Krasnal_basenowy_Bulbulek_(Spa_dwarf_Bubbler)_Wroclaw_dwarf_03.jpg
+51°06'20”N 17°02'04”E	Ratuś	Teatralna 10/12	Tomasz Moczek	Wrocławskie Centrum Spa basen nr 1	Krasnal_basenowy_Ratus_(Spa_dwarf_Rescuer)_Wroclaw_dwarf_01.jpg
+51°06'20”N 17°02'04”E	Plumplumek	Teatralna 10/12	Tomasz Moczek	Wrocławskie Centrum Spa basen nr 1	Krasnal_basenowy_Plumplumek_(Spa_dwarf_Slopper)_Wroclaw_dwarf_01.jpg
+51°06'37”N 17°01'59”E	Bawarka	Rynek Ratusz 26	Beata Zwolańska–Hołod	restauracja „Bierhalle” Bawarka (Bavarian)	Wroclaw_dwarf_01.jpg
+51°06'44”N 17°03'35”E	Bąbelek Chlaptuś	plac Grunwaldzki 22	Marcin Łuczkowski	Pasaż Grunwaldzki	Babelek_Chlapus_(Bubble-spiller)_Wroclaw_dwarf_01.jpg
+51°06'29”N 17°02'17”E	BEAnka	Krawiecka 1-3	Tomasz Moczek	Justin Center	Automatek_II_(Machine-man_II)_Wroclaw_dwarf_01.jpg
+51°06'56”N 17°01'31”E	Bernaś i Warchleś	Księcia Witolda 49	Marta Mirynowska	Klinika „Platinum”	Bernas_i_Warchles_(Bernatek_and_Warchlewski)_Wroclaw_dwarf_01.jpg
+51°06'56”N 17°01'31”E	Bamboszek[53]	księdza Piotra Skargi 24-28	Tomasz Moczek	Hotel B&B	Bezimienny_(Nameless)_Wroclaw_dwarf_01.jpg
+51°05'55”N 17°01'28”E	Bellboy	Powstańców Śląskich 7b	nieznany	Hotel Wrocław	Krasnal_bellboy.jpg
+51°06'20”N 17°01'58”E	Bibliofil	plac Tetralny 5	Paweł Osóbka	Mediateka	Bibliofil_(Booklover)_Wroclaw_dwarf_01.jpg
+51°05'38”N 17°01'12”E	Biegacz	Sky Tower Gwiaździsta 62	Tomasz Moczek	Towarzystwo Ubezpieczeń Europa	Biegacz_(Racer)_Wroclaw_dwarf_01.jpg
+51°05'00”N 17°03'13”E	Boliząbek	Nyska 70B	nieznany	Stomatologia REGMED	Bolizabek_(Toothache)_Wroclaw_dwarf_01.jpg
+51°06'59”N 17°02'50”E	Botanik	Henryka Sienkiewicza 23	Marcin Łuczkowski	Ogród Botaniczny	Wroclaw_krasnal_Botanik.jpg
+51°06'42”N 16°58'17”E	Budinpolek	Traktatowa 1	Beata Zwolańska–Hołod	siedziba firmy „Budinpol”	Budinpolek_(Mr._Budinpol)_Wroclaw_dwarf_01.jpg
+51°06'46”N 17°01'53”E	Budoludki	Odrzańska 22	Beata Zwolańska–Hołod	Dolnośląska Okręgowa Izba Inżynierów Budownictwa	Budoludek_i_Budoludka_(Budomen_i_Budowoman)_Wroclaw_dwarf_01.jpg
+51°05'57”N 16°59'51”E	Bumarek	Grabiszyńska 163	Beata Zwolańska–Hołod	siedziba firmy „Bumar”	Bumarek_i_Fadromka_(Bumar_and_Fadroma)_Wroclaw_dwarf_05.jpg
+51°05'57”N 16°59'51”E	Fadromka Grabiszyńska 163	Beata Zwolańska–Hołod	siedziba firmy „Bumar”	Bumarek i Fadromka (Bumar and Fadroma)	Wroclaw_dwarf_07.jpg
+51°07'00”N 16°59'49”E	Ceneusz	Legnicka 48G	Piotr Makała	Ceneo.pl	
+51°09'30”N 17°00'28”E	Centrostaluś	Centrostal Wrocław	Marta Mirynowska, Piotr Makała	Pełczyńska 4	Centrostaluś_(Centrostaler)_Wroclaw_dwarf_01.jpg
+51°06'48”N 16°59'56”E	Cermigiusz	Strzegomska 38-40	Beata Zwolańska–Hołod	Cermag sp. z o. o.	Cermigiusz.jpg
+51°06'33”N 17°04'03”E	Chirurg	Marii Curie-Skłodowskiej 65	Bogna Kozera-Radomska	Klinika Chirurgii Przewodu Pokarmowego i Chirurgii Ogólnej	Chirurg_(Surgeon)_Wroclaw_dwarf_01.jpg
+51°06'16”N 17°01'54”E	Chodziarz (Johnnie Walker)	Świdnicka 38A	Beata Zwolańska–Hołod	Pogodynka	Chodziarz_(Walker)_Wroclaw_dwarf_02.jpg
+51°06'37”N 17°02'01”E	Ciastuś	Wita Stwosza 1-2	Beata Zwolańska–Hołod	kafejka amorinio.pl	Ciastuś_i_Amorinek_(Patissier_and_Amorinio)_Wroclaw_dwarf_03.jpg
+51°06'37”N 17°02'01”E	Amorinek	Wita Stwosza 1-2	Beata Zwolańska–Hołod	kafejka amorinio.pl	Ciastuś_i_Amorinek_(Patissier_and_Amorinio)_Wroclaw_dwarf_05.jpg
+51°06'42”N 17°01'47”E	Chemik	Ignacego Łukasiewicza 2	nieznany	Wydział Chemiczny (A2) Politechniki Wrocławskiej	Chemik_(Chemist)_Wroclaw_dwarf_01.jpg
+51°06'42”N 17°01'47”E	Chrapek	Kiełbaśnicza 24-25	Beata Zwolańska–Hołod	hotel „Patio”	Chrapek_(Snorer)_Wroclaw_dwarf_01.jpg
+51°07'38”N 17°01'31”E	Clara	Kleczkowska 45	Beata Zwolańska–Hołod	Centrum Szkoleniowe i Salon Sprzedaży Clarena	Clara_(Clara)_Wroclaw_dwarf_01.jpg
+51°05'51”N 17°02'01”E	Concierge	Sucha 1	Grzegorz Łagowski	Galeria Wroclavia	Concierge_(Concierge)_Wroclaw_dwarf_01.jpg
+51°04'29”N 17°00'12”E	Consulencjusz Italicus	Wawrzyniaka 6	nieznany	Bosetti Global Consulting	Consulencjusz_Italicus_(Consultantius_Italicus)_Wroclaw_dwarf_01.jpg
+51°06'41”N 17°01'39”E	Czajczyński	Białoskórnicza 10	Jan Żelbromski	Czajczyński nieruchomości	Czajczynski_(Czajczynski)_Wroclaw_dwarf_02.jpg
+51°07'15”N 17°03'21”E	Dąbrek Pierwszy	Nowowiejska 78	Beata Zwolańska–Hołod	Szkoła Podstawowa nr 1 im. Marii Dąbrowskiej	Dabrek_Pierwszy_(Dabrek_the_First)_Wroclaw_dwarf_01.jpg
+51°07'36”N 16°57'59”E	Dedaliusz	Bulwar Dedala	Tomasz Moczek	osiedle Lokum da Vinci	Dedaliusz_(Daedalus)_Wroclaw_dwarf_01.jpg
+51°06'34”N 17°01'45”E	Demokracja	Plac Solny	Jean Louis Kotagomba	Komitet Obrony Demokracji	Demokracja_(Democrat)_Wroclaw_dwarf_01.jpg
+51°04'35”N 17°01'55”E	Diagnozjusz	Borowska 211	Beata Zwolańska–Hołod	Wydział Farmacji Uniwersytetu Medycznego	Diagnozjusz_(Diagnostician)_Wroclaw_dwarf_01.jpg
+51°06'35”N 17°01'45”E	Dialogomir	plac Solny	Grzegorz Łagowski	północno-zachodni narożnik placu	Dialogomir_(Dialogomir)_Wroclaw_dwarf_05.jpg
+51°06'32”N 17°01'46”E	Długi	plac Solny 16	Marcin Łuczkowski	Stara Giełda	Dlugi_(Debtie)_Wroclaw_dwarf_01.jpg
+51°07'21”N 16°55'15”E	Dobrotek	Objazdowa 50	Marcin Łuczkowski	Kancelaria Prawa Gospodarczego KOKSZTYS	Dobrotek_(Warm-hearted)_Wroclaw_dwarf_01.jpg
+51°08'20”N 16°59'29”E	Drukarz	Osobowicka 89	Marta Mirynowska Małgorzata Kaszyńska	Przedsiębiorstwo poligraficzne „KEA”	Drukarz_(Printer)_Wroclaw_dwarf_01.jpg
+51°06'52”N 17°02'36”E	Drukarz Kacper	Katedralna 1/3	autor nieznany	Wydawnictwa Wrocławskiej Księgarni Archidiecezjalnej TUM	Drukarz_Kacper_(Caspar_the_Printer)_Wroclaw_dwarf_01.jpg
+51°06'36”N 17°02'00”E	Dryndek (Gadofonik)	Rynek 35	Tomasz Moczek	Piwiarnia „Bernard”	Dryndek_(Ringer)_Wroclaw_dwarf_01.jpg
+51°05'56”N 17°02'12”E	Dworcowy ciągnący walizkę	Józefa Piłsudskiego 105	Marta Mirynowska	dworzec kolejowy Wrocław Główny	Dworcowy_Ciagnacy_walizke_(Railway_Dwarf_Luggage-puller)_Wroclaw_dwarf_01.jpg
+51°05'56”N 17°02'12”E	Dworcowy leżący na trawie	Józefa Piłsudskiego 105	Marta Mirynowska	dworzec kolejowy Wrocław Główny	Dworcowy_Leżący_na_trawie_(Railway_Dwarf_Lawn-sleeper)_Wroclaw_dwarf_01.jpg
+51°05'56”N 17°02'12”E	Dworcowy siedzacy na walizce	Józefa Piłsudskiego 105	Tomasz Moczek	dworzec kolejowy Wrocław Główny	Dworcowy_Siedzacy_na_walizce_(Railway_Dwarf_Suitcase-sitter)_Wroclaw_dwarf_03.jpg
+51°06'22”N 17°06'22”E	Dżinn	Spółdzielcza 2a	nieznany	XI Liceum Ogólnokształcące im. Stanisława Konarskiego	Dzinn_(Jinn)_Wroclaw_dwarf_01.jpg
+51°05'38”N 17°03'43”E	Edukacjusz	Krakowska 56-62	nieznany	Wyższa Szkoła Zarządzania „Edukacja”	Edukacjusz_(Educator)_Wroclaw_dwarf_01.jpg
+51°05'25”N 17°01'34”E	Ekonomek	Komandorska 118/120	Beata Zwolańska–Hołod	Uniwersytet Ekonomiczny budynek A1	Ekonomek_(Financier)_Wroclaw_dwarf_01.jpg
+51°06'16”N 17°02'35”E	Ekonomik	Henryka Worcella 3	Beata Zwolańska–Hołod	Zespół Szkół Ekonomiczno-Administracyjnych im. Marii Dąbrowskiej	Ekonomik_(Economist)_Wroclaw_dwarf_01.jpg
+51°06'42”N 17°00'37”E	Elwruś Lutowniczek	Braniborska 57	Beata Zwolańska–Hołod	Elektroniczne Zakłady Naukowe im. Jeana Frédérica Joliot-Curie	Elwrus_Lutowniczek_(Solderer)_Wroclaw_dwarf_01.jpg
+51°06'46”N 16°59'04”E	Eldżej i Modułek	Biskupice Podgórne ulica LG 1	Beata Zwolańska–Hołod	fabryka LG Display	Eldziki_Eldzej_i_Modulek_Wroclaw_dwarf_01.jpg
+51°06'46”N 16°59'04”E	Tabuś i Assik	Biskupice Podgórne ulica LG 1	Beata Zwolańska–Hołod	fabryka LG Display	Eldziki_Tabus_i_Assik_Wroclaw_dwarf_01.jpg
+51°06'46”N 16°59'04”E	Pakerka i Pikselek	Biskupice Podgórne ulica LG 1	Beata Zwolańska–Hołod	fabryka LG Display	Eldziki_Pakerka_i_Pikselek_Wroclaw_dwarf_01.jpg
+51°06'34”N 17°02'02”E	Esencjusz	Kurzy Targ 3	Katarzyna Nowak	pub „Bistro Przemysłowe”	Esencjusz_(Infuser)_Wroclaw_dwarf_01.jpg
+51°06'27”N 17°01'51”E	Eskulapek	Kazimierza Wielkiego 45	Beata Zwolańska–Hołod	Dolnośląska Izba Lekarska	Eskulapek_(Esculapius)_Wroclaw_dwarf_01.jpg
+51°06'02”N 17°02'03”E	Europejczyk	Józefa Piłsudskiego 88	Beata Zwolańska–Hołod	Hotel Europejski	Europejczyk_(European)_Wroclaw_dwarf_01.jpg
+51°06'36”N 17°02'59”E	Faksymilka	plac Powstańców Warszawy 1	Tomasz Moczek	Urząd Wojewódzki	Faksymilka_(Facsimile)_Wroclaw_dwarf_01.jpg
+51°06'40”N 17°01'51”E	Farciarz	Odrzańska 39/40	Beata Zwolańska–Hołod	sklep z pamiątkami Kamieniczka „Małgosia”	Farciarz_(Lucky)_Wroclaw_dwarf_01.jpg
+51°04'35”N 17°01'55”E	Farmaceuta Akademicki	Borowska 211	Beata Zwolańska–Hołod	Wydział Farmacji Uniwersytetu Medycznego	Farmaceuta_Akademicki_(Academic_Pharmacist)_Wroclaw_dwarf_01.jpg
+51°04'51”N 17°03'20”E	Farmacjusz	Ziębicka 40	Beata Zwolańska–Hołod	US Pharmacia	Farmacjusz_(Pharmacist)_Wroclaw_dwarf_01.jpg
+51°05'44”N 16°58'46”E	Fatuś	Grabiszyńska 281	Marta Mirynowska, Piotr Makała	Fabryka Automatów Tokarskich	Fatus_(Lathe_operator)_Wroclaw_dwarf_03.jpg
+51°06'55”N 17°06'07”E	Fizolek	Adama Mickiewicza 58	Marta Mirynowska	Wydział Fizjoterapii AWF (P-5) Akademii Wychowania Fizycznego	Fizolek_(Physiotherapist)_Wroclaw_dwarf_01.jpg
+51°06'24”N 17°01'55”E	Florianek	Świdnicka 21/23	Grzegorz Łagowski	Dom towarowy Solpol	Florianek_(Florian)_Wroclaw_dwarf_02.jpg
+51°06'34”N 17°01'55”E	Franek Moczymordka	Rynek Ratusz 1	Grzegorz Łagowski	Piwnica Świdnicka	Franek_Moczymordka_(Franky_Boozehound)_Wroclaw_dwarf_01.jpg
+51°05'41”N 17°02'15”E	Freudek	Dawida 1a	Marta Mirynowska	Instytut Psychologii Uniwersytetu Wrocławskiego	Freudek_(Freudie)_Wroclaw_dwarf_01.jpg
+51°06'46”N 16°58'55”E	Fuger Bankowy	Fabryczna 29/31	Beata Zwolańska–Hołod	Wyższa Szkoła Bankowa	Fuger_(Fuger)_Wroclaw_dwarf_01.jpg
+51°04'54”N 17°02'11”E	Gasiorek	Borowska 138	Tomasz Moczek	Wojewódzka Komenda Straży Pożarnej	Gasiorek_(Hoser)_Wroclaw_dwarf_01.jpg
+51°04'54”N 17°02'11”E	Gastronomek	Kamienna 86	Iga Mąkowska	Zespół Szkół Gastronomicznych	Gastronomek_(Gastronomer)_Wroclaw_dwarf.jpg
+51°05'36”N 17°03'33”E	Gaviusz	Krakowska 13	Marek Stankiewicz	Instal-Konsorcjum	Gaviusz_(Gavius)_Wroclaw_dwarf_01.jpg
+51°06'04”N 17°02'23”E	Gazeciarz	plac Tadeusza Kościuszki	Małgorzata Kaszyńska	kiosk z gazetami	Gazeciarz_(Newsboy)_Wroclaw_dwarf_02.jpg
+51°06'53”N 17°02'33”E	Gazuś	Most Tumski	Tomasz Moczek	latarnia gazowa nr 4	Gazus_(Lamplighter)_Wroclaw_dwarf_01.jpg
+51°06'58”N 17°01'50”E	Geolog	Wojciecha Cybulskiego 30-34	Marcin Łuczkowski	Instytut Nauk Geologicznych Uniwersytetu Wrocławskiego	Geolog_(Geologist)_Wroclaw_dwarf_03.jpg
+51°06'32”N 17°01'46”E	Giełduś	plac Solny 16	Tomasz Moczek	Stara Giełda	Gieldus_(Broker)_Wroclaw_dwarf_01.jpg
+51°06'37”N 17°04'23”E	Gilbert	Parkowa 8	Beata Zwolańska–Hołod	Hotel „Grape”	Gilbert_(Gilbert)_Wroclaw_dwarf_01.jpg
+51°08'15”N 17°01'41”E	Gimnazjalista	Czeska 40	Alicja Zgraja	Gimnazjum nr 27 im. Ossolineum	Gimnazjalista_(Gymnasiast)_Wroclaw_dwarf_01.jpg
+51°06'30”N 17°01'37”E	Gladiatorek	Krupnicza 5	nieznany	Sklep Gladiator-Fight	Gladiatorek_(Gladiator)_Wroclaw_dwarf_01.jpg
+51°08'15”N 17°01'41”E	Googlak	plac Bema 2	nieznany	Bema Plaza	Googlak_(Googlo)_Wroclaw_dwarf_02.jpg
+51°04'18”N 17°02'03”E	Golduś	Jerzego Kukuczki 5	nieznany	Centrum Medyczne GOLDEN CARE	Goldus_(Golden)_Wroclaw_dwarf_01.jpg
+51°06'36”N 17°01'52”E	Gołębnik	Rynek Ratusz 2	Marcin Łuczkowski	parapet restauracji „Pod Papugami”	Gołebnik_(Pigeon-keeper)_Wroclaw_dwarf_01.jpg
+51°10'30”N 17°01'23”E	Gościnek[71]	Sułowska 39	Beata Zwolańska–Hołod	hotel „Jasek”	Jasek_(Porter)_Wroclaw_dwarf_01.jpg
+51°06'31”N 17°02'06”E	Grajek	Oławska 10	Beata Zwolańska–Hołod	kwiaciarnia	Grajek_i_Meloman_(Busker_and_Music-lover)_Wroclaw_dwarf_03.jpg
+51°06'31”N 17°02'06”E	Meloman	Oławska 10	Beata Zwolańska–Hołod	kwiaciarnia	Grajek_i_Meloman_(Busker_and_Music-lover)_Wroclaw_dwarf_05.jpg
+51°06'44”N 17°03'31”E	Grun-Waldek (Giermek)	plac Grunwaldzki 22	Marcin Łuczkowski	Pasaż Grunwaldzki	Giermek_Grun-Waldek_(Squire_Grun-Wald)_Wroclaw_dwarf_01.jpg
+51°06'41”N 17°02'04”E	Gwaruś	Kotlarska 41	nieznany	Okręgowy Urząd Górniczy	Gwaruś_(Miner)_Wroclaw_dwarf_01.jpg
+51°05'57”N 17°01'33”E	HaPek	Powstańców Śląskich 7A	Beata Zwolańska–Hołod	Centrum Biurowe „Globis“	HaPek_(HaPer)_Wroclaw_dwarf_01.jpg
+51°06'20”N 17°02'21”E	Harcuś	Nowa 6	Beata Zwolańska–Hołod	Chorągiew Dolnośląska ZHP im. hm. Stefana Mirowskiego	Harcerz_(Scout)_Wroclaw_dwarf_01.jpg
+51°06'33”N 17°00'03”E	Harfuś	Robotnicza 52A	Tomasz Moczek	Dolnośląskie Centrum Rowerowe Harfa-Harrysonn	Harfus_(Harpist)_Wroclaw_dwarf_01.jpg
+51°06'18”N 17°04'28”E	Hipoczyściciel	Zygmunta Wróblewskiego 1-5	Marcin Łuczkowski	Ogród Zoologiczny przy wybiegu dla hipopotamów	Hipoczysciciel_(Hippo-cleaner)_Wroclaw_dwarf_01.jpg
+51°06'39”N 17°02'22”E	Hohelka	plac Nowy Targ 27	Małgorzata Kaszyńska	Bar „Jacek i Agatka”	Hohelka_(Ladelle)_Wroclaw_dwarf_01.jpg
+51°06'58”N 17°03'58”E	Honorek	Czerwonego Krzyża 5/9	Tomasz Moczek	Regionalne Centrum Krwiodawstwa i Krwiolecznictwa	Honorek_(Honour)_Wroclaw_dwarf_01.jpg
+51°10'55”N 17°01'32”E	Hortuś	Psary Główna 1C	Beata Zwolańska–Hołod	Galeria Ogrodnicza Zielone Centrum	Hortus_(Hortic)_Wroclaw_dwarf_01.jpg
+51°07'29”N 16°59'51”E	Hugonek	Jelenia 7	Beata Zwolańska–Hołod	Gimnazjum nr 1 im. Hugona Steinhausa	Hugonek_(Hugo)_Wroclaw_dwarf_01.jpg
+51°06'51”N 17°01'50”E	Hydrotechnik	Mosty Pomorskie	nieznany	jaz Elektrowni Wodnej Wrocław II	Hydrotechnik_(Hydrotechnic)_Wroclaw_dwarf_01.jpg
+51°04'55”N 17°01'25”E	Impluś	Ślężna 118	Grzegorz Łagowski	siedziba firmy „Impel”	Implus_(Impelie)_Wroclaw_dwarf_01.jpg
+51°07'31”N 16°54'47”E	Insercik	Jerzmanowska 2	Marcin Łuczkowski	siedziba firmy „InsERT”	Insercik_(Insert)_Wroclaw_dwarf_01.jpg
+51°07'05”N 17°02'57”E	Inwigiluś	Jana Matejki 6	nieznany	Rada Wojewódzka Sojuszu Lewicy Demokratycznej	Inwigilus_(Spy)_Wroclaw_dwarf_01.jpg
+51°06'26”N 17°05'01”E	IP-ek	Mikołaja Kopernika 5	Marta Mirynowska	Ośrodek Szkolenia Państwowej Inspekcji Pracy im. prof. Jana Rosnera	Inspektor_Pracy_(Labor_Inspector)_IP-ek_Wroclaw_dwarf_01.jpg
+51°06'45”N 17°01'57”E	Italudek	Więzienna 21	Luca Montagliani	Pizzeria Trattoria „Capri”	Krasnal_wloski_(Lo_Gnomo_Italiano)_Wroclaw_dwarf_01.jpg
+51°06'41”N 17°02'02”E	Janinek	Kuźnicza 57/58	nieznany	Salon Kosmetyczny „Babor”	Janinek_(Jany)_Wroclaw_dwarf_01.jpg
+51°06'50”N 17°03'15”E	Julian Okulista	Piwna 13	Jan Żelbromski	Wrocławskie Centrum Okulistyczne	Julian_Okulista_(Julian_the_Ophthalmologist)_Wroclaw_dwarf_01.jpg
+51°06'38”N 17°02'00”E	Kacuś	Rynek 42/43	nieznany	Apteka „Pod Podwójnym Złotym Orłem”	Kacus_(Hangover)_Wroclaw_dwarf_01.jpg
+51°06'39”N 17°01'25”E	Kanapownik	Ruska 37/39	Tomasz Moczek	Sklep „Domar”	Kanapownik_(Couch_Potato)_Wroclaw_dwarf_01.jpg
+51°03'37”N 17°00'13”E	Kandarek	Zwycięska 9-23 lokal 7	nieznany	Salon Urody „Kandara”	Kandarek_(Kandary)_Wroclaw_dwarf_01.jpg
+51°06'37”N 17°07'32”E	Kapitan Jack Port	Chałupnicza 55	Grzegorz Łagowski	Osiedle Nowy Port	Pirat_(Pirate)_Wroclaw_dwarf_01.jpg
+51°06'50”N 17°02'30”E	Kapitański Bliźniak "Nereida"	przystań Bulwar Piotra Włostowica	Beata Zwolańska–Hołod	Statki „Nereida” i „Wiktoria”	Kapitański_Bliźniak_(Captains_Twin)_Nereida_Wroclaw_dwarf_01.jpg
+51°06'50”N 17°02'30”E	Kapitański Bliźniak "Victoria" przystań Bulwar Piotra Włostowica	Beata Zwolańska–Hołod	Statki „Nereida” i „Wiktoria”	Kapitański Bliźniak (Captains Twin) Victoria Wroclaw dwarf 01.JPG	
+51°06'05”N 17°01'49”E	Hazarduś	Józefa Piłsudskiego 66	Wojciech Nowak	Olympic Casino	Kasyniarze_(Croupiers)_Wroclaw_dwarf_03.jpg
+51°06'05”N 17°01'49”E	Pokerek	Józefa Piłsudskiego 66	Wojciech Nowak	Olympic Casino	Kasyniarze_(Croupiers)_Wroclaw_dwarf_04.jpg
+51°06'05”N 17°01'49”E	Farciarz	Józefa Piłsudskiego 66	Wojciech Nowak	Olympic Casino	Kasyniarze_(Croupiers)_Wroclaw_dwarf_05.jpg
+51°04'57”N 17°03'11”E	Centrek	Armii Krajowej	nieznany	Siedziba główna Kaufland Polska	Kauflandki_(Kauflanders)_Centrek_(Centerer)_Wroclaw_dwarf_08.jpg
+51°04'57”N 17°03'11”E	Marketek	Armii Krajowej	nieznany	Siedziba główna Kaufland Polska	Kauflandki_(Kauflanders)_Marketek_(Marketer)_Wroclaw_dwarf_07.jpg
+51°04'57”N 17°03'11”E	Logistek	Armii Krajowej	nieznany	Siedziba główna Kaufland Polska	Kauflandki_(Kauflanders)_Logistek_(Logistician)_Wroclaw_dwarf_05.jpg
+51°06'52”N 17°02'38”E	Kawiarek	Katedralna 6	nieznany	Cafeteria Chic	Kawiarek_(Cafeterian)_Wroclaw_dwarf_01.jpg
+51°05'49”N 16°59'46”E	Kibic	Oporowska 62	Marcin Łuczkowski	WKS Śląsk Wrocław	Slazak_(Silesian)_Wroclaw_dwarf_01.jpg
+51°06'33”N 17°01'35”E	Kinoman młodszy	Kazimierza Wielkiego 19a-21	Beata Zwolańska–Hołod	kino „Nowe Horyzonty”	Kinoman_Mlodszy_(Film_Buff_Junior)_Wroclaw_dwarf_01.jpg
+51°07'05”N 17°04'02”E	Klaun	Odona Bujwida 44	Beata Zwolańska–Hołod	KlinikaTransplantacji Szpiku, Onkologii i Hematologii Dziecięcej	Klaun_(Clown)_Wroclaw_dwarf_01.jpg
+51°06'35”N 17°02'04”E	Klucznik	Szewska 74	Marcin Łuczkowski	siedziba firmy „Gant Development”	Klucznik_(Keymaker)_Wroclaw_dwarf_01.jpg
+51°06'01”N 17°01'43”E	Kolejarz	Wojciecha Bogusławskiego 61	Tomasz Moczek	wiadukt kolejowy	Kolejarz_(Trainman)_Wroclaw_dwarf_01.jpg
+51°08'35”N 16°51'59”E	Kolejarz II	Jana Rubczaka 20	Tomasz Moczek	stacja kolejowa Wrocław Leśnica	Kolejarz_II_(Trainman_II)_Wroclaw_dwarf_01.jpg
+51°03'48”N 17°04'50”E	Kolejarz Brochowski I	Biegła 2	Beata Zwolańska–Hołod	kościół św. Jerzego Męczennika i Podwyższenia Krzyża Świętego	Kolejarz_III_(Trainman_III)_Wroclaw_dwarf_01.jpg
+51°03'48”N 17°04'50”E	Kolejarz Brochowski II	Biegła 2	Beata Zwolańska–Hołod	kościół św. Jerzego Męczennika i Podwyższenia Krzyża Świętego	Kolejarz_Brochowski_II_(Brochow_Trainman_II)_Wroclaw_dwarf_01.jpg
+51°06'34”N 17°01'59”E	Kolekcjoner	Rynek 31/32	Beata Zwolańska–Hołod	dom handlowy „Feniks” IV piętro	Kolekcjoner_(Collector)_Wroclaw_dwarf_01.jpg
+51°06'31”N 17°01'59”E	Korpokrasnal	Świdnicka 2-4	nieznany	Galeria Dizajn BWA Wrocław	Korpokrasnal_(Company_dwarf)_Wroclaw_dwarf_01.jpg
+51°06'38”N 17°02'01”E	Kowal (Kuźnik)	Kuźnicza Wita Stwosza	Beata Zwolańska–Hołod	salon jubilerski „Kruk”	Kowal_(Smithie)_Wroclaw_dwarf_01.jpg
+51°05'27”N 17°00'00”E	Kownacek	Józefa Hallera 77a	Beata Zwolańska–Hołod	Przedszkole nr 141 im. Marii Kownackiej	Kownacek_(Kownacek)_Wroclaw_dwarf_02.jpg
+51°08'14”N 16°58'33”E	Kozanek	Gołężycka 4a	Beata Zwolańska–Hołod	Przedszkole nr 110 „Domek Krasnoludków”	Kozanek_(Cosel)_Wroclaw_dwarf_01.jpg
+51°06'27”N 17°01'56”E	Obżartuch	Świdnicka 13	Beata Zwolańska–Hołod	Restauracja KFC „Delikatesy”	Krasnal_KFC_(Dwarf_KFC)_Wroclaw_dwarf_01.jpg
+51°06'04”N 17°01'43”E	Kika	Legnicka 21a	Marta Mirynowska	Biuro KiK	KiKa_(KiKi)_Wroclaw_dwarf_01.jpg
+51°06'44”N 17°01'44”E	Krasnal Teatralny Współczesny Powitalnik	Rzeźnicza 12	Tomasz Moczek	Teatr Współczesny im. Edmunda Wiercińskiego	Krasnal_Teatralny_(Theatre_Dwarf)_Wroclaw_dwarf_01.jpg
+51°06'44”N 17°01'49”E	Krasnal z piłką	Stare Jatki 7/8	Tomasz Moczek	Galeria „Domus”	Krasnal_z_piłka_(Dwarf_with_soccer_ball)_Wroclaw_dwarf_01.jpg
+51°06'23”N 17°01'38”E	Dyrygent	plac Wolności	nieznany	Orkiestra 21 krasnali	Krasnale_Filharmonii_Wroclawskiej_01_Dyrygent_(Wroclaw_Philharmonic_Dwarves_Conductor)_Wroclaw_dwarf.jpg
+51°06'23”N 17°01'38”E	Altowiolinista I	plac Wolności	nieznany	Orkiestra 21 krasnali	Krasnale_Filharmonii_Wroclawskiej_02_Altowiolinista_I_(Wroclaw_Philharmonic_Dwarves_Violist_I)_Wroclaw_dwarf.jpg
+51°06'23”N 17°01'38”E	Altowiolinista II	plac Wolności	nieznany	Orkiestra 21 krasnali	Krasnale_Filharmonii_Wroclawskiej_03_Altowiolinista_II_(Wroclaw_Philharmonic_Dwarves_Violist_II)_Wroclaw_dwarf.jpg
+51°06'23”N 17°01'38”E	Skrzypek I	plac Wolności	nieznany	Orkiestra 21 krasnali	Krasnale_Filharmonii_Wroclawskiej_04_Skrzypek_I_(Wroclaw_Philharmonic_Dwarves_Violinist_I)_Wroclaw_dwarf.jpg
+51°06'23”N 17°01'38”E	Pierwszy Skrzypek	plac Wolności	nieznany	Orkiestra 21 krasnali	Krasnale_Filharmonii_Wroclawskiej_05_Pierwszy_Skrzypek_(Wroclaw_Philharmonic_Dwarves_First_Violinist)_Wroclaw_dwarf_04.jpg
+51°06'23”N 17°01'38”E	Skrzypek II	plac Wolności	nieznany	Orkiestra 21 krasnali	Krasnale_Filharmonii_Wroclawskiej_06_Skrzypek_II_(Wroclaw_Philharmonic_Dwarves_Violinist_II)_Wroclaw_dwarf.jpg
+51°06'23”N 17°01'38”E	Kontrabasista I	plac Wolności	nieznany	Orkiestra 21 krasnali	Krasnale_Filharmonii_Wroclawskiej_07_Kontrabasista_I_(Wroclaw_Philharmonic_Dwarves_Contrabassist_I)_Wroclaw_dwarf.jpg
+51°06'23”N 17°01'38”E	Tubista	plac Wolności	nieznany	Orkiestra 21 krasnali	Krasnale_Filharmonii_Wroclawskiej_08_Tubista_(Wroclaw_Philharmonic_Dwarves_Tubaist)_Wroclaw_dwarf.jpg
+51°06'23”N 17°01'38”E	Kontrabasista II	plac Wolności	nieznany	Orkiestra 21 krasnali	Krasnale_Filharmonii_Wroclawskiej_09_Kontrabasista_II_(Wroclaw_Philharmonic_Dwarves_Contrabassist_II)_Wroclaw_dwarf.jpg
+51°06'23”N 17°01'38”E	Puzonista	plac Wolności	nieznany	Orkiestra 21 krasnali	Krasnale_Filharmonii_Wroclawskiej_10_Puzonista_(Wroclaw_Philharmonic_Dwarves_Trombonist)_Wroclaw_dwarf.jpg
+51°06'23”N 17°01'38”E	Puzonista Basowy	plac Wolności	nieznany	Orkiestra 21 krasnali	Krasnale_Filharmonii_Wroclawskiej_11_Puzonista_Basowy_(Wroclaw_Philharmonic_Dwarves_Bass_Trombonist)_Wroclaw_dwarf.jpg
+51°06'23”N 17°01'38”E	Wiolonczelista I	plac Wolności	nieznany	Orkiestra 21 krasnali	Krasnale_Filharmonii_Wroclawskiej_12_Wiolonczelista_I_(Wroclaw_Philharmonic_Dwarves_Violoncellist_I)_Wroclaw_dwarf.jpg
+51°06'23”N 17°01'38”E	Trębacz	plac Wolności	nieznany	Orkiestra 21 krasnali	Krasnale_Filharmonii_Wroclawskiej_13_Trebacz_(Wroclaw_Philharmonic_Dwarves_Trumpeter)_Wroclaw_dwarf.jpg
+51°06'23”N 17°01'38”E	Wiolonczelista II	plac Wolności	nieznany	Orkiestra 21 krasnali	Krasnale_Filharmonii_Wroclawskiej_14_Wiolonczelista_II_(Wroclaw_Philharmonic_Dwarves_Violoncellist_II)_Wroclaw_dwarf.jpg
+51°06'23”N 17°01'38”E	Waltornista	plac Wolności	nieznany	Orkiestra 21 krasnali	Krasnale_Filharmonii_Wroclawskiej_15_Waltornista_(Wroclaw_Philharmonic_Dwarves_Hornist)_Wroclaw_dwarf.jpg
+51°06'23”N 17°01'38”E	Klarnecista	plac Wolności	nieznany	Orkiestra 21 krasnali	Krasnale_Filharmonii_Wroclawskiej_16_Klarnecista_(Wroclaw_Philharmonic_Dwarves_Clarinetist)_Wroclaw_dwarf.jpg
+51°06'23”N 17°01'38”E	Klarnecista Basowy	plac Wolności	nieznany	Orkiestra 21 krasnali	Krasnale_Filharmonii_Wroclawskiej_17_Klarnecista_Basowy_(Wroclaw_Philharmonic_Dwarves_Bass_Clarinetist)_Wroclaw_dwarf.jpg
+51°06'23”N 17°01'38”E	Flecista	plac Wolności	nieznany	Orkiestra 21 krasnali	Krasnale_Filharmonii_Wroclawskiej_18_Flecista_(Wroclaw_Philharmonic_Dwarves_Flutist)_Wroclaw_dwarf.jpg
+51°06'23”N 17°01'38”E	Fagocista	plac Wolności	nieznany	Orkiestra 21 krasnali	Krasnale_Filharmonii_Wroclawskiej_19_Fagocista_(Wroclaw_Philharmonic_Dwarves_Bassoonist)_Wroclaw_dwarf.jpg
+51°06'23”N 17°01'38”E	Perkusista	plac Wolności	nieznany	Orkiestra 21 krasnali	Krasnale_Filharmonii_Wroclawskiej_20_Perkusista_(Wroclaw_Philharmonic_Dwarves_Percussionist)_Wroclaw_dwarf.jpg
+51°06'23”N 17°01'38”E	Kotlarz	plac Wolności	nieznany	Orkiestra 21 krasnali	Krasnale_Filharmonii_Wroclawskiej_21_Kotlarz_(Wroclaw_Philharmonic_Dwarves_Timpanist)_Wroclaw_dwarf.jpg
+51°06'05”N 17°04'04”E	Czarodziej	Okólna 2	nieznany	Instytut Niskich Temperatur i Badań Strukturalnych im. Włodzimierza Trzebiatowskiego PAN	Krasnale_PAN_(PAN_Dwarves)_Czarodziej_(Magician)_Wroclaw_dwarf_01.jpg
+51°06'05”N 17°04'04”E	Magnetyzer	Okólna 2	nieznany	Instytut Niskich Temperatur i Badań Strukturalnych im. Włodzimierza Trzebiatowskiego PAN	Krasnale_PAN_(PAN_Dwarves)_Magnetyzer_(Magnetizer)_Wroclaw_dwarf_01.jpg
+51°06'05”N 17°04'04”E	Kelwinek	Okólna 2	nieznany	Instytut Niskich Temperatur i Badań Strukturalnych im. Włodzimierza Trzebiatowskiego PAN	Krasnale_PAN_(PAN_Dwarves)_Kelwinek_(Kelvin)_Wroclaw_dwarf_01.jpg
+51°07'47”N 17°02'41”E	Krasnal Promenad Wrocławskich I	Antoniego Słonimskiego	nieznany	osiedle „Promenady Wrocławskie”	Krasnale_Promenad_Wroclawskich_(Dwarves_of_Wroclaw_Promenades)_Wroclaw_dwarf_03.jpg
+51°07'47”N 17°02'41”E	Krasnal Promenad Wrocławskich II	Antoniego Słonimskiego	nieznany	osiedle „Promenady Wrocławskie”	Krasnale_Promenad_Wroclawskich_(Dwarves_of_Wroclaw_Promenades)_Wroclaw_dwarf_04.jpg
+51°06'35”N 16°52'48”E	Krasnal Przylądka Nadziei I	Graniczna 190	Beata Zwolańska–Hołod	Port Lotniczy im. Mikołaja Kopernika terminal pasażerski	Przyladka_Nadziei_(Cape_of_Hope)_Wroclaw_dwarf_03.jpg
+51°06'35”N 16°52'48”E	Krasnal Przylądka Nadziei II	Graniczna 190	Beata Zwolańska–Hołod	Port Lotniczy im. Mikołaja Kopernika terminal pasażerski	Przyladka_Nadziei_(Cape_of_Hope)_Wroclaw_dwarf_05.jpg
+51°06'35”N 16°52'48”E	Krasnal Przylądka Nadziei III	Graniczna 190	Beata Zwolańska–Hołod	Port Lotniczy im. Mikołaja Kopernika terminal pasażerski	Przyladka_Nadziei_(Cape_of_Hope)_Wroclaw_dwarf_07.jpg
+51°06'35”N 16°52'48”E	Krasnal Przylądka Nadziei IV	Graniczna 190	Beata Zwolańska–Hołod	Port Lotniczy im. Mikołaja Kopernika terminal pasażerski	Przyladka_Nadziei_(Cape_of_Hope)_Wroclaw_dwarf_09.jpg
+51°06'30”N 17°01'34”E	Grający na bębnie	św. Antoniego 2/4	José Torres, Beata Zwolańska–Hołod	„Pasaż Pokoyhof”	Krasnale_tolerancji_(Tolerance_Dwarves)_Wroclaw_dwarf_03.jpg
+51°06'30”N 17°01'34”E	Grający na saksofonie	św. Antoniego 2/4	José Torres, Beata Zwolańska–Hołod	„Pasaż Pokoyhof”	Krasnale_tolerancji_(Tolerance_Dwarves)_Wroclaw_dwarf_05.jpg
+51°06'19”N 17°01'59”E	Wierzbownik	plac Teatralny 4	Paweł Pawlak	fontanna przed Teatrem Lalek	Krasnale_Wodne_(Water_dwarves)_Wierzbownik_(Willow)_Wroclaw_dwarf_01.jpg
+51°06'19”N 17°01'59”E	Zbierający Wodę	plac Teatralny 4	Paweł Pawlak	fontanna przed Teatrem Lalek	Krasnale_Wodne_(Water_dwarves)_Zbierający_Wodę_(Water-collector)_Wroclaw_dwarf_01.JP
+51°06'19”N 17°01'59”E	Puszczający Stateczki	plac Teatralny 4	Paweł Pawlak	fontanna przed Teatrem Lalek	Krasnale_Wodne_(Water_dwarves)_Puszczający_Stateczki_(Paper-shi-maker)_Wroclaw_dwarf_01.jpg
+51°06'19”N 17°01'59”E	Karmiący Ptaki	plac Teatralny 4	Paweł Pawlak	fontanna przed Teatrem Lalek	Krasnale_Wodne_(Water_dwarves)_Karmiący_Ptaki_(Bird-feeder)_Wroclaw_dwarf_01.jpg
+51°06'19”N 17°01'59”E	Ogrodnik	plac Teatralny 4	Paweł Pawlak	fontanna przed Teatrem Lalek	Krasnale_Wodne_(Water_dwarves)_Ogrodnik_(Gardener)_Wroclaw_dwarf_01.jpg
+51°06'19”N 17°01'59”E	Aktor	plac Teatralny 4	Paweł Pawlak	fontanna przed Teatrem Lalek	Krasnale_Wodne_(Water_dwarves)_Aktor_(Actor)_Wroclaw_dwarf_01.jpg
+51°06'19”N 17°01'59”E	Parasolnik	plac Teatralny 4	Paweł Pawlak	fontanna przed Teatrem Lalek	Krasnale_Wodne_(Water_dwarves)_Parasolnik_(Umbreller)_Wroclaw_dwarf_01.jpg
+51°05'56”N 17°01'42”E	Zakupek	Komandorska 21	Tomasz Moczek	sklep „Epi”	Epiki_Zakupek_(Shopper)_Wroclaw_dwarf_01.jpg
+51°05'56”N 17°01'42”E	Brat O’Hurt I	Komandorska 21	Tomasz Moczek	sklep „Epi”	Epiki_Bracia_O'Hurt_(Wholesale_Brothers)_Wroclaw_dwarf_05.jpg
+51°05'56”N 17°01'42”E	Brat O’Hurt II	Komandorska 21	Tomasz Moczek	sklep „Epi”	Epiki_Bracia_O'Hurt_(Wholesale_Brothers)_Wroclaw_dwarf_07.jpg
+51°05'56”N 17°01'42”E	Bracia O’Hurt III i IV	Komandorska 21	Tomasz Moczek	sklep „Epi”	Epiki_Bracia_O'Hurt_(Wholesale_Brothers)_Wroclaw_dwarf_09.jpg
+51°05'56”N 17°01'42”E	Promocjusz i Przecennik	Komandorska 21	Tomasz Moczek	sklep „Epi”	Epiki_Promocjusz_i_Przecennik_(Saler_and_Price-cutter)_Wroclaw_dwarf_01.jpg
+51°05'53”N 17°02'16”E	Krasnalica	Józefa Piłsudskiego 105	Marta Mirynowska	dworzec kolejowy Wrocław Główny peron 2	Krasnalica_(Dwarfette)_Wroclaw_dwarf_01.jpg
+51°05'39”N 17°03'42”E	Kreacjusz	Krakowska 56-62 budynek A	Stanisław Lenar	Lama Media	Kreacjusz_(Designer)_Wroclaw_dwarf_01.jpg
+51°07'33”N 16°58'51”E	Kruszek z wróbelkiem Łakomczuszkiem	Legnicka 158	Beata Zwolańska-Hołod	Cukiernia Wolak	Kruszek_z_wrobelkiem_Lakomczuszkiem_(Crumbly_with_Gourmand_the_Sparrow)_Wroclaw_dwarf_01.jpg
+51°05'41”N 17°01'42”E	Kupczyk	Komandorska 66	Marcin Łuczkowski	Centrum Handlowe „Arena“	Kupczyk_(Merchant)_Wroclaw_dwarf_01.jpg
+51°06'40”N 17°01'53”E	Lady Wolność	Rynek 58	nieznany	Dolnośląska Biblioteka Publiczna im. Tadeusza Mikulskiego	Lady_Wolnosc_(Lady_Liberty)_Wroclaw_dwarf_01.jpg
+51°06'34”N 17°05'45”E	Kusy	Rafała Krajewskiego 1	Marta Mirynowska	Szkoła podstawowa nr 45 im. Janusza Kusocińskiego	Kusy_(Kusy)_Wroclaw_dwarf_04.jpg
+51°07'22”N 17°02'33”E	Leoś	Franklina Delano Roosevelta 15	Beata Zwolańska–Hołod	przedszkole „Leonardo”	Leos_(Leonard)_Wroclaw_dwarf_01.jpg
+51°06'38”N 17°03'34”E	Lappek	Zygmunta Janiszewskiego 8	Marta Mirynowska	Wydział Elektryczny (D20) Politechniki Wrocławskiej	Lappek_(Lappie)_Wroclaw_dwarf_01.jpg
+51°06'18”N 16°53'59”E	Latałek	Plac Gołębi	Tomasz Moczek	Port Lotniczy im. Mikołaja Kopernika terminal general aviation	Latałek_(Flyer)_Wroclaw_dwarf_01.jpg
+51°06'36”N 17°01'51”E	Leszko	Stanisława Skarżyńskiego 36	Beata Zwolańska–Hołod	Gitarowy Rekord Guinnessa	Leszko_(Leszko)_Wroclaw_dwarf_01.jpg
+51°06'36”N 17°01'55”E	Lion spod znaku lwa	Sukiennice 6	nieznany	Lions Clubs International	Lion_spod_znaku_lwa_(Lion_born_born_under_the_sign_of_Leo)_Wroclaw_dwarf_01.jpg
+51°05'21”N 17°01'02”E	Listonosz	Zygmunta Krasińskiego 1	Beata Zwolańska–Hołod	Muzeum Poczty i Telekomunikacji	Listonosz_(Mailman)_Wroclaw_dwarf_01.jpg
+51°06'30”N 17°01'37”E	Lombardzik	Krupnicza 3/1-B	nieznany	Lombard	Lombardzik_(Pawnbroker)_Wroclaw_dwarf_01.jpg
+51°05'21”N 17°00'00”E	Lotnicy	Józefa Hallera 52	Tomasz Moczek	Centrum Handlowe „Borek”	Lotnicy_(Aeronauts)_Wroclaw_dwarf_03.jpg
+51°05'57”N 17°02'25”E	Luksik	plac Konstytucji 3 Maja 3	Tomasz Moczek	Luxsoft	Luksik_(Lux)_Wroclaw_dwarf_01.jpg
+51°05'19”N 17°01'00”E	Luminator	Sudecka 96/97	Tomasz Moczek	Tauron Obsługa Klienta	Luminator_(Luminator)_Wroclaw_dwarf_03.jpg
+51°06'41”N 17°01'34”E	Lunatyk	Św. Mikołaja 61-62	Marcin Łuczkowski	Kamienica pod Lunatykiem	Lunatyk_(Sleepwalker)_Wroclaw_dwarf_01.jpg
+51°05'57”N 17°06'43”E	Malarz Piotruś	Witolda Wojtkiewicza 16	Beata Zwolańska–Hołod	prywatna posesja	Malarz_Piotrus_(Peter_the_Painter)_Wroclaw_dwarf_01.jpg
+51°06'24”N 17°02'01”E	Marysia Pięknisia	Widok 8	Tomasz Moczek	Centrum Dermatologii Estetycznej "Bagłaj"	Marysia_Pieknisia_(Pretty_Mary)_Wroclaw_dwarf_01.jpg
+51°07'05”N 17°04'02”E	Marzenka	Odona Bujwida 44	Beata Zwolańska–Hołod	KlinikaTransplantacji Szpiku, Onkologii i Hematologii Dziecięcej	Marzenka_(Marcy)_Wroclaw_dwarf_01.jpg
+51°09'08”N 17°07'52”E	Marzyciel	Bierutowska 65/67	Marta Mirynowska	UTC Aerospace Systems	Marzyciel_(Dreamer)_Wroclaw_dwarf_02.jpg
+51°06'46”N 17°01'03”E	Ma(Ste)rche(Fek)	Świdnicka 53	nieznany	Restauracja Marche	Ma(STE)rche(FEK)_(Ma(STE)rche(F))_Wroclaw_dwarf_01.jpg
+51°06'37”N 17°03'15”E	Matematyk	plac Grunwaldzki 2	Beata Zwolańska–Hołod	Instytut Matematyczny Uniwersytetu Wrocławskiego	Matematyk_(Mathematician)_Wroclaw_dwarf_01.jpg
+51°06'20”N 16°56'56”E	Max i Fliz	Mińska 60A	Tomasz Moczek	Sklep „Maz i Fliz”	Max_i_Fliz_(Max_and_Fliz)_Wroclaw_dwarf_01.jpg
+51°05'54”N 17°01'52”E	Mellonik	Swobodna 1	Agata Gwizd-Leszczyńska	BNY Mellon Aquarius Business House	Mellonik_(Mellon)_Wroclaw_dwarf_03_(2017).jpg
+51°06'42”N 17°01'40”E	Mikołaj Ziółko	św. Mikołaja 65/68	Tomasz Moczek	Herbapol Wrocław S.A.	Mikolaj_Ziolko_(Herbie_Nicholas)_Wroclaw_dwarf_01.jpg
+51°04'16”N 17°00'08”E	Miłostek	Zimowa 14	Stanisław Wysocki	prywatna posesja	Milostek_(Loverboy)_Wroclaw_dwarf_01.jpg
+51°07'28”N 17°01'44”E	Modruś i Odruś	Odrzańska 24/29	nieznany	restauracja „Modra Odra”	Modrus_i_Odrus_(Bluish_and_Odrish)_Wroclaw_dwarf_01.jpg
+51°07'28”N 17°01'44”E	Moteusz	Stanisława Staszica 20	Piotr Rychel	sklep e-dziewiarka.pl	Moteusz_(Skeiner)_Wroclaw_dwarf_01.jpg
+51°06'34”N 17°02'04”E	Motocyklista	Szewska 10	Mika Matylda	Katedra św. Marii Magdaleny	Motocyklista_(Chopper-dwarf)_Wroclaw_dwarf_01.jpg
+51°06'34”N 17°01'27”E	Murarz	św. Antoniego 23	Tomasz Moczek	Cech Rzemiosł Budowlanych	Murarz_(Bricklayer)_Wroclaw_dwarf_01.jpg
+51°06'27”N 16°56'54”E	Myjek	Graniczna 2	nieznany	myjnia samochodowa „Aquamio“	Myjek_(Washer)_Wroclaw_dwarf_01.jpg
+51°04'12”N 17°00'39”E	Myślichwilek	Wojszycka 1	Beata Zwolańska–Hołod	Szkoła Podstawowa nr 64 im. Władysława Broniewskiego	Myslichwilek_(Timethoughts)_wroclaw_dwarf_01.jpg
+51°06'34”N 17°01'27”E	Narcyś	Narcyzowa 6	Beata Zwolańska–Hołod	Przedszkole nr 59 „U Krasnala pod Narcyzem”	Narcys_(Narcy)_Wroclaw_dwarf_01.jpg
+51°06'41”N 17°00'04”E	Narzędziownik	Robotnicza 40	Marcin Łuczkowski	Sklep Elektro Serwis	Narzędziownik_(Handyman)_Wroclaw_dwarf_01.jpg
+51°06'53”N 17°01'56”E	Nawigator	Księcia Witolda 2	Grzegorz Łagowski	Marina Topacz	Nawigator_(Navigator)_Wroclaw_dwarf_01.jpg
+51°06'37”N 17°02'21”E	Neptunek	Purkyniego 1	nieznany	Klub muzyczny „Stary Klasztor”	Neptunek_(Neptune)_Wroclaw_dwarf_01.jpg
+51°03'54”N 16°59'05”E	Niezabudka	Wałbrzyska 2A	Tomasz Moczek	Przedszkole nr 56 „Niezapominajka”	Niezabudka_(Kindergarten_Dwarf)_Wroclaw_dwarf_02.jpg
+51°06'53”N 17°01'53”E	O’Barek	Księcia Witolda 1	Beata Zwolańska–Hołod	OKWineBar	O’Barek_(O’Bar)_Wroclaw_dwarf_03_(2016)_01.jpg
+51°06'38”N 17°01'58”E	Obieżysmak	Rynek 48	Marcin Łuczkowski	Restauracja Pizza Hut	Obieżysmak_(Globetaster)_Wroclaw_dwarf_01.jpg
+51°06'38”N 17°01'58”E	Oddludek	Wiązowa	Beata Zwolańska–Hołod	Promenada Staromiejska	Oddludek_(OddGuy)_Wroclaw_dwarf_01.jpg
+51°06'59”N 17°02'50”E	Ogorzałek	św. Mikołaja 81	Beata Zwolańska–Hołod	Bar Przedwojenna	Ogorzalek_i_Opilek_(Drinker_and_Boozer)_Wroclaw_dwarf_03.jpg
+51°06'59”N 17°02'50”E	Opiłek	św. Mikołaja 81	Beata Zwolańska–Hołod	Bar Przedwojenna	Ogorzalek_i_Opilek_(Drinker_and_Boozer)_Wroclaw_dwarf_05.jpg
+51°06'59”N 17°02'50”E	Ogrodnik i Kierownik	Henryka Sienkiewicza 23	Marcin Łuczkowski	Ogród Botaniczny	Ogrodnik_i_Kierownik_(Gardener_and_Manager)_Wroclaw_dwarf_02.jpg
+51°07'12”N 17°02'59”E	Ołbiniusz	Bolesława Prusa 64	Beata Zwolańska–Hołod	Szkoła Podstawowowa nr 107 im. Piotra Włostowica	Olbiniusz_(Olbinus)_Wroclaw_dwarf_01.jpg
+51°06'53”N 16°58'25”E	Onkuś (Germazowy Onkuś)	Strzegomska 139	Beata Zwolańska–Hołod oraz dzieci z Kliniki Transplantacji Szpiku, Onkologii i Hematologii Dziecięcej	Dom Samochodowy Germaz	Onkus_(Oncky)_Wroclaw_dwarf_01.jpg
+51°07'22”N 17°02'33”E	Opałek	Irkucka 11	nieznany	punkt przedszkolny „Koszałki Opałki”	Opalek_(Opalek)_Wroclaw_dwarf_01.jpg
+51°06'34”N 17°04'26”E	Opiekunek i Krasnomaleństwo	Parkowa 2	Beata Zwolańska–Hołod	Zespół Placówek Opiekuńczo-Wychowawczych „Dziecięcy Dom”	Opiekunek_i_Krasnomalenstwo_(Guardian_and_baby-dwarf)_Wroclaw_dwarf_01.jpg
+51°04'27”N 17°01'52”E	Ortopeda (Crasnallus Orthopedicus)	Borowska 213	Beata Zwolańska-Hołod	Uniwersytecki Szpital Kliniczny im. Jana Mikulicza-Radeckiego	Ortopeda_(Orthopaedist)_Wroclaw_dwarf_01.jpg
+51°06'38”N 17°01'57”E	Orzeźwiacz	Rynek Ratusz	nieznany	pierzeja północna rynku	Orzezwiacz_(Refresher)_Wroclaw_dwarf_01.jpg
+51°06'50”N 17°02'14”E	Ossolineusz (Ossolinek Ossolińczyk)	Zaułek Ossolińskich	Marcin Łuczkowski	Zakład Narodowy im. Ossolińskich	Ossolinek_(Ossolineo)_Wroclaw_dwarf_01.jpg
+51°06'33”N 17°01'45”E	Ottuś	plac Solny 15	nieznany	Agencja Pracy OTTO	Ottus_(Otto)_Wroclaw_dwarf_01.jpg
+51°05'38”N 17°00'54”E	Ósemek	Zaporoska 71	Bogusława Gasiewicz	VIII Liceum Ogólnokształcące im. Bolesława Krzywoustego	Osemek_(The_Eight)_Wroclaw_dwarf_01.jpg
+51°06'59”N 17°03'11”E	Pacjent i Lekarz	Henryka Sienkiewicza 37/39	Tomasz Moczek	Przychodnia Śródmieście	Pacjent_i_lekarz_(Patient_and_Doc)_Wroclaw_dwarf_02.jpg
+51°07'17”N 16°50'40”E	Pan Twardowski	Jarnołtowska 85b	Beata Zwolańska–Hołod	Karczma Rzym	Pan_Twardowski_(Mister_Twardowski)_Wroclaw_dwarf_01.jpg
+51°06'18”N 17°01'22”E	Panna Pychotka	Sądowa 14	Marcin Łuczkowski	Sklep „Krasnal”	Panna_Pychotka_(Miss_Delicious)_Wroclaw_dwarf_01.jpg
+51°06'37”N 17°02'39”E	Panoramik	Jana Ewangelisty Purkyniego 11	Beata Zwolańska–Hołod[91]	Panorama Racławicka	Panoramik_(Panoramist)_Wroclaw_dwarf_01.jpg
+51°06'38”N 17°01'22”E	Państwo Krasnalscy Pawła Włodkowica 20/22	Beata Zwolańska–Hołod	Urząd Stanu Cywilnego	Panstwo Krasnalscy (Mr. and Mrs. Dwarf) Wroclaw dwarf 01.JPG	
+51°06'41”N 17°00'57”E	Papa Het[27][92]	Ziemowita 11	Marta Mirynowska, Piotr Makała	Budynek Solo 11	Papa_Het_(Papa_Het)_Wroclaw_dwarf_01.jpg
+51°06'41”N 17°00'57”E	Paragrafek	Uniwersytecka 22-26	Beata Zwolańska–Hołod	Budynek „A” Wydział Prawa, Administracji i Ekonomii Uniwersytetu Wrocławskiego	Paragrafek_(Paragrapher)_Wroclaw_dwarf_01.jpg
+51°06'18”N 17°01'41”E	Patrolek[93]	Podwale 31/33	Marta Mirynowska	Komenda Wojewódzka Policji	Patrolek_(Patroler)_Wroclaw_dwarf_01.jpg
+51°06'41”N 17°00'57”E	Parasolnik I	plac Grunwaldzki 25-27	Tomasz Moczek	Grunwaldzki Center	Parasolniki_(Umbrella-makers)_Wroclaw_dwarf_03.jpg
+51°06'41”N 17°00'57”E	Parasolnik II	plac Grunwaldzki 25-27	Tomasz Moczek	Grunwaldzki Center	Parasolniki_(Umbrella-makers)_Wroclaw_dwarf_05.jpg
+51°06'46”N 17°02'31”E	ParkM	Bulwar Xawerego Dunikowskiego	nieznany	Przystań „Amfiteatralna”	ParkM_(ParkM)_Wroclaw_dwarf_01.jpg
+51°09'00”N 17°07'36”E	Phoeniksik	Bierutowska 57-59	nieznany	Wrocławski Park Biznesu 3	Phoeniksik_(Phoenix)_Wroclaw_dwarf_01.jpg
+51°06'44”N 17°04'22”E	Piastek	Parkowa 18-36	Anna Wójcik	II Liceum Ogólnokształcące im. Piastów Śląskich	Piastek_(Piastek)_Wroclaw_dwarf_01.jpg
+51°06'40”N 17°02'02”E	Pierożnik	Kuźnicza 10	Marcin Łuczkowski	Restauracja „STP”	Pieroznik_(Dumplinger)_Wroclaw_dwarf_01.jpg
+51°07'36”N 16°58'18”E	Pilotek	Bulwar Ikara 19	Beata Zwolańska–Hołod	Szkoła podstawowa 118 im. płk. pil. Bolesława Orlińskiego	Pilotek_(Aviator)_Wroclaw_dwarf_01.jpg
+51°06'51”N 16°57'13”E	Piotrek	Wojrowicka 58	Ute Hartwig-Schulz oraz uczniowie liceum	XV Liceum Ogólnokształcące im. mjr. Piotra Wysockiego	Piotrek_(Peter)_Wroclaw_dwarf_01.jpg
+51°06'37”N 17°02'01”E	Piwożłop z piesełem Piwoszem	Rynek 41	nieznany	Kamienica Pod Złotym Psem	Piwozlop_z_pieselem_Piwoszem_(Beers_with_dog_Beer_drinker)_Wroclaw_dwarf_01.jpg
+51°06'39”N 17°01'50”E	Pocztowiec	Rynek 28	Beata Zwolańska–Hołod	Urząd Pocztowy Wrocław 32 na skrzynce pocztowej	Pocztowiec-krasnal.jpg
+51°06'44”N 17°01'48”E	Podróżnik I	Kiełbaśnicza 20	Beata Zwolańska–Hołod	„Art Hotel”	Podroznik_(Explorer)_Wroclaw_dwarf_03.jpg
+51°05'50”N 17°02'07”E	Podróżnik II	Sucha 1	Grzegorz Łagowski	Galeria Wroclavia	Podróżnik_(Voyager)_Wroclaw_dwarf_01.jpg
+51°06'39”N 17°03'35”E	Polidenciak	plac Grunwaldzki 15	Beata Zwolańska–Hołod	Centrum Stomatologiczne „poliDENT”	Polidenciak_(Polidental)_Wroclaw_dwarf_01.jpg
+51°06'23”N 17°02'30”E	Polonek	Podwale	Beata Zwolańska–Hołod	Konsulat Generalny Republiki Federalnej Niemiec	Polonek_i_Germanek_(Polish_and_German)_Wroclaw_dwarf_03.jpg
+51°06'23”N 17°02'30”E	Germanek	Podwale	Beata Zwolańska–Hołod	Konsulat Generalny Republiki Federalnej Niemiec	Polonek_i_Germanek_(Polish_and_German)_Wroclaw_dwarf_04.jpg
+51°06'35”N 17°01'54”E	Pomagajek	Rynek/Sukiennice 12	Marta Mirynowska, Piotr Makała	przy Ratuszu	Pomagajek_(_Helper)_Wroclaw_dwarf_04.jpg
+51°07'35”N 16°59'29”E	Popowicjusz	Rysia	nieznany	Geometryczne Centrum Wrocławia	Popowicjusz_(Popowicer)_Wroclaw_dwarf_01.jpg
+51°06'34”N 17°01'49”E	Powerek	Rynek 12	Beata Zwolańska–Hołod	Agencja PowerEvents	Powerek_(Powery)_Wroclaw_dwarf_01.jpg
+51°06'40”N 17°01'50”E	Pożarki	św. Elżbiety 1	Grzegorz Łagowski	plac przed Bazyliką św. Elżbiety Węgierskiej	Pożarki_(Firemen)_Wroclaw_dwarf_01.jpg
+51°06'49”N 17°02'24”E	Pracz Odrzański	św. Jadwigi 3/4	Tomasz Moczek	Bulwar Włostowica most Piaskowy	Pracz_Odrzanski_(Odra_Washer)_Wroclaw_dwarf_01.jpg
+51°05'22”N 17°03'59”E	Pralinka	Krakowska 112-116	nieznany	E&S Industry S.A.	Pralinka_(Pralinka)_Wroclaw_dwarf_03.jpg
+51°06'35”N 17°01'51”E	Prezentuś	Rynek	Beata Zwolańska–Hołod	obecny podczas Jarmarku Bożonarodzeniowego	Prezentus_(Giftie)_Wroclaw_dwarf_03.jpg
+51°06'50”N 17°02'01”E	Profesor medyk	plac Uniwersytecki 1	Bogna Kozera-Radomska	Gmach główny Uniwersytetu Wrocławskiego	Profesor_(Professor)_Wroclaw_dwarf_01.jpg
+51°06'47”N 17°02'21”E	Profesor Miodek	plac Biskupa Nankiera 15	Beata Zwolańska–Hołod	Instytut Filologii Polskiej Uniwersytetu Wrocławskiego	Profesor_Miodek_(Professor_Miodek)_Wroclaw_dwarf_01.jpg
+51°05'50”N 17°01'54”E	Promyczek	Swobodna 8a	Beata Zwolańska–Hołod	Przychodnia Fundacji „Promyk Słońca”	Promyk_(Beamie)_Wroclaw_dwarf_01.jpg
+51°04'53”N 16°58'11”E	Prywatek	Marcina Bukowskiego 7A	Beata Zwolańska–Hołod	prywatna posesja	Prywatek_(Loner)_Wroclaw_dwarf_03.jpg
+51°06'38”N 17°01'55”E	Przodownik	Rynek Ratusz 10	Beata Zwolańska–Hołod	Klubo – kawiarnia PRL	Przodownik_(Leader)_Wroclaw_dwarf_01.jpg
+51°06'23”N 17°01'13”E	Przedszkoludek	Iwana Pawłowa 6A	Katarzyna Nowak	Przedszkole nr 87 „Wrocławskie dzieciaki”	Przedszkoludek_(Kindergartner)_Wroclaw_dwarf_01.jpg
+51°06'43”N 16°59'28”E	Przemysław Parkuś	Fabryczna 10	Tomasz Moczek	Centrum Konferencyjne Wrocławskiego Parku Przemysłowego	Przemysław_Parkuś_(Indie_Parker)_Wroclaw_dwarf_03.jpg
+51°06'36”N 16°55'38”E	Przylepek	Graniczna 25	Marta Mirynowska	Comex	Przylepek_(Stickman)_Wroclaw_dwarf_01.jpg
+51°02'45”N 16°52'57”E	Radiotechnik	Pietrzykowice Fabryczna 20	Tomasz Moczek	Radiotechnika Marketing Sp. z o.o.	Radiotechnik_(Radio_technician)_Wroclaw_dwarf_01.jpg
+51°04'18”N 17°00'23”E	Radiowiec	Karkonoska 10	Beata Zwolańska-Hołod	Radio Wrocław	Radiowiec_(Radio_Technician)_Wroclaw_dwarf_03.jpg
+51°06'22”N 17°01'54”E	Recyklinek	Świdnicka 31	Tomasz Moczek	Hotel Monopol	Recyklinek_(Recycler)_Wroclaw_dwarf_02.jpg
+51°06'36”N 17°01'42”E	Rejent	Ruska 3/4	Marta Mirynowska	Kamienica Pod Trzema Liliami	Rejent_(Notary)_Wroclaw_dwarf_01.jpg
+51°09'14”N 17°07'32”E	Rejestruś	Armii Ludowej 21	Marcin Łuczkowski	Krajowy Rejestr Długów	Rejestrus_(Registrar)_Wroclaw_dwarf_01.jpg
+51°08'29”N 16°53'56”E	Rodzinka Rajska 71	Tomasz Moczek	Klinika „Mama i Ja”	Rodzinka (Family) Wroclaw dwarf 01.JPG	
+51°06'39”N 17°02'01”E	Rogalik	Kuźnicza 65/66	Beata Zwolańska–Hołod	Piekarnia-Restauracja „Pan Croissant”	Rogalik_(Croissant)_Wroclaw_dwarf_01.jpg
+51°06'44”N 17°03'53”E	Roszek	Norwida 31	Tomasz Moczek	Wydział Medycyny Weterynaryjnej Uniwersytetu Przyrodniczego	Roszek_(Roch)_Wroclaw_dwarf_01.jpg
+51°06'27”N 17°01'57”E	Rowerzysta	Świdnicka 8c	nieznany	Barbara: infopunkt, kawiarnia, kultura	Rowerzysta_(Cyclist)_Wroclaw_dwarf_2016_P01.jpg
+51°06'29”N 17°01'53”E	RoyalDenciak I	Stanisława Leszczyńskiego 5	Tomasz Moczek	Royal Dent	RoyalDenciaki_(Royaldenters)_Wroclaw_dwarf_02.jpg
+51°06'29”N 17°01'53”E	RoyalDenciak II	Stanisława Leszczyńskiego 5	Tomasz Moczek	Royal Dent	RoyalDenciaki_(Royaldenters)_Wroclaw_dwarf_04.jpg
+51°06'29”N 17°01'53”E	RoyalDenciak III	Stanisława Leszczyńskiego 5	Tomasz Moczek	Royal Dent	RoyalDenciaki_(Royaldenters)_Wroclaw_dwarf_06.jpg
+51°07'21”N 17°02'25”E	Rozkwietnik	Kręta 1/3	Marta Mirynowska, Piotr Makała oraz dzieci z programu „Rozkwietnik podwórek”	Centrum Zrównoważonego Rozwoju Społeczności Wrocławia „Locus”	Rozkwietnik_Wroclaw_dwarf_01.jpg
+51°08'44”N 16°52'14”E	Rycerz Jadwiżański	plac Świętojański 1	Beata Zwolańska–Hołod	kamienna półka przed Zamkiem w Leśnicy	Rycerz_Jadwiżański_(Jadwiga’s_Knight)_Wroclaw_dwarf_01.jpg
+51°06'43”N 17°01'51”E	Rzeźnik	Stare Jatki	Tomasz Moczek	Od strony przeciwnej niż sklepyna początku bramy (nie od strony zwierząt)	Rzeznik_(Butcher)_Wroclaw_dwarf_01.jpg
+51°09'04”N 17°01'02”E	Saper	Obornicka 108	Jerzy Maziarz	Centrum Szkolenia Wojsk Inżynieryjnych i Chemicznych im. gen. Jakuba Jasińskiego	Saper_(Sapper)_Wroclaw_dwarf_01.jpg
+51°06'44”N 17°03'35”E	Serdeczniś	plac Grunwaldzki 22	Marcin Łuczkowski	Pasaż Grunwaldzki	Serdecznis_(Warm-heart)_Wroclaw_dwarf_01.jpg
+51°08'53”N 17°01'50”E	Skarbuś	Żmigrodzka 141	Beata Zwolańska–Hołod	Dolnośląski Urząd Skarbowy	Skarbuś_(Treasurer)_Wroclaw_dwarf_01.jpg
+51°06'36”N 17°01'55”E	Słuchacz RMF	Sukiennice 6	nieznany	RMF FM	Sluchacz_RMF_(RMF_Listener)_Wroclaw_dwarf_01.jpg
+51°06'31”N 17°02'07”E	Słupnik Oławski I	Oławska	Michał Osuch	latarnia przed numerem 1	Slupniki_Swidnickie_(Swidnicka_Columnists)_Wroclaw_(1)_dwarf_01.jpg
+51°06'31”N 17°02'07”E	Słupnik Oławski II	Oławska	Michał Osuch	latarnia przed numerem 4a	Slupniki_Swidnickie_(Swidnicka_Columnists)_Wroclaw_(2)_dwarf_01.jpg
+51°06'31”N 17°02'07”E	Słupnik Oławski III	Oławska	Michał Osuch	latarnia przed numerem 8	Slupniki_Swidnickie_(Swidnicka_Columnists)_Wroclaw_(3)_dwarf_01.jpg
+51°06'34”N 17°01'46”E	Słupnik Solny I	plac Solny	Michał Osuch	północno-wschodni narożnik placu	Slupniki_Solne_(Salt_Columnists)_Wroclaw_(1)_dwarf_01.jpg
+51°06'34”N 17°01'46”E	Słupnik Solny II	plac Solny	Michał Osuch	północno-zachodni narożnik placu	Slupniki_Solne_(Salt_Columnists)_Wroclaw_(2)_dwarf_01.jpg
+51°06'34”N 17°01'46”E	Słupnik Solny III	plac Solny	Michał Osuch	południowo-zachodni narożnik placu	Slupniki_Solne_(Salt_Columnists)_Wroclaw_(3)_dwarf_01.jpg
+51°06'34”N 17°01'46”E	Słupnik Solny IV	plac Solny	Michał Osuch	południowo-wschodni narożnik placu	Slupniki_Solne_(Salt_Columnists)_Wroclaw_(4)_dwarf_01.jpg
+51°06'30”N 17°01'57”E	Słupnik Świdnicki I	Świdnicka	Michał Osuch	latarnia przed numerem 5	Slupniki_Olawskie_(Olawska_Columnists)_Wroclaw_(1)_dwarf_01.jpg
+51°06'30”N 17°01'57”E	Słupnik Świdnicki II	Świdnicka	Michał Osuch	latarnia przed numerem 8	Slupniki_Olawskie_(Olawska_Columnists)_Wroclaw_(2)_dwarf_01.jpg
+51°06'30”N 17°01'57”E	Słupnik Świdnicki III	Świdnicka	Michał Osuch	latarnia przed numerem 16	Slupniki_Olawskie_(Olawska_Columnists)_Wroclaw_(3)_dwarf_01.jpg
+51°06'30”N 17°01'57”E	Słupnik Świdnicki IV	Świdnicka	Michał Osuch	latarnia przed numerem 27- 29	Slupniki_Olawskie_(Olawska_Columnists)_Wroclaw_(4)_dwarf_01.jpg
+51°06'46”N 17°01'09”E	Solidarek	plac Solidarności 1/3/5	Beata Zwolańska–Hołod	Zarząd RegionuNSZZ Solidarność	Solidarek_(Solidarist)_Wroclaw_dwarf_01.jpg
+51°06'29”N 17°01'31”E	Sportuś	Włodkowica 5	Tomasz Moczek	The Winners Pub	Sportus_(Sporty)_Wroclaw_dwarf_01.jpg
+51°06'53”N 17°02'24”E	Sprawiedliwiusz	Świętej Jadwigi 12	Beata Zwolańska–Hołod	Wyższa Szkoła Zarządzania i Prawa im. Heleny Chodkowskiej	Sprawiedliwiusz_(Righteous_man)_Wrocław_dwarf_01.jpg
+51°06'05”N 17°02'15”E	Strażnik (Halabardnik)	Gwarna 5/7	Marcin Łuczkowski	Posterunek straży miejskiej	Straznik_(Guard)_Wroclaw_dwarf_01.jpg
+51°06'38”N 17°01'50”E	Suvenirek	Rynek 3	Beata Zwolańska–Hołod	Informacja Turystyczna	Suvenirek_(Souvenir)_Wroclaw_dwarf_01.jpg
+51°06'32”N 17°01'58”E	Syzyfek pchający kulę	Świdnicka	Tomasz Moczek	koło Poczty Polskiej	Syzyfki_(Sisyphers)_Wroclaw_dwarf_03.jpg
+51°06'32”N 17°01'58”E	Syzyfek podnoszący kulę	Świdnicka	Tomasz Moczek	koło Poczty Polskiej	Syzyfki_(Sisyphers)_Wroclaw_dwarf_05.jpg
+51°06'50”N 17°02'03”E	Szcześciarz	Wojszycka 8	Tomasz Moczek	Hotel „Podkowa”	Szczesciarze_(Luckers)_Wroclaw_dwarf_03.jpg
+51°06'50”N 17°02'03”E	Szczęściara	Wojszycka 8	Tomasz Moczek	Hotel „Podkowa”	Szczesciarze_(Luckers)_Wroclaw_dwarf_05.jpg
+51°06'50”N 17°02'03”E	Szermierz	plac Uniwerstytecki	Tomasz Moczek	Fontanna „Szermierz”	Szermierz_(Swordsman)_Wroclaw_dwarf_01.jpg
+51°06'03”N 17°01'49”E	Szoł Mastgołoń	Józefa Piłsudskiego 67	Marta Mirynowska	Teatr Muzyczny „Capitol”	Szol_Mastgolon_(Show-Must-Go-On)_Wroclaw_dwarf_01.jpg
+51°06'27”N 17°01'33”E	Szomol	Krupnicza	Piotr Makała, Marta Mirynowska	Narodowe Forum Muzyki	Szomol_(Shomol)_Wroclaw_dwarf_new_location_2016_P01.jpg
+51°05'50”N 16°59'52”E	Sztangista	Oporowska 60	Beata Zwolańska–Hołod	Hotel „Śląsk”	Sztangista_(Raiser)_Wroclaw_dwarf_01.jpg
+51°06'41”N 17°01'50”E	Śpioch (Strażnik)	Św. Mikołaja 1	Tomasz Moczek	na tyłach kamieniczki Jaś	Spioch_(Sleepyhead)_Wroclaw_dwarf_01.jpg
+51°06'18”N 17°05'11”E	Świetlik	Zajezdnia nr VI Dąbie Zygmunta Wróblewskiego 36	Tomasz Moczek	Tramwaj Protram 205 WrAs o numerze bocznym 2703	Swietlik_(Sparkles)_Wroclaw_dwarf_01.jpg
+51°06'39”N 17°01'46”E	Tatuator	Kiełbaśnicza 7	nieznany	Kos Tattoo	Tatuator_(Tattooer)_Wroclaw_dwarf_01.jpg
+51°06'17”N 17°02'46”E	Telefonista Telefoniusz	gen. Józefa Hauke Bosaka 21	Grzegorz Łagowski	Zespół Szkół Teleinformatycznych i Elektronicznych im. Polskich Zwycięzców Enigmy	Telefonista_(Telephonist)_Wroclaw_dwarf_01.jpg
+51°04'20”N 17°00'24”E	Telesfor	Karkonoska 8	Tomasz Moczek	Telewizja Polska Oddział Wrocław (przy siedzibie TVP 3)	Telesfor_(Telesfor)_Wroclaw_dwarf_01.jpg
+51°06'30”N 17°01'27”E	Temidek	Pawła Włodkowica 8	Beata Zwolańska–Hołod	Okręgowa Izba Radców Prawnych	Temidek_(Judge)_Wroclaw_dwarf_01.jpg
+51°02'04”N 16°59'32”E	Tomek	Ślęza ul. Główna 12	nieznany	Zamek Topacz	Tomek_(Tommy)_Wroclaw_dwarf_01.jpg
+51°04'44”N 17°02'34”E	Torfik	Orzechowa 62	Marta Mirynowska	Szkoła Podstawowa nr 90 im. prof. Stanisława Tołpy	Torfik_(Peater)_Wroclaw_dwarf_01.jpg
+51°06'47”N 17°01'57”E	Tralalalek	Więzienna 21	nieznany	Cafe Tralalala	Tralalalek_(Tralalaler)_Wroclaw_dwarf_01.jpg
+51°06'44”N 17°03'35”E	Trąbibrzuch	plac Grunwaldzki 22	Marcin Łuczkowski	Pasaż Grunwaldzki	Trabibrzuch_(Herald)_Wroclaw_dwarf_01.jpg
+51°06'44”N 17°03'35”E	Trenduś	plac Grunwaldzki 22	Marcin Łuczkowski	Pasaż Grunwaldzki	Trendus_(Trendy-boy)_Wroclaw_dwarf_01.jpg
+51°06'51”N 17°05'39”E	Trener	Adama Mickiewicza 58	Marta Mirynowska	Akademia Wychowania Fizycznego Katedra Biomechaniki	Trener_(Coach)_Wroclaw_dwarf_01.jpg
+51°08'44”N 16°52'14”E	Trisomek	Kapitulna 4	Beata Zwolańska–Hołod	klub środowiskowy „Pozytywka”	Trisomek_(Trisomy)_Wroclaw_dwarf_01.jpg
+51°06'35”N 17°02'00”E	Troszka i Adoratorek	Rynek 33	Grzegorz Łagowski	II oddział PKO BP	Troszka_i_Adoratorek_(Bitty_and_Admirer)_Wroclaw_dwarf_01.jpg
+51°06'29”N 17°01'21”E	Trójkuć Wywiadek	Bulwar Tadka Jasińskiego	Beata Zwolańska–Hołod	Przy kładce Radiowej Trójki	Trojkuc_Wywiadek_(Radio_3_Reporter)_Wroclaw_dwarf_01.jpg
+51°06'29”N 17°01'36”E	Truchcia	Krupnicza 6/8	Grzegorz Łagowsk	Sklep Run4Fun.pl	Truchcia_(Runner)_Wroclaw_dwarf_01.jpg
+51°03'30”N 17°00'37”E	Trufelek	Zwycięska 14	nieznany	Sklep Zielona Trufla	Trufelek_(Truffle)_Wroclaw_dwarf_01.jpg
+51°06'34”N 17°01'50”E	Turysta	Rynek 14	Marcin Łuczkowski	Centrum Informacji Turystycznej	Turysta_(Tourist)_Wroclaw_dwarf_01.jpg
+51°06'36”N 17°01'54”E	TynQuś	Sukiennice 6	nieznany	Baumit	TynQus_(Plasterer)_Wroclaw_dwarf_01.jpg
+51°06'46”N 17°02'14”E	Ursus	Plac Biskupa Nankiera 16	nieznany	Zespół Szkół Urszulańskich	Ursus_(Ursus)_Wroclaw_dwarf_01.jpg
+51°06'40”N 17°01'52”E	Wedelek	Rynek 59	nieznany	Pijalnia Czekolady E. Wedel	Wedelek_(Wedel)_Wroclaw_dwarf_01.jpg
+51°05'15”N 17°03'32”E	Waguś	Piękna 58a	Beata Zwolańska–Hołod	Biurowiec „WAGO”	Wagus_(Wago)_Wroclaw_dwarf_01.jpg
+51°06'47”N 17°01'57”E	Wałałałek	Więzienna 21	nieznany	Cafe Tralalala	Walalalek_(Rollerer)_Wroclaw_dwarf_01.jpg
+51°06'41”N 17°01'48”E	Weteran	św. Elżbiety 1/2	Jerzy Maziarz	Bazylika św. Elżbiety Węgierskiej	Weteran_(Veteran)_Wroclaw_dwarf_01.jpg
+51°04'49”N 17°01'20”E	Weterynarz	Ślężna 136	Stanisław Lenar	Klinika Weterynaryjna INTERWET	Weterynarz_(Vet_Dwarf)_Wroclaw_dwarf_01.jpg
+51°06'37”N 17°01'52”E	Wiesiek Partnerski	Sukiennice 9	Beata Zwolańska–Hołod	parapet sekretariatu Prezydenta	Wiesiek_Partnerski_Wroclaw_dwarf_01.jpg
+51°06'45”N 17°01'57”E	Więzień (Więziennik)	Więzienna 6	Marcin Łuczkowski	Ośrodek Badań nad Kulturą Późnego Antyku i Wczesnego Średniowiecza Instytut Archeologii i Etnologii PAN	Wiezien_(Prisoner)_Wroclaw_dwarf_01.jpg
+51°06'24”N 17°03'31”E	Sterniczka	Wybrzeże Stanisława Wyspiańskiego 40	nieznany	przystań Politechniki Wrocławskiej	Wioslarze_(Rowing_crew)_Wroclaw_dwarf_06_Sterniczka_(Coxswain).jpg
+51°06'24”N 17°03'31”E	Wioślarz I	Wybrzeże Stanisława Wyspiańskiego 40	nieznany	przystań Politechniki Wrocławskiej	Wioslarze_(Rowing_crew)_Wroclaw_dwarf_07_Wioślarz_1_(Rower_1).jpg
+51°06'24”N 17°03'31”E	Wioślarz II	Wybrzeże Stanisława Wyspiańskiego 40	nieznany	przystań Politechniki Wrocławskiej	Wioslarze_(Rowing_crew)_Wroclaw_dwarf_08_Wioślarz_2_(Rower_2).jpg
+51°06'24”N 17°03'31”E	Wioślarz III	Wybrzeże Stanisława Wyspiańskiego 40	nieznany	przystań Politechniki Wrocławskiej	Wioslarze_(Rowing_crew)_Wroclaw_dwarf_09_Wioślarz_3_(Rower_3).jpg
+51°06'24”N 17°03'31”E	Wioślarz IV	Wybrzeże Stanisława Wyspiańskiego 40	nieznany	przystań Politechniki Wrocławskiej	Wioslarze_(Rowing_crew)_Wroclaw_dwarf_10_Wioślarz_4_(Rower_4).jpg
+51°06'24”N 17°03'31”E	Wioślarz V	Wybrzeże Stanisława Wyspiańskiego 40	nieznany	przystań Politechniki Wrocławskiej	Wioslarze_(Rowing_crew)_Wroclaw_dwarf_11_Wioślarz_5_(Rower_5).jpg
+51°06'24”N 17°03'31”E	Wioślarz VI	Wybrzeże Stanisława Wyspiańskiego 40	nieznany	przystań Politechniki Wrocławskiej	Wioslarze_(Rowing_crew)_Wroclaw_dwarf_12_Wioślarz_6_(Rower_6).jpg
+51°06'24”N 17°03'31”E	Wioślarz VII	Wybrzeże Stanisława Wyspiańskiego 40	nieznany	przystań Politechniki Wrocławskiej	Wioslarze_(Rowing_crew)_Wroclaw_dwarf_13_Wioślarz_7_(Rower_7).jpg
+51°06'24”N 17°03'31”E	Wioślarz VIII	Wybrzeże Stanisława Wyspiańskiego 40	nieznany	przystań Politechniki Wrocławskiej	Wioslarze_(Rowing_crew)_Wroclaw_dwarf_14_Wioślarz_8_(Rower_8).jpg
+51°06'35”N 17°01'53”E	Wodziarz	Rynek Ratusz 1	Grzegorz Łagowski	przed restauracją „Pod Fredrą”	Wodziarz_(Water-keeper)_Wroclaw_dwarf_01.jpg
+51°07'35”N 16°58'57”E	Wolontarek	Legnicka 65	Grzegorz Łagowski	Stowarzyszenie „Tratwa” Wolontarek (Volunteer)	Wroclaw_dwarf_01.jpg
+51°05'19”N 17°03'54”E	Wrati i Slawi	Krakowska 71-105	Tomasz Moczek	hala Selgros	Wrati_i_Slawi_(Wrati_and_Slawi)_Wroclaw_dwarf_03.jpg
+51°10'11”N 16°54'06”E	Wroc-ek	Stabłowicka 143	uczeń szkoły	Szkoła Podstawowa nr 22	Wroc-ek_(Eco-dwarf)_Wroclaw_dwarf_01.jpg
+51°07'22”N 17°01'37”E	Wrocklik	pl. Strzelecki 25 – I. piętro, kiedyś gen. Józefa Bema 2	Beata Zwolańska–Hołod	Siedziba nk.pl	Wrocklik_(Wroclick)_Wroclaw_dwarf_02.jpg
+51°06'40”N 17°01'51”E	WrocLovek	Odrzańska 39-40	Beata Zwolańska–Hołod	Towarzystwo Miłośników Wrocławia kamieniczka „Małgosia“	WrocLovek_(WrocLover)_Wroclaw_dwarf_01.jpg
+51°05'44”N 17°02'00”E	Wroclovek I	Sucha 1	Beata Zwolańska–Hołod	Galeria Wroclavia	Wroclovek_(Wroclovek)_Wroclaw_dwarf_03.jpg
+51°05'44”N 17°02'00”E	Wroclovek II	Sucha 1	Beata Zwolańska–Hołod	Galeria Wroclavia	Wroclovek_(Wroclovek)_Wroclaw_dwarf_05.jpg
+51°06'35”N 17°02'15”E	WspółCzesio	Wita Stwosza 32	Paweł Jarodzki	BWA Wrocław Galerie Sztuki Współczesnej	WspolCzesio_(Modernist)_Wroclaw_dwarf_01.jpg
+51°06'26”N 17°03'34”E	Wykształciuch	Wybrzeże Stanisława Wyspiańskiego 23-25	Beata Zwolańska–Hołod	Zintegrowane Centrum Studenckie (C13) Politechniki Wrocławskiej	Wyksztalciuch_(Highbrow)_Wroclaw_dwarf_01.jpg
+51°06'35”N 17°01'49”E	Wypłatnik	Rynek 9/11	Marcin Łuczkowski	I Oddział Banku Zachodniego WBK	\Wypłatnik_(Withdrawer)_Wroclaw_dwarf_03.jpg
+51°05'36”N 17°01'23”E	Wytrwałek	Trwała 17-19	uczniowie szkoły	Szkoła Podstawowa nr 72 im. Władysława Zarembowicza	Wytrwalek_(Persister)_Wroclaw_dwarf_01.jpg
+51°06'06”N 17°01'47”E	Zikusia	Świdnicka 48	Grzegorz Łagowski	Ziko Apteka	Zikoslaw_(Zikoslaw)_Wroclaw_dwarf_03.jpg
+51°03'40”N 17°01'38”E	Zgryzek	Parafialna 57	Grzegorz Łagowski	Ortho.pl	Zgryzek_(Occlusionist)_Wroclaw_dwarf_01.jpg
+51°06'39”N 17°01'42”E	Zośka	Rzeźnicza 5	Tomasz Moczek	Coctail Bar Max&Dom Whisky	Zoska_i_Jedrus_(Sophia_and_Andrew)_Zoska_(Sophia)_Wroclaw_dwarf_02.jpg
+51°06'39”N 17°01'42”E	Jedruś	Rzeźnicza 5	Tomasz Moczek	Coctail Bar Max&Dom Whisky	Zoska_i_Jedrus_(Sophia_and_Andrew)_Jedrus_(Andrew)_Wroclaw_dwarf_04.jpg
+51°06'35”N 17°01'54”E	Zraszacz	Rynek Ratusz	nieznany	pierzeja południowa rynku	Zraszacz_(Sprinkler)_Wroclaw_dwarf_01.jpg
+51°06'22”N 17°02'08”E	Żaczek	Mennicza 21-23	Tomasz Moczek	Szkoła Podstawowa nr 63 im. Anny Jasińskiej	Zaczek_(Schoolboy)_Wroclaw_dwarf_01.jpg
+51°06'38”N 17°01'53”E	Życzliwek	Rynek	Marcin Łuczkowski	strona zachodnia koło fontanny	Zyczliwek_(Well-wisher)_Wroclaw_dwarf_01.jpg
+51°06'31”N 17°03'16”E	Poliglotek	Wybrzeże Stanisława Wyspiańskiego 7	nieznany	wejście do budynku H-4 (Studium Języków Obcych) Politechniki Wrocławskiej	Poliglotek.jpg
