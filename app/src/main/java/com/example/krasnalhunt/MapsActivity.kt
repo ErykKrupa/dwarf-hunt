@@ -2,9 +2,9 @@ package com.example.krasnalhunt
 
 import android.Manifest
 import android.app.AlertDialog
+import android.content.Context
 import android.content.pm.PackageManager
 import android.location.Location
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -15,25 +15,63 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.edit
+import androidx.lifecycle.Observer
+import com.example.krasnalhunt.model.AppDatabase
+import com.google.android.gms.maps.model.CameraPosition
 
 const val PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1
 
-class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
+class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFragment.OnDoneListener {
+
+    override fun onDone() {
+        runOnUiThread {
+            getSharedPreferences(SHARED_PREFERENCES, Context.MODE_PRIVATE).edit {
+                putBoolean(PREF_FIRST_LAUNCH, false)
+            }
+
+            loadMap()
+        }
+    }
 
     private lateinit var mMap: GoogleMap
     private var mLocationPermissionGranted = false
     private var mLastKnownLocation: Location? = null
 
+    private fun launchInitialization() {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.content, InitializationFragment())
+            .commit()
+    }
+
+    private fun loadMap() {
+        getLocationPermission()
+
+        val mapFragment = SupportMapFragment()
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.content, mapFragment, "map")
+            .commit()
+        mapFragment.getMapAsync(this)
+    }
+
+    private lateinit var database: AppDatabase
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
 
-        getLocationPermission()
+        database = AppDatabase.createInstance(applicationContext)
 
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        val mapFragment = supportFragmentManager
-            .findFragmentById(R.id.map) as SupportMapFragment
-        mapFragment.getMapAsync(this)
+        val firstLaunch = getSharedPreferences(SHARED_PREFERENCES, Context.MODE_PRIVATE)
+            .getBoolean(PREF_FIRST_LAUNCH, true)
+
+        if (firstLaunch)
+            launchInitialization()
+        else
+            loadMap()
     }
 
     /**
@@ -48,10 +86,15 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
-        // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        database.dwarfItemDao().findItems().observe(this, Observer { dwarfs ->
+            Log.d("TAG", dwarfs.toString())
+            for (dwarf in dwarfs) {
+                mMap.addMarker(MarkerOptions().position(dwarf.coordinates).title(dwarf.name))
+            }
+            val pos = CameraUpdateFactory.newCameraPosition(
+                CameraPosition.fromLatLngZoom(LatLng(51.109286, 17.032307), 16.0f))
+            mMap.moveCamera(pos)
+        })
     }
 
     private fun getLocationPermission() {
@@ -127,4 +170,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION
         )
     }
+
+    companion object {
+        const val PREF_FIRST_LAUNCH = "first-launch"
+        const val SHARED_PREFERENCES = "shared-preferences"
+    }
+
 }

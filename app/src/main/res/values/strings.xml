@@ -5,8 +5,10 @@
     <string name="location_permission_alert_message">This app needs the location permission. Please accept it to use
         the application.
     </string>
-    <string name="location_permission_alert_message_on_dont_show_again">This app needs the location permission. Please accept it to use
+    <string name="location_permission_alert_message_on_dont_show_again">This app needs the location permission. Please
+        accept it to use
         the application. You can change it in application settings > application permissions > location
     </string>
     <string name="positive_button_text">OK</string>
+    <string name="initializing_app">Initializing app</string>
 </resources>
