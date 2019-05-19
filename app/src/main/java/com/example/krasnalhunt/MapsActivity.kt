@@ -6,6 +6,7 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.pm.PackageManager
 import android.location.Location
+import android.os.AsyncTask
 import android.os.Bundle
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -16,6 +17,8 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
 import androidx.lifecycle.Observer
@@ -81,15 +84,38 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
             loadMap()
     }
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_reset -> {
+                getSharedPreferences(SHARED_PREFERENCES, Context.MODE_PRIVATE).edit {
+                    putBoolean(PREF_FIRST_LAUNCH, true)
+                }
+                AsyncTask.execute {
+                    AppDatabase.instance?.clearAllTables()
+                    runOnUiThread {
+                        finish()
+                    }
+                }
+                true
+            }
+            R.id.action_list -> {
+                if (supportFragmentManager.findFragmentByTag("list") == null) {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.content, DwarfItemListFragment.newInstance(), "list")
+                        .addToBackStack(null)
+                        .commit()
+                }
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
     @SuppressLint("MissingPermission")
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
