@@ -16,13 +16,13 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import android.util.Log
 
-const val  PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1
+const val PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
     private var mLocationPermissionGranted = false
-    private var mLastKnownLocation : Location? = null
+    private var mLastKnownLocation: Location? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,49 +55,36 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     private fun getLocationPermission() {
-     /*
-     * Request location permission, so that we can get the location of the
-     * device. The result of the permission request is handled by a callback,
-     * onRequestPermissionsResult.
-     */
+        /*
+        * Request location permission, so that we can get the location of the
+        * device. The result of the permission request is handled by a callback,
+        * onRequestPermissionsResult.
+        */
         if (ContextCompat.checkSelfPermission(
                 this.applicationContext,
                 Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                    Manifest.permission.ACCESS_FINE_LOCATION)) {
-//                 Show an explanation to the user *asynchronously* -- don't block
-//                 this thread waiting for the user's response! After the user
-//                 sees the explanation, try again to request the permission.
-                showPermissionDialog(getString(R.string.location_permission_alert_message)) {
-                    ActivityCompat.requestPermissions(this,
-                        arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
-                        PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION)
-                }
-            } else {
-                showPermissionDialog(getString(R.string.location_permission_alert_message_on_dont_show_again)) {
-                    finish()
-                }
-//                 No explanation needed, we can request the permission.
-//                ActivityCompat.requestPermissions(this,
-//                    arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
-//                    PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION)
-            }
-
+            askForPermissions()
         } else {
             mLocationPermissionGranted = true
         }
     }
 
     override fun onRequestPermissionsResult(
-        requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
+        requestCode: Int, permissions: Array<String>, grantResults: IntArray
+    ) {
         mLocationPermissionGranted = false
         when (requestCode) {
             PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION -> {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     mLocationPermissionGranted = true
-                }
+                } else
+                    showPermissionDialog({
+                        if (!ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
+                            finish()
+                        } else
+                            askForPermissions()
+                    })
             }
         }
         updateLocationUI()
@@ -112,19 +99,32 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 mMap.isMyLocationEnabled = false
                 mMap.uiSettings.isMyLocationButtonEnabled = false
                 mLastKnownLocation = null
-                getLocationPermission()
+                //getLocationPermission()
             }
         } catch (e: SecurityException) {
             Log.e("Exception: %s", e.message)
         }
     }
 
-    private fun showPermissionDialog(message: String,handler: ()->Unit) {
+    private fun showPermissionDialog(handler: () -> Unit, message: String? = null) {
         AlertDialog.Builder(this).setTitle(R.string.location_permission_alert_title)
-            .setMessage(message)
+            .setMessage(
+                when {
+                    message != null -> message
+                    ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION) -> getString(R.string.location_permission_alert_message)
+                    else -> getString(R.string.location_permission_alert_message_on_dont_show_again)
+                }
+            )
             .setPositiveButton(getString(R.string.positive_button_text)) { _, _ -> handler() }
             .setCancelable(false)
             .create().show()
     }
 
+    private fun askForPermissions() {
+        ActivityCompat.requestPermissions(
+            this,
+            arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+            PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION
+        )
+    }
 }
