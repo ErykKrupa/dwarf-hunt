@@ -64,19 +64,25 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
 
     private fun loadFirestoreData() {
         firestoreListener?.remove()
-        firestoreListener = firestore.collection("caught-dwarfs")
-            .document(user!!.uid)
-            .addSnapshotListener(MetadataChanges.EXCLUDE) { documentSnapshot, firebaseFirestoreException ->
-            documentSnapshot?.run {
-                AsyncTask.execute {
-                    database.dwarfItemDao().resetCaught()
-                    data?.forEach { (dwarfIdString, caught) ->
-                        val id = dwarfIdString.toInt()
-                        val dwarf = database.dwarfItemDao().findItem(id)
-                        dwarf.caught = caught as Boolean
-                        database.dwarfItemDao().updateItems(dwarf)
+        AsyncTask.execute {
+            database.dwarfItemDao().resetCaught()
+            runOnUiThread {
+                firestoreListener = firestore.collection("caught-dwarfs")
+                    .document(user!!.uid)
+                    .addSnapshotListener(MetadataChanges.EXCLUDE) { documentSnapshot, firebaseFirestoreException ->
+                        documentSnapshot?.run {
+                            AsyncTask.execute {
+                                data?.forEach { (dwarfIdString, caught) ->
+                                    val id = dwarfIdString.toInt()
+                                    val dwarf = database.dwarfItemDao().findItem(id)
+                                    dwarf.caught = caught as Boolean
+                                    database.dwarfItemDao().updateItems(dwarf)
+                                }
+                            }
+                        } ?: run {
+                            Log.e("TAG", "Document snapshot unavailable", firebaseFirestoreException)
+                        }
                     }
-                }
             }
         }
     }
@@ -227,7 +233,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
                 mMap.addMarker(MarkerOptions().position(dwarf.coordinates).title(dwarf.name))
             }
             val pos = CameraUpdateFactory.newCameraPosition(
-                CameraPosition.fromLatLngZoom(LatLng(51.109286, 17.032307), 16.0f))
+                CameraPosition.fromLatLngZoom(LatLng(51.109286, 17.032307), 16.0f)
+            )
             mMap.moveCamera(pos)
         })
         if (mLocationPermissionGranted) {
