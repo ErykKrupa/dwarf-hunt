@@ -14,6 +14,7 @@ data class DwarfItem(
     val location: String,
     val author: String,
     val fileName: String,
+    var caught: Boolean = false,
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0
 )
