@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "232776060092",
+    "firebase_url": "https://krasnal-hunt.firebaseio.com",
+    "project_id": "krasnal-hunt",
+    "storage_bucket": "krasnal-hunt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:232776060092:android:b860e9fd3d3e725c",
+        "android_client_info": {
+          "package_name": "com.example.krasnalhunt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "232776060092-ml2d0isb9jiir4bk6f6mqoj3i0o6e17j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.krasnalhunt",
+            "certificate_hash": "91a9cafc725421c8cefd236c74d013dbb346109c"
+          }
+        },
+        {
+          "client_id": "232776060092-rrevbih2r7vp44sfe0folrlq79q30ccm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAieD8an7mZCbI4ltxdjIVcTofMxAhONio"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "232776060092-rrevbih2r7vp44sfe0folrlq79q30ccm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
