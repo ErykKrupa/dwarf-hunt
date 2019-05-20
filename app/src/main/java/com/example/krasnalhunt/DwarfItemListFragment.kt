@@ -1,6 +1,7 @@
 package com.example.krasnalhunt
 
 import android.graphics.drawable.ClipDrawable
+import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
 import android.view.*
@@ -12,6 +13,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.krasnalhunt.model.AppDatabase
 import com.example.krasnalhunt.model.DwarfItem
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
 
 
 class DwarfItemListFragment : Fragment(), MyDwarfItemRecyclerViewAdapter.OnListFragmentInteractionListener {
@@ -19,11 +23,33 @@ class DwarfItemListFragment : Fragment(), MyDwarfItemRecyclerViewAdapter.OnListF
     override fun onListFragmentInteraction(item: DwarfItem?) {
         Log.d("TAG", "$item clicked")
         Toast.makeText(context, "${item?.name}", Toast.LENGTH_LONG).show()
+
+        if (item == null)
+            return
+
+        AsyncTask.execute {
+            val dwarf = database.dwarfItemDao().findItem(item.id)
+            if (dwarf.caught) {
+                firestore.collection("caught-dwarfs")
+                    .document(auth.currentUser!!.uid).update(mapOf(dwarf.id.toString() to false))
+            } else {
+                firestore.collection("caught-dwarfs")
+                    .document(auth.currentUser!!.uid).set(mapOf(dwarf.id.toString() to true), SetOptions.merge())
+            }
+        }
     }
+
+    private lateinit var database: AppDatabase
+    private lateinit var auth: FirebaseAuth
+    private lateinit var firestore: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
+
+        database = AppDatabase.instance!!
+        auth = FirebaseAuth.getInstance()
+        firestore = FirebaseFirestore.getInstance()
     }
 
     override fun onCreateOptionsMenu(menu: Menu, menuInflater: MenuInflater) {

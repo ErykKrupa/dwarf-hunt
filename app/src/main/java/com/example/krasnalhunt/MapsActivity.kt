@@ -34,6 +34,9 @@ import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ListenerRegistration
+import com.google.firebase.firestore.MetadataChanges
 
 
 const val PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1
@@ -46,7 +49,35 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
                 putBoolean(PREF_FIRST_LAUNCH, false)
             }
 
+            postInit()
+        }
+    }
+
+    private fun postInit() {
+        if (user != null) {
             loadMap()
+            loadFirestoreData()
+        } else {
+            login()
+        }
+    }
+
+    private fun loadFirestoreData() {
+        firestoreListener?.remove()
+        firestoreListener = firestore.collection("caught-dwarfs")
+            .document(user!!.uid)
+            .addSnapshotListener(MetadataChanges.EXCLUDE) { documentSnapshot, firebaseFirestoreException ->
+            documentSnapshot?.run {
+                AsyncTask.execute {
+                    database.dwarfItemDao().resetCaught()
+                    data?.forEach { (dwarfIdString, caught) ->
+                        val id = dwarfIdString.toInt()
+                        val dwarf = database.dwarfItemDao().findItem(id)
+                        dwarf.caught = caught as Boolean
+                        database.dwarfItemDao().updateItems(dwarf)
+                    }
+                }
+            }
         }
     }
 
@@ -79,6 +110,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
     private lateinit var database: AppDatabase
     private lateinit var auth: FirebaseAuth
     private var user: FirebaseUser? = null
+    private lateinit var firestore: FirebaseFirestore
+    private var firestoreListener: ListenerRegistration? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -87,16 +120,15 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
         database = AppDatabase.createInstance(applicationContext)
         auth = FirebaseAuth.getInstance()
         user = auth.currentUser
+        firestore = FirebaseFirestore.getInstance()
 
         val firstLaunch = getSharedPreferences(SHARED_PREFERENCES, Context.MODE_PRIVATE)
             .getBoolean(PREF_FIRST_LAUNCH, true)
 
         if (firstLaunch)
             launchInitialization()
-        else if (user != null)
-            loadMap()
         else
-            login()
+            postInit()
     }
 
     private fun login() {
@@ -123,7 +155,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
 
             if (resultCode == RESULT_OK) {
                 user = auth.currentUser
-                loadMap()
+                postInit()
             } else {
                 if (response == null) {
                     finish()
@@ -151,6 +183,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_logout -> {
+                firestoreListener?.remove()
+                firestoreListener = null
                 AuthUI.getInstance()
                     .signOut(this)
                     .addOnCompleteListener {

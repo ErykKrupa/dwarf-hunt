@@ -1,5 +1,7 @@
 package com.example.krasnalhunt
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,6 +40,7 @@ class MyDwarfItemRecyclerViewAdapter(
         val item = ald.currentList[position]
         holder.mIdView.text = item.id.toString()
         holder.mContentView.text = "${item.name} - ${item.location}"
+        holder.mView.background = if (item.caught) ColorDrawable(Color.GREEN) else ColorDrawable(Color.RED)
 
         with(holder.mView) {
             tag = item

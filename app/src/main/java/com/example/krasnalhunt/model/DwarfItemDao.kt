@@ -10,7 +10,7 @@ interface DwarfItemDao {
     fun findItems(): LiveData<List<DwarfItem>>
 
     @Query("SELECT * FROM dwarf_item WHERE id = :id")
-    fun findItem(id: Long): DwarfItem
+    fun findItem(id: Int): DwarfItem
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertItems(vararg items: DwarfItem)
@@ -23,4 +23,7 @@ interface DwarfItemDao {
 
     @Delete
     fun deleteItems(vararg items: DwarfItem)
+
+    @Query("UPDATE dwarf_item SET caught = 0")
+    fun resetCaught()
 }
