@@ -36,7 +36,7 @@ class InitializationFragment : Fragment() {
         AsyncTask.execute {
             val textFile = context!!.resources.openRawResource(R.raw.dwarfs)
             textFile.reader().useLines { lines ->
-                lines.map {
+                val dwarfs = lines.mapIndexed { index, it ->
                     it.split("\t").let { tokens ->
                         val coordinates = tokens[0].toLatLng()
                         val name = tokens[1]
@@ -45,11 +45,10 @@ class InitializationFragment : Fragment() {
                         val location = tokens[4]
                         val fileName = tokens[5]
 
-                        DwarfItem(name, address, coordinates, location, author, fileName)
+                        DwarfItem(name, address, coordinates, location, author, fileName, id = index + 1)
                     }
-                }.let {
-                    AppDatabase.instance?.dwarfItemDao()?.insertItems(it.toList())
                 }
+                AppDatabase.instance?.dwarfItemDao()?.insertItems(dwarfs.toList())
             }
 
             Thread.sleep(3000) //TODO: remove
