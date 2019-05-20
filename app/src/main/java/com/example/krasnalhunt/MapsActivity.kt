@@ -4,6 +4,7 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.AsyncTask
@@ -19,14 +20,20 @@ import com.google.android.gms.maps.model.MarkerOptions
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
 import androidx.lifecycle.Observer
 import com.example.krasnalhunt.model.AppDatabase
+import com.firebase.ui.auth.AuthUI
+import com.firebase.ui.auth.ErrorCodes
+import com.firebase.ui.auth.IdpResponse
 import com.example.krasnalhunt.model.Player
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.model.CameraPosition
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
 
 const val PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1
@@ -65,23 +72,75 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
             .replace(R.id.content, mapFragment, "map")
             .commit()
         mapFragment.getMapAsync(this)
+
+        Log.d("TAG", user?.run { displayName ?: "Anonymous" } ?: "what")
     }
 
     private lateinit var database: AppDatabase
+    private lateinit var auth: FirebaseAuth
+    private var user: FirebaseUser? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
 
         database = AppDatabase.createInstance(applicationContext)
+        auth = FirebaseAuth.getInstance()
+        user = auth.currentUser
 
         val firstLaunch = getSharedPreferences(SHARED_PREFERENCES, Context.MODE_PRIVATE)
             .getBoolean(PREF_FIRST_LAUNCH, true)
 
         if (firstLaunch)
             launchInitialization()
-        else
+        else if (user != null)
             loadMap()
+        else
+            login()
+    }
+
+    private fun login() {
+        val providers = listOf(
+            AuthUI.IdpConfig.EmailBuilder().build()
+            // TODO: AuthUI.IdpConfig.AnonymousBuilder().build()
+        )
+
+        startActivityForResult(
+            AuthUI.getInstance()
+                .createSignInIntentBuilder()
+                .setAvailableProviders(providers)
+//                .enableAnonymousUsersAutoUpgrade()
+                .build(),
+            RC_SIGN_IN
+        )
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == RC_SIGN_IN) {
+            val response = IdpResponse.fromResultIntent(data)
+
+            if (resultCode == RESULT_OK) {
+                user = auth.currentUser
+                loadMap()
+            } else {
+                if (response == null) {
+                    finish()
+                    return
+                }
+
+                if (response.error!!.errorCode == ErrorCodes.NO_NETWORK) {
+                    Toast.makeText(this, "No internet connection", Toast.LENGTH_LONG).show()
+                    finish()
+                    return
+                }
+
+                Log.e("TAG", "Sign-in error: ", response.error)
+                Toast.makeText(this, "Sign-in error: ${response.error?.message}", Toast.LENGTH_LONG).show()
+                finish()
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -91,6 +150,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
+            R.id.action_logout -> {
+                AuthUI.getInstance()
+                    .signOut(this)
+                    .addOnCompleteListener {
+                        login()
+                    }
+                true
+            }
             R.id.action_reset -> {
                 getSharedPreferences(SHARED_PREFERENCES, Context.MODE_PRIVATE).edit {
                     putBoolean(PREF_FIRST_LAUNCH, true)
@@ -212,6 +279,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
     companion object {
         const val PREF_FIRST_LAUNCH = "first-launch"
         const val SHARED_PREFERENCES = "shared-preferences"
+        private const val RC_SIGN_IN = 1
     }
     private fun getDeviceLocation() {
         mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
