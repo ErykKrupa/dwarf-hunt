@@ -1,6 +1,7 @@
 package com.example.krasnalhunt
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
 import android.content.pm.PackageManager
@@ -19,7 +20,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
 import androidx.lifecycle.Observer
 import com.example.krasnalhunt.model.AppDatabase
+import com.example.krasnalhunt.model.Player
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.model.CameraPosition
+import com.google.android.gms.tasks.Task
+import java.lang.Exception
 
 const val PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1
 
@@ -38,6 +44,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
     private lateinit var mMap: GoogleMap
     private var mLocationPermissionGranted = false
     private var mLastKnownLocation: Location? = null
+    private var mFusedLocationProviderClient : FusedLocationProviderClient? = null
+    var player = Player(Location("Player location"))
 
     private fun launchInitialization() {
         supportFragmentManager
@@ -83,6 +91,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
+    @SuppressLint("MissingPermission")
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
@@ -95,6 +104,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
                 CameraPosition.fromLatLngZoom(LatLng(51.109286, 17.032307), 16.0f))
             mMap.moveCamera(pos)
         })
+        if (mLocationPermissionGranted) {
+            getDeviceLocation()
+            mMap.isMyLocationEnabled=true
+        }
     }
 
     private fun getLocationPermission() {
@@ -175,5 +188,32 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
         const val PREF_FIRST_LAUNCH = "first-launch"
         const val SHARED_PREFERENCES = "shared-preferences"
     }
+    private fun getDeviceLocation() {
+        mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
+        try
+        {
+            if (mLocationPermissionGranted)
+            {
+                val location = mFusedLocationProviderClient!!.lastLocation
+                location.addOnCompleteListener {task ->
+                        if (task.isSuccessful)
+                        {
+                            val currentLocation = task.getResult() as Location
+                            player.setPlayerLocation(currentLocation)
+                        }
+                        else
+                        {
+
+                        }
+                }
+            }
+        }
+        catch (e:SecurityException) {
+            Log.e("Exception: %s", e.message)
+        }
+    }
+
+
+
 
 }
