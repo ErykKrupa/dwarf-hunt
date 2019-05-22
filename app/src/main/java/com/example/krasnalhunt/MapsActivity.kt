@@ -6,32 +6,31 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.location.Location
 import android.os.AsyncTask
 import android.os.Bundle
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.core.content.edit
 import androidx.lifecycle.Observer
 import com.example.krasnalhunt.model.AppDatabase
+import com.example.krasnalhunt.model.Player
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.ErrorCodes
 import com.firebase.ui.auth.IdpResponse
-import com.example.krasnalhunt.model.Player
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import com.google.android.gms.maps.model.CameraPosition
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
@@ -90,7 +89,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
     private lateinit var mMap: GoogleMap
     private var mLocationPermissionGranted = false
     private var mLastKnownLocation: Location? = null
-    private var mFusedLocationProviderClient : FusedLocationProviderClient? = null
+    private var mFusedLocationProviderClient: FusedLocationProviderClient? = null
     var player = Player(Location("Player location"))
 
     private fun launchInitialization() {
@@ -227,23 +226,50 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
         }
     }
 
+    private var currentCircle: Circle? = null
+
     @SuppressLint("MissingPermission")
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
         database.dwarfItemDao().findItems().observe(this, Observer { dwarfs ->
             Log.d("TAG", dwarfs.toString())
+            mMap.clear()
+            currentCircle = null
             for (dwarf in dwarfs) {
-                mMap.addMarker(MarkerOptions().position(dwarf.coordinates).title(dwarf.name))
+                mMap.addMarker(MarkerOptions().position(dwarf.coordinates).title(dwarf.name)).apply {
+                    tag = dwarf
+                }
             }
             val pos = CameraUpdateFactory.newCameraPosition(
                 CameraPosition.fromLatLngZoom(LatLng(51.109286, 17.032307), 16.0f)
             )
             mMap.moveCamera(pos)
         })
+
+        mMap.setOnMarkerClickListener {
+            currentCircle?.remove()
+            currentCircle = mMap.addCircle(
+                CircleOptions()
+                    .center(it.position)
+                    .radius(30.0)
+                    .strokeWidth(3.0f)
+                    .strokeColor(Color.GREEN)
+                    .fillColor(Color.argb(128, 255, 0, 0))
+                    .clickable(false)
+            )
+            it.showInfoWindow()
+            true
+        }
+
+        mMap.setOnMapClickListener {
+            currentCircle?.remove()
+            currentCircle = null
+        }
+
         if (mLocationPermissionGranted) {
             getDeviceLocation()
-            mMap.isMyLocationEnabled=true
+            mMap.isMyLocationEnabled = true
         }
     }
 
@@ -326,32 +352,25 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
         const val SHARED_PREFERENCES = "shared-preferences"
         private const val RC_SIGN_IN = 1
     }
+
     private fun getDeviceLocation() {
         mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
-        try
-        {
-            if (mLocationPermissionGranted)
-            {
+        try {
+            if (mLocationPermissionGranted) {
                 val location = mFusedLocationProviderClient!!.lastLocation
-                location.addOnCompleteListener {task ->
-                        if (task.isSuccessful)
-                        {
-                            val currentLocation = task.getResult() as Location
-                            player.setPlayerLocation(currentLocation)
-                        }
-                        else
-                        {
-
-                        }
+                location.addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        val currentLocation = task.result as Location
+                        player.setPlayerLocation(currentLocation)
+                    } else {
+                        // TODO: not successful
+                    }
                 }
             }
-        }
-        catch (e:SecurityException) {
+        } catch (e: SecurityException) {
             Log.e("Exception: %s", e.message)
         }
     }
-
-
 
 
 }
