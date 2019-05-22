@@ -11,4 +11,8 @@
     </string>
     <string name="positive_button_text">OK</string>
     <string name="initializing_app">Initializing app</string>
+    <string name="name_eng">Name: </string>
+    <string name="author_eng">Author: </string>
+    <string name="address_eng">Address: </string>
+    <string name="location_eng">Location: </string>
 </resources>
