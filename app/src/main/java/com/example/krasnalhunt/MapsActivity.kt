@@ -26,10 +26,7 @@ import com.firebase.ui.auth.ErrorCodes
 import com.firebase.ui.auth.IdpResponse
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -105,7 +102,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
         supportFragmentManager.findFragmentByTag("map")?.let { mapFragment ->
             (mapFragment as SupportMapFragment).getMapAsync(this)
         } ?: run {
-            val mapFragment = SupportMapFragment()
+            val mapFragment = SupportMapFragment.newInstance(GoogleMapOptions()
+                .camera(CameraPosition.fromLatLngZoom(LatLng(51.109286, 17.032307), 16.0f))
+                .maxZoomPreference(19.0f))
             supportFragmentManager
                 .beginTransaction()
                 .replace(R.id.content, mapFragment, "map")
@@ -241,10 +240,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
                     tag = dwarf
                 }
             }
-            val pos = CameraUpdateFactory.newCameraPosition(
-                CameraPosition.fromLatLngZoom(LatLng(51.109286, 17.032307), 16.0f)
-            )
-            mMap.moveCamera(pos)
         })
 
         mMap.setOnMarkerClickListener {
