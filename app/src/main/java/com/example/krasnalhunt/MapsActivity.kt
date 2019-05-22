@@ -103,12 +103,16 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
     private fun loadMap() {
         getLocationPermission()
 
-        val mapFragment = SupportMapFragment()
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.content, mapFragment, "map")
-            .commit()
-        mapFragment.getMapAsync(this)
+        supportFragmentManager.findFragmentByTag("map")?.let { mapFragment ->
+            (mapFragment as SupportMapFragment).getMapAsync(this)
+        } ?: run {
+            val mapFragment = SupportMapFragment()
+            supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.content, mapFragment, "map")
+                .commit()
+            mapFragment.getMapAsync(this)
+        }
 
         Log.d("TAG", user?.run { displayName ?: "Anonymous" } ?: "what")
     }
