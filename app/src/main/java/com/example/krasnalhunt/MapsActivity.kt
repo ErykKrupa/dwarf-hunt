@@ -24,8 +24,7 @@ import com.example.krasnalhunt.model.Player
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.model.CameraPosition
-import com.google.android.gms.tasks.Task
-import java.lang.Exception
+
 
 const val PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1
 
