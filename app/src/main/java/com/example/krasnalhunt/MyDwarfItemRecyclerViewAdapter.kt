@@ -48,7 +48,7 @@ class MyDwarfItemRecyclerViewAdapter(
         if (imgResId == 0) {
             Picasso.get().load(R.drawable.ic_block_black_24dp).into(holder.imageHolder)
         } else {
-            Picasso.get().load(imgResId).error(R.drawable.ic_block_black_24dp).into(holder.imageHolder)
+            Picasso.get().load(imgResId).error(R.drawable.ic_block_black_24dp).fit().into(holder.imageHolder)
         }
         if (item.caught) {
             holder.caughtImageHolder.setImageResource(R.drawable.ic_check_icon)
