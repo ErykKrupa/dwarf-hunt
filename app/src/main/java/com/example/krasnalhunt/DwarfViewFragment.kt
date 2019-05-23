@@ -1,14 +1,13 @@
 package com.example.krasnalhunt
 
 import android.content.Context
-import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.krasnalhunt.model.DwarfItem
-import kotlinx.android.synthetic.main.fragment_dwarf_view.*
 import kotlinx.android.synthetic.main.fragment_dwarf_view.view.*
 
 
@@ -21,6 +20,7 @@ import kotlinx.android.synthetic.main.fragment_dwarf_view.view.*
  */
 class DwarfViewFragment(private val dwarfItem: DwarfItem) : Fragment() {
     private var listener: OnFragmentInteractionListener? = null
+    private var catchable = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,7 +32,7 @@ class DwarfViewFragment(private val dwarfItem: DwarfItem) : Fragment() {
         view.authorTextView.text = dwarfItem.author
         view.locationTextView.text = dwarfItem.location
         view.addressTextView.text = dwarfItem.address
-        view.caughtImage.visibility = if (dwarfItem.caught) View.VISIBLE else View.INVISIBLE
+        if (dwarfItem.caught) setGraphicToCaught()
         view.imageView.setImageResource(
             resources.getIdentifier(
                 dwarfItem.fileName.dropLast(4),
@@ -41,11 +41,9 @@ class DwarfViewFragment(private val dwarfItem: DwarfItem) : Fragment() {
             )
         )
         view.showOnTheMapButton.setOnClickListener { onShowOnTheMapButtonPressed() }
+        view.caughtImageBackground.setOnClickListener { catchButtonClicked() }
+        view.caughtButton.setOnClickListener { catchButtonClicked() }
         return view
-    }
-
-    private fun onShowOnTheMapButtonPressed() {
-        listener?.onFragmentInteraction()
     }
 
     override fun onAttach(context: Context) {
@@ -53,7 +51,7 @@ class DwarfViewFragment(private val dwarfItem: DwarfItem) : Fragment() {
         if (context is OnFragmentInteractionListener) {
             listener = context
         } else {
-            throw RuntimeException("$context must implement OnFragmentInteractionListener")
+            //throw RuntimeException("$context must implement OnFragmentInteractionListener")
         }
     }
 
@@ -61,6 +59,42 @@ class DwarfViewFragment(private val dwarfItem: DwarfItem) : Fragment() {
         super.onDetach()
         listener = null
     }
+
+    private fun catchButtonClicked() {
+        if (catchable) {
+            Log.i("DwarfView", "catching dwarf")
+            //TODO: do catching a dwarf and change buttons appearance
+            setGraphicToCaught()
+            catchable = false
+        }
+    }
+
+    private fun setGraphicToCaught() {
+        if (catchable) {
+            view?.apply {
+                caughtButton.setImageResource(R.drawable.ic_check_icon)
+                caughtButton.setOnClickListener { }
+                caughtImageBackground.background = resources.getDrawable(R.color.greenBackground, null)
+                caughtImageBackground.setOnClickListener { }
+            }
+        }
+    }
+
+    private fun onShowOnTheMapButtonPressed() {
+        listener?.onFragmentInteraction()
+    }
+
+
+    fun setCatchable() {
+        if (!dwarfItem.caught) {
+            catchable = true
+            view?.let {
+                it.caughtButton.setImageResource(R.drawable.ic_hand_yellow)
+                it.caughtImageBackground.background = resources.getDrawable(R.color.yellowBackground, null)
+            } ?: Log.i("DwarfView", "setting catchable failed due to view being null")
+        }
+    }
+
 
     interface OnFragmentInteractionListener {
         fun onFragmentInteraction()
