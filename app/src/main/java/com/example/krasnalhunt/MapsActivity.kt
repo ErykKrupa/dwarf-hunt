@@ -266,6 +266,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
             getDeviceLocation()
             mMap.isMyLocationEnabled = true
         }
+
+        updateLocationUI()
     }
 
     private fun getLocationPermission() {
