@@ -15,4 +15,5 @@
     <string name="author_eng">Author: </string>
     <string name="address_eng">Address: </string>
     <string name="location_eng">Location: </string>
+    <string name="distance">Distance:</string>
 </resources>
