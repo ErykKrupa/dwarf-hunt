@@ -1,5 +1,6 @@
 package com.example.krasnalhunt
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -36,6 +37,7 @@ class MyDwarfItemRecyclerViewAdapter(
         return ViewHolder(view)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = ald.currentList[position]
         holder.nameHolder.text = item.name
@@ -59,7 +61,8 @@ class MyDwarfItemRecyclerViewAdapter(
             holder.caughtImageBackground.background =
                 holder.caughtImageBackground.resources.getDrawable(R.color.grayBackground, null)
         }
-        holder.distanceHolder.text = "0"
+
+        holder.distanceHolder.text = MapsActivity.dwarfsMap[holder.nameHolder.text.toString()].toString() + " m"
 
         with(holder.mView) {
             tag = item

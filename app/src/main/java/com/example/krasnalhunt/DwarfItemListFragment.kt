@@ -70,6 +70,7 @@ class DwarfItemListFragment : Fragment(), MyDwarfItemRecyclerViewAdapter.OnListF
                     mAdapter.updateData(newList)
                 })
         }
+
     }
 
     companion object {

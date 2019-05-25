@@ -24,6 +24,12 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kotlinx.android.synthetic.main.fragment_main.*
 
 
+import android.location.Location
+import android.location.LocationListener
+import android.location.LocationManager
+import com.example.krasnalhunt.MapsActivity.Companion.dwarfsMap
+import com.example.krasnalhunt.model.DwarfItem
+
 class MainFragment : Fragment(), OnMapReadyCallback {
 
     private var listener: OnFragmentInteractionListener? = null
@@ -36,7 +42,7 @@ class MainFragment : Fragment(), OnMapReadyCallback {
     @SuppressLint("MissingPermission")
     override fun onMapReady(googleMap: GoogleMap) {
         mainViewModel.map = googleMap
-
+        var dwarfsList: List<DwarfItem>? = null
         mainViewModel.items.observe(this, Observer { dwarfs ->
             Log.d("TAG", dwarfs.toString())
             mainViewModel.map.clear()
@@ -46,6 +52,7 @@ class MainFragment : Fragment(), OnMapReadyCallback {
                     tag = dwarf
                 }
             }
+            dwarfsList = dwarfs
         })
 
         mainViewModel.map.setOnMarkerClickListener {
@@ -74,6 +81,32 @@ class MainFragment : Fragment(), OnMapReadyCallback {
                 uiSettings.isMyLocationButtonEnabled = it
             }
         })
+
+        val locationListener = object : LocationListener {
+            override fun onLocationChanged(location: Location) {
+                var result = floatArrayOf(0f)
+                for (dwarf in dwarfsList!!) {
+                    Location.distanceBetween(
+                        location.latitude, location.longitude,
+                        dwarf.coordinates.latitude, dwarf.coordinates.longitude, result
+                    )
+                    dwarfsMap[dwarf.name] = result[0].toInt()
+                }
+            }
+
+            override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {
+            }
+
+            override fun onProviderEnabled(provider: String?) {
+            }
+
+            override fun onProviderDisabled(provider: String?) {
+            }
+        }
+        try {
+            MapsActivity.locationManager!!.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0L, 0f, locationListener)
+        } catch (ex: SecurityException) {
+        }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -97,7 +130,8 @@ class MainFragment : Fragment(), OnMapReadyCallback {
                 val mapFragment = SupportMapFragment.newInstance(
                     GoogleMapOptions()
                         .camera(CameraPosition.fromLatLngZoom(LatLng(51.109286, 17.032307), 16.0f))
-                        .maxZoomPreference(19.0f))
+                        .maxZoomPreference(19.0f)
+                )
 
                 replace(R.id.content_map, mapFragment, "map")
                 mapFragment.getMapAsync(this@MainFragment)

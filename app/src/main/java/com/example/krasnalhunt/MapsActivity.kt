@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
+import android.location.LocationManager
 import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
@@ -30,7 +31,6 @@ import com.firebase.ui.auth.IdpResponse
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 
-
 const val PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1
 
 class MapsActivity : AppCompatActivity(), InitializationFragment.OnDoneListener, DwarfViewFragment.OnFragmentInteractionListener {
@@ -53,6 +53,8 @@ class MapsActivity : AppCompatActivity(), InitializationFragment.OnDoneListener,
         } else {
             login()
         }
+
+        locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager?
     }
 
     private fun loadMainFragment() {
@@ -143,6 +145,7 @@ class MapsActivity : AppCompatActivity(), InitializationFragment.OnDoneListener,
                 finish()
             }
         }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -245,6 +248,8 @@ class MapsActivity : AppCompatActivity(), InitializationFragment.OnDoneListener,
         const val PREF_FIRST_LAUNCH = "first-launch"
         const val SHARED_PREFERENCES = "shared-preferences"
         private const val RC_SIGN_IN = 1
+        var dwarfsMap: MutableMap<String, Int> = hashMapOf()
+        var locationManager: LocationManager? = null
     }
 
     private fun getDeviceLocation() {
@@ -265,5 +270,4 @@ class MapsActivity : AppCompatActivity(), InitializationFragment.OnDoneListener,
             Log.e("Exception: %s", e.message)
         }
     }
-
 }
