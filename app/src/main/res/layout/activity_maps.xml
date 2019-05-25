@@ -10,17 +10,20 @@
             android:id="@+id/content"
             android:layout_height="match_parent"
             android:layout_width="match_parent"
-            tools:context=".MapsActivity">
+            tools:context="com.google.android.gms.maps.SupportMapFragment">
 
     </FrameLayout>
 
     <androidx.core.widget.NestedScrollView
+            android:id="@+id/nested_content"
             android:layout_width="match_parent"
-            android:layout_height="350dp"
+            android:layout_height="match_parent"
             android:background="@color/colorAccent"
             app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
             app:behavior_hideable="true"
-            app:behavior_peekHeight="55dp">
+            app:behavior_peekHeight="0dp"
+            app:behavior_skipCollapsed="true"
+            tools:context=".DwarfItemListFragment">
     </androidx.core.widget.NestedScrollView>
 
     <!--<fragment-->
@@ -30,5 +33,13 @@
     <!--app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"-->
     <!--app:behavior_hideable="true"-->
     <!--/>-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:src="@drawable/ic_view_list_black_24dp"
+            android:layout_margin="16dp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -13,8 +13,10 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.edit
@@ -29,11 +31,13 @@ import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.*
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.MetadataChanges
+import kotlinx.android.synthetic.main.activity_maps.*
 import com.google.firebase.firestore.SetOptions
 
 
@@ -55,6 +59,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
         if (user != null) {
             loadMap()
             loadFirestoreData()
+            fab.show()
         } else {
             login()
         }
@@ -99,8 +104,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
     }
 
     private fun loadMap() {
-        getLocationPermission()
-
         supportFragmentManager.findFragmentByTag("map")?.let { mapFragment ->
             (mapFragment as SupportMapFragment).getMapAsync(this)
         } ?: run {
@@ -114,6 +117,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
             mapFragment.getMapAsync(this)
         }
 
+        getLocationPermission()
+
         Log.d("TAG", user?.run { displayName ?: "Anonymous" } ?: "what")
     }
 
@@ -123,6 +128,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
     private lateinit var firestore: FirebaseFirestore
     private var firestoreListener: ListenerRegistration? = null
 
+    private lateinit var bottomSheetBehavior: BottomSheetBehavior<*>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
@@ -131,6 +138,40 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
         auth = FirebaseAuth.getInstance()
         user = auth.currentUser
         firestore = FirebaseFirestore.getInstance()
+
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.nested_content, DwarfItemListFragment.newInstance(), "list")
+            .commit()
+
+        val lp = nested_content.layoutParams
+        if (lp is CoordinatorLayout.LayoutParams) {
+            val behavior = lp.behavior
+            if (behavior is BottomSheetBehavior<*>) {
+                bottomSheetBehavior = behavior
+            }
+        }
+
+        bottomSheetBehavior.setBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
+            override fun onSlide(p0: View, p1: Float) = Unit
+
+            override fun onStateChanged(p0: View, p1: Int) {
+                when (p1) {
+                    BottomSheetBehavior.STATE_HIDDEN ->
+                        fab.setImageResource(R.drawable.ic_view_list_black_24dp)
+                    else ->
+                        fab.setImageResource(R.drawable.ic_map_black_24dp)
+                }
+            }
+        })
+        bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
+
+        fab.setOnClickListener { view ->
+            bottomSheetBehavior.state = if (bottomSheetBehavior.state == BottomSheetBehavior.STATE_EXPANDED) {
+                BottomSheetBehavior.STATE_HIDDEN
+            } else {
+                BottomSheetBehavior.STATE_EXPANDED
+            }
+        }
 
         val firstLaunch = getSharedPreferences(SHARED_PREFERENCES, Context.MODE_PRIVATE)
             .getBoolean(PREF_FIRST_LAUNCH, true)
