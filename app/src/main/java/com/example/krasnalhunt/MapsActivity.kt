@@ -21,27 +21,14 @@ import androidx.fragment.app.commit
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.krasnalhunt.model.AppDatabase
-import com.example.krasnalhunt.model.MainViewModel
 import com.example.krasnalhunt.model.DwarfItem
+import com.example.krasnalhunt.model.MainViewModel
 import com.example.krasnalhunt.model.Player
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.ErrorCodes
 import com.firebase.ui.auth.IdpResponse
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.GoogleMapOptions
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.*
-import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.ListenerRegistration
-import com.google.firebase.firestore.MetadataChanges
-import kotlinx.android.synthetic.main.activity_maps.*
-import com.google.firebase.firestore.SetOptions
 
 
 const val PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1
@@ -80,7 +67,6 @@ class MapsActivity : AppCompatActivity(), InitializationFragment.OnDoneListener,
         mainViewModel.observeFirestore(this)
     }
 
-    private var mLocationPermissionGranted = false
     private var mFusedLocationProviderClient: FusedLocationProviderClient? = null
     var player = Player(Location("Player location"))
 
@@ -202,7 +188,7 @@ class MapsActivity : AppCompatActivity(), InitializationFragment.OnDoneListener,
                 Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             askForPermissions()
         } else {
-            mLocationPermissionGranted = true
+            mainViewModel.locationPermissionGranted.value = true
         }
     }
 
@@ -264,7 +250,7 @@ class MapsActivity : AppCompatActivity(), InitializationFragment.OnDoneListener,
     private fun getDeviceLocation() {
         mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
         try {
-            if (mLocationPermissionGranted) {
+            if (mainViewModel.locationPermissionGranted.value == true) {
                 val location = mFusedLocationProviderClient!!.lastLocation
                 location.addOnCompleteListener { task ->
                     if (task.isSuccessful) {
