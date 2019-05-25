@@ -1,7 +1,6 @@
 package com.example.krasnalhunt
 
 import android.graphics.drawable.ClipDrawable
-import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.commit
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -18,10 +18,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.krasnalhunt.model.AppDatabase
 import com.example.krasnalhunt.model.DwarfItem
 import com.example.krasnalhunt.model.DwarfViewModel
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
 import com.example.krasnalhunt.model.MainViewModel
-import com.google.firebase.firestore.SetOptions
 
 
 class DwarfItemListFragment : Fragment(), MyDwarfItemRecyclerViewAdapter.OnListFragmentInteractionListener {
@@ -35,7 +32,10 @@ class DwarfItemListFragment : Fragment(), MyDwarfItemRecyclerViewAdapter.OnListF
 
         ViewModelProviders.of(requireActivity()).get(DwarfViewModel::class.java).dwarfItem = item
         val dwarfViewFragment = DwarfViewFragment()
-        fragmentManager!!.beginTransaction().addToBackStack(null).replace(R.id.content, dwarfViewFragment, "dwarfView").commit()
+        requireActivity().supportFragmentManager.commit {
+            addToBackStack(null)
+            replace(R.id.content, dwarfViewFragment, "dwarfView")
+        }
     }
 
     private val mainViewModel: MainViewModel by activityViewModels()

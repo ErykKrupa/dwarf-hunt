@@ -12,6 +12,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.MetadataChanges
+import com.google.firebase.firestore.SetOptions
 
 
 class MainViewModel(context: Context) : ViewModel() {
@@ -48,6 +49,19 @@ class MainViewModel(context: Context) : ViewModel() {
                             Log.e("TAG", "Document snapshot unavailable", firebaseFirestoreException)
                         }
                     }
+            }
+        }
+    }
+
+    fun updateCaught(dwarfItem: DwarfItem) {
+        AsyncTask.execute {
+            val dwarf = database.dwarfItemDao().findItem(dwarfItem.id)
+            if (dwarf.caught) {
+                firestore.collection("caught-dwarfs")
+                    .document(auth.currentUser!!.uid).update(mapOf(dwarf.id.toString() to false))
+            } else {
+                firestore.collection("caught-dwarfs")
+                    .document(auth.currentUser!!.uid).set(mapOf(dwarf.id.toString() to true), SetOptions.merge())
             }
         }
     }

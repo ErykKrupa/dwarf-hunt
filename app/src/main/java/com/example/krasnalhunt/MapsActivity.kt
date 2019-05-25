@@ -252,16 +252,7 @@ class MapsActivity : AppCompatActivity(), InitializationFragment.OnDoneListener,
     override fun onFragmentInteraction(item: DwarfItem?) {
         if (item == null)
             return
-        AsyncTask.execute {
-            val dwarf = database.dwarfItemDao().findItem(item.id)
-            if (dwarf.caught) {
-                firestore.collection("caught-dwarfs")
-                    .document(auth.currentUser!!.uid).update(mapOf(dwarf.id.toString() to false))
-            } else {
-                firestore.collection("caught-dwarfs")
-                    .document(auth.currentUser!!.uid).set(mapOf(dwarf.id.toString() to true), SetOptions.merge())
-            }
-        }
+        mainViewModel.updateCaught(item)
     }
 
     companion object {
