@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 import com.example.krasnalhunt.model.DwarfItem
+import com.example.krasnalhunt.model.DwarfViewModel
 import kotlinx.android.synthetic.main.fragment_dwarf_view.view.*
 
 
@@ -18,9 +20,15 @@ import kotlinx.android.synthetic.main.fragment_dwarf_view.view.*
  * to handle interaction events.
  *
  */
-class DwarfViewFragment(private val dwarfItem: DwarfItem) : Fragment() {
+class DwarfViewFragment : Fragment() {
+    lateinit var dwarfItem: DwarfItem
     private var listener: OnFragmentInteractionListener? = null
     private var catchable = false
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        dwarfItem = ViewModelProviders.of(requireActivity()).get(DwarfViewModel::class.java).dwarfItem!!
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,6 +52,11 @@ class DwarfViewFragment(private val dwarfItem: DwarfItem) : Fragment() {
         view.caughtImageBackground.setOnClickListener { catchButtonClicked(dwarfItem) }
         view.caughtButton.setOnClickListener { catchButtonClicked(dwarfItem) }
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setCatchable()
     }
 
     override fun onAttach(context: Context) {
@@ -84,7 +97,7 @@ class DwarfViewFragment(private val dwarfItem: DwarfItem) : Fragment() {
         //TODO: implement showing dwarf on the map
     }
 
-    private fun catchDwarf(item: DwarfItem?){
+    private fun catchDwarf(item: DwarfItem?) {
         listener?.onFragmentInteraction(item)
     }
 

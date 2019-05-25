@@ -7,11 +7,13 @@ import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.krasnalhunt.model.AppDatabase
 import com.example.krasnalhunt.model.DwarfItem
+import com.example.krasnalhunt.model.DwarfViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -26,7 +28,8 @@ class DwarfItemListFragment : Fragment(), MyDwarfItemRecyclerViewAdapter.OnListF
         if (item == null)
             return
 
-        val dwarfViewFragment = DwarfViewFragment(item)
+        ViewModelProviders.of(requireActivity()).get(DwarfViewModel::class.java).dwarfItem = item
+        val dwarfViewFragment = DwarfViewFragment()
         fragmentManager!!.beginTransaction().addToBackStack(null).replace(R.id.content, dwarfViewFragment, "dwarfView").commit()
     }
 
