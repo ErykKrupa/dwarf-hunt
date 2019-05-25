@@ -1,27 +1,27 @@
 package com.example.krasnalhunt
 
 import android.Manifest
-import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Color
 import android.location.Location
 import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.edit
-import androidx.lifecycle.Observer
+import androidx.fragment.app.commit
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.example.krasnalhunt.model.AppDatabase
+import com.example.krasnalhunt.model.MainViewModel
 import com.example.krasnalhunt.model.DwarfItem
 import com.example.krasnalhunt.model.Player
 import com.firebase.ui.auth.AuthUI
@@ -46,7 +46,7 @@ import com.google.firebase.firestore.SetOptions
 
 const val PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1
 
-class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFragment.OnDoneListener, DwarfViewFragment.OnFragmentInteractionListener {
+class MapsActivity : AppCompatActivity(), InitializationFragment.OnDoneListener, DwarfViewFragment.OnFragmentInteractionListener {
 
     override fun onDone() {
         runOnUiThread {
@@ -59,127 +59,53 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
     }
 
     private fun postInit() {
-        if (user != null) {
-            loadMap()
+        if (mainViewModel.user != null) {
+            loadMainFragment()
+            getLocationPermission()
             loadFirestoreData()
-            fab.show()
         } else {
             login()
         }
     }
 
-    private fun loadFirestoreData() {
-        firestoreListener?.remove()
-        AsyncTask.execute {
-            database.dwarfItemDao().resetCaught()
-            runOnUiThread {
-                firestoreListener = firestore.collection("caught-dwarfs")
-                    .document(user!!.uid)
-                    .addSnapshotListener(MetadataChanges.EXCLUDE) { documentSnapshot, firebaseFirestoreException ->
-                        documentSnapshot?.run {
-                            AsyncTask.execute {
-                                data?.forEach { (dwarfIdString, caught) ->
-                                    val id = dwarfIdString.toInt()
-                                    val dwarf = database.dwarfItemDao().findItem(id)
-                                    dwarf.caught = caught as Boolean
-                                    database.dwarfItemDao().updateItems(dwarf)
-                                }
-                            }
-                        } ?: run {
-                            Log.e("TAG", "Document snapshot unavailable", firebaseFirestoreException)
-                        }
-                    }
+    private fun loadMainFragment() {
+        if (supportFragmentManager.findFragmentByTag("main") == null) {
+            supportFragmentManager.commit {
+                replace(R.id.content, MainFragment.newInstance(), "main")
             }
         }
     }
 
-    private lateinit var mMap: GoogleMap
+    private fun loadFirestoreData() {
+        mainViewModel.observeFirestore(this)
+    }
+
     private var mLocationPermissionGranted = false
-    private var mLastKnownLocation: Location? = null
     private var mFusedLocationProviderClient: FusedLocationProviderClient? = null
     var player = Player(Location("Player location"))
 
     private fun launchInitialization() {
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.content, InitializationFragment())
-            .commit()
-    }
-
-    private fun loadMap() {
-        supportFragmentManager.findFragmentByTag("map")?.let { mapFragment ->
-            (mapFragment as SupportMapFragment).getMapAsync(this)
-        } ?: run {
-            val mapFragment = SupportMapFragment.newInstance(GoogleMapOptions()
-                .camera(CameraPosition.fromLatLngZoom(LatLng(51.109286, 17.032307), 16.0f))
-                .maxZoomPreference(19.0f))
-            supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.content, mapFragment, "map")
-                .commit()
-            mapFragment.getMapAsync(this)
+        supportFragmentManager.commit {
+            replace(R.id.content, InitializationFragment())
         }
-
-        getLocationPermission()
-
-        Log.d("TAG", user?.run { displayName ?: "Anonymous" } ?: "what")
     }
 
-    private lateinit var database: AppDatabase
-    private lateinit var auth: FirebaseAuth
-    private var user: FirebaseUser? = null
-    private lateinit var firestore: FirebaseFirestore
-    private var firestoreListener: ListenerRegistration? = null
-
-    private lateinit var bottomSheetBehavior: BottomSheetBehavior<*>
+    private val mainViewModel: MainViewModel by viewModels {
+        object : ViewModelProvider.Factory {
+            override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+                return if (modelClass.isAssignableFrom(MainViewModel::class.java)) {
+                    @Suppress("UNCHECKED_CAST")
+                    MainViewModel(applicationContext) as T
+                } else {
+                    throw IllegalArgumentException("ViewModel Not Found")
+                }
+            }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
-
-        database = AppDatabase.createInstance(applicationContext)
-        auth = FirebaseAuth.getInstance()
-        user = auth.currentUser
-        firestore = FirebaseFirestore.getInstance()
-
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.nested_content, DwarfItemListFragment.newInstance(), "list")
-            .commit()
-
-        val lp = nested_content.layoutParams
-        if (lp is CoordinatorLayout.LayoutParams) {
-            val behavior = lp.behavior
-            if (behavior is BottomSheetBehavior<*>) {
-                bottomSheetBehavior = behavior
-            }
-        }
-
-        bottomSheetBehavior.setBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
-            override fun onSlide(p0: View, p1: Float) = Unit
-
-            override fun onStateChanged(p0: View, p1: Int) {
-                when (p1) {
-                    BottomSheetBehavior.STATE_HIDDEN ->
-                        fab.setImageResource(R.drawable.ic_view_list_black_24dp)
-                    else ->
-                        fab.setImageResource(R.drawable.ic_map_black_24dp)
-                }
-            }
-        })
-
-        if (savedInstanceState?.containsKey(BOTTOM_SHEET_BEHAVIOR_STATE) == true) {
-            bottomSheetBehavior.state = savedInstanceState.getInt(BOTTOM_SHEET_BEHAVIOR_STATE)
-        } else {
-            bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
-        }
-
-        fab.setOnClickListener { view ->
-            bottomSheetBehavior.state = if (bottomSheetBehavior.state == BottomSheetBehavior.STATE_EXPANDED) {
-                BottomSheetBehavior.STATE_HIDDEN
-            } else {
-                BottomSheetBehavior.STATE_EXPANDED
-            }
-        }
 
         val firstLaunch = getSharedPreferences(SHARED_PREFERENCES, Context.MODE_PRIVATE)
             .getBoolean(PREF_FIRST_LAUNCH, true)
@@ -188,11 +114,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
             launchInitialization()
         else
             postInit()
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putInt(BOTTOM_SHEET_BEHAVIOR_STATE, bottomSheetBehavior.state)
     }
 
     private fun login() {
@@ -218,7 +139,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
             val response = IdpResponse.fromResultIntent(data)
 
             if (resultCode == RESULT_OK) {
-                user = auth.currentUser
                 postInit()
             } else {
                 if (response == null) {
@@ -247,8 +167,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_logout -> {
-                firestoreListener?.remove()
-                firestoreListener = null
+                mainViewModel.removeFirestoreListener()
                 AuthUI.getInstance()
                     .signOut(this)
                     .addOnCompleteListener {
@@ -268,62 +187,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
                 }
                 true
             }
-            R.id.action_list -> {
-                if (supportFragmentManager.findFragmentByTag("list") == null) {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.content, DwarfItemListFragment.newInstance(), "list")
-                        .addToBackStack(null)
-                        .commit()
-                }
-                true
-            }
             else -> super.onOptionsItemSelected(item)
         }
-    }
-
-    private var currentCircle: Circle? = null
-
-    @SuppressLint("MissingPermission")
-    override fun onMapReady(googleMap: GoogleMap) {
-        mMap = googleMap
-
-        database.dwarfItemDao().findItems().observe(this, Observer { dwarfs ->
-            Log.d("TAG", dwarfs.toString())
-            mMap.clear()
-            currentCircle = null
-            for (dwarf in dwarfs) {
-                mMap.addMarker(MarkerOptions().position(dwarf.coordinates).title(dwarf.name)).apply {
-                    tag = dwarf
-                }
-            }
-        })
-
-        mMap.setOnMarkerClickListener {
-            currentCircle?.remove()
-            currentCircle = mMap.addCircle(
-                CircleOptions()
-                    .center(it.position)
-                    .radius(30.0)
-                    .strokeWidth(3.0f)
-                    .strokeColor(Color.GREEN)
-                    .fillColor(Color.argb(128, 255, 0, 0))
-                    .clickable(false)
-            )
-            it.showInfoWindow()
-            true
-        }
-
-        mMap.setOnMapClickListener {
-            currentCircle?.remove()
-            currentCircle = null
-        }
-
-        if (mLocationPermissionGranted) {
-            getDeviceLocation()
-            mMap.isMyLocationEnabled = true
-        }
-
-        updateLocationUI()
     }
 
     private fun getLocationPermission() {
@@ -344,37 +209,21 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
     override fun onRequestPermissionsResult(
         requestCode: Int, permissions: Array<String>, grantResults: IntArray
     ) {
-        mLocationPermissionGranted = false
         when (requestCode) {
             PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION -> {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    mLocationPermissionGranted = true
-                } else
+                    mainViewModel.locationPermissionGranted.value = true
+                } else {
+                    mainViewModel.locationPermissionGranted.value = false
                     showPermissionDialog({
                         if (!ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
                             finish()
                         } else
                             askForPermissions()
                     })
+                }
             }
-        }
-        updateLocationUI()
-    }
-
-    private fun updateLocationUI() {
-        try {
-            if (mLocationPermissionGranted) {
-                mMap.isMyLocationEnabled = true
-                mMap.uiSettings.isMyLocationButtonEnabled = true
-            } else {
-                mMap.isMyLocationEnabled = false
-                mMap.uiSettings.isMyLocationButtonEnabled = false
-                mLastKnownLocation = null
-                //getLocationPermission()
-            }
-        } catch (e: SecurityException) {
-            Log.e("Exception: %s", e.message)
         }
     }
 
@@ -416,10 +265,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
     }
 
     companion object {
-        private const val PREF_FIRST_LAUNCH = "first-launch"
+        const val PREF_FIRST_LAUNCH = "first-launch"
         const val SHARED_PREFERENCES = "shared-preferences"
         private const val RC_SIGN_IN = 1
-        private const val BOTTOM_SHEET_BEHAVIOR_STATE = "bottom-sheet-behavior-state"
     }
 
     private fun getDeviceLocation() {
@@ -440,6 +288,5 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
             Log.e("Exception: %s", e.message)
         }
     }
-
 
 }

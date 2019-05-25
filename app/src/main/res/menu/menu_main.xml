@@ -6,10 +6,6 @@
           android:title="Log out"
           android:orderInCategory="98"
           app:showAsAction="never"/>
-    <item android:id="@+id/action_list"
-          android:title="Show list"
-          android:orderInCategory="99"
-          app:showAsAction="never"/>
     <item android:id="@+id/action_reset"
           android:title="Reset"
           android:orderInCategory="100"

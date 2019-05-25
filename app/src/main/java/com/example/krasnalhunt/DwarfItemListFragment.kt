@@ -1,11 +1,15 @@
 package com.example.krasnalhunt
 
 import android.graphics.drawable.ClipDrawable
+import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -16,10 +20,11 @@ import com.example.krasnalhunt.model.DwarfItem
 import com.example.krasnalhunt.model.DwarfViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.example.krasnalhunt.model.MainViewModel
+import com.google.firebase.firestore.SetOptions
 
 
 class DwarfItemListFragment : Fragment(), MyDwarfItemRecyclerViewAdapter.OnListFragmentInteractionListener {
-
 
     override fun onListFragmentInteraction(item: DwarfItem?) {
         Log.d("TAG", "$item clicked")
@@ -33,23 +38,7 @@ class DwarfItemListFragment : Fragment(), MyDwarfItemRecyclerViewAdapter.OnListF
         fragmentManager!!.beginTransaction().addToBackStack(null).replace(R.id.content, dwarfViewFragment, "dwarfView").commit()
     }
 
-    private lateinit var database: AppDatabase
-    private lateinit var auth: FirebaseAuth
-    private lateinit var firestore: FirebaseFirestore
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-
-        database = AppDatabase.instance!!
-        auth = FirebaseAuth.getInstance()
-        firestore = FirebaseFirestore.getInstance()
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, menuInflater: MenuInflater) {
-        menu.clear()
-    }
-
+    private val mainViewModel: MainViewModel by activityViewModels()
     private lateinit var mAdapter: MyDwarfItemRecyclerViewAdapter
 
     override fun onCreateView(
