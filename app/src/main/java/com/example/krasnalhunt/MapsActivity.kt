@@ -29,7 +29,10 @@ import com.firebase.ui.auth.ErrorCodes
 import com.firebase.ui.auth.IdpResponse
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import com.google.android.gms.maps.*
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.GoogleMapOptions
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.firebase.auth.FirebaseAuth
@@ -163,7 +166,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
                 }
             }
         })
-        bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
+
+        if (savedInstanceState?.containsKey(BOTTOM_SHEET_BEHAVIOR_STATE) == true) {
+            bottomSheetBehavior.state = savedInstanceState.getInt(BOTTOM_SHEET_BEHAVIOR_STATE)
+        } else {
+            bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
+        }
 
         fab.setOnClickListener { view ->
             bottomSheetBehavior.state = if (bottomSheetBehavior.state == BottomSheetBehavior.STATE_EXPANDED) {
@@ -180,6 +188,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
             launchInitialization()
         else
             postInit()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt(BOTTOM_SHEET_BEHAVIOR_STATE, bottomSheetBehavior.state)
     }
 
     private fun login() {
@@ -403,9 +416,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
     }
 
     companion object {
-        const val PREF_FIRST_LAUNCH = "first-launch"
+        private const val PREF_FIRST_LAUNCH = "first-launch"
         const val SHARED_PREFERENCES = "shared-preferences"
         private const val RC_SIGN_IN = 1
+        private const val BOTTOM_SHEET_BEHAVIOR_STATE = "bottom-sheet-behavior-state"
     }
 
     private fun getDeviceLocation() {
