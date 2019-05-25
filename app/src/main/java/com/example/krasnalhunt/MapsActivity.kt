@@ -20,6 +20,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.edit
 import androidx.lifecycle.Observer
 import com.example.krasnalhunt.model.AppDatabase
+import com.example.krasnalhunt.model.DwarfItem
 import com.example.krasnalhunt.model.Player
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.ErrorCodes
@@ -33,11 +34,12 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.MetadataChanges
+import com.google.firebase.firestore.SetOptions
 
 
 const val PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1
 
-class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFragment.OnDoneListener {
+class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFragment.OnDoneListener, DwarfViewFragment.OnFragmentInteractionListener {
 
     override fun onDone() {
         runOnUiThread {
@@ -342,6 +344,21 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, InitializationFrag
             arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
             PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION
         )
+    }
+
+    override fun onFragmentInteraction(item: DwarfItem?) {
+        if (item == null)
+            return
+        AsyncTask.execute {
+            val dwarf = database.dwarfItemDao().findItem(item.id)
+            if (dwarf.caught) {
+                firestore.collection("caught-dwarfs")
+                    .document(auth.currentUser!!.uid).update(mapOf(dwarf.id.toString() to false))
+            } else {
+                firestore.collection("caught-dwarfs")
+                    .document(auth.currentUser!!.uid).set(mapOf(dwarf.id.toString() to true), SetOptions.merge())
+            }
+        }
     }
 
     companion object {

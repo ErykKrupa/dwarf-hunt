@@ -41,8 +41,8 @@ class DwarfViewFragment(private val dwarfItem: DwarfItem) : Fragment() {
             )
         )
         view.showOnTheMapButton.setOnClickListener { onShowOnTheMapButtonPressed() }
-        view.caughtImageBackground.setOnClickListener { catchButtonClicked() }
-        view.caughtButton.setOnClickListener { catchButtonClicked() }
+        view.caughtImageBackground.setOnClickListener { catchButtonClicked(dwarfItem) }
+        view.caughtButton.setOnClickListener { catchButtonClicked(dwarfItem) }
         return view
     }
 
@@ -51,7 +51,7 @@ class DwarfViewFragment(private val dwarfItem: DwarfItem) : Fragment() {
         if (context is OnFragmentInteractionListener) {
             listener = context
         } else {
-            //throw RuntimeException("$context must implement OnFragmentInteractionListener")
+            throw RuntimeException("$context must implement OnFragmentInteractionListener")
         }
     }
 
@@ -60,10 +60,10 @@ class DwarfViewFragment(private val dwarfItem: DwarfItem) : Fragment() {
         listener = null
     }
 
-    private fun catchButtonClicked() {
+    private fun catchButtonClicked(dwarfItem: DwarfItem?) {
         if (catchable) {
             Log.i("DwarfView", "catching dwarf")
-            //TODO: do catching a dwarf and change buttons appearance
+            catchDwarf(dwarfItem)
             setGraphicToCaught()
             catchable = false
         }
@@ -81,9 +81,12 @@ class DwarfViewFragment(private val dwarfItem: DwarfItem) : Fragment() {
     }
 
     private fun onShowOnTheMapButtonPressed() {
-        listener?.onFragmentInteraction()
+        //TODO: implement showing dwarf on the map
     }
 
+    private fun catchDwarf(item: DwarfItem?){
+        listener?.onFragmentInteraction(item)
+    }
 
     fun setCatchable() {
         if (!dwarfItem.caught) {
@@ -97,7 +100,7 @@ class DwarfViewFragment(private val dwarfItem: DwarfItem) : Fragment() {
 
 
     interface OnFragmentInteractionListener {
-        fun onFragmentInteraction()
+        fun onFragmentInteraction(item: DwarfItem?)
     }
 
 }

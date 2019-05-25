@@ -1,7 +1,6 @@
 package com.example.krasnalhunt
 
 import android.graphics.drawable.ClipDrawable
-import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
 import android.view.*
@@ -15,10 +14,10 @@ import com.example.krasnalhunt.model.AppDatabase
 import com.example.krasnalhunt.model.DwarfItem
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.SetOptions
 
 
 class DwarfItemListFragment : Fragment(), MyDwarfItemRecyclerViewAdapter.OnListFragmentInteractionListener {
+
 
     override fun onListFragmentInteraction(item: DwarfItem?) {
         Log.d("TAG", "$item clicked")
@@ -27,16 +26,8 @@ class DwarfItemListFragment : Fragment(), MyDwarfItemRecyclerViewAdapter.OnListF
         if (item == null)
             return
 
-        AsyncTask.execute {
-            val dwarf = database.dwarfItemDao().findItem(item.id)
-            if (dwarf.caught) {
-                firestore.collection("caught-dwarfs")
-                    .document(auth.currentUser!!.uid).update(mapOf(dwarf.id.toString() to false))
-            } else {
-                firestore.collection("caught-dwarfs")
-                    .document(auth.currentUser!!.uid).set(mapOf(dwarf.id.toString() to true), SetOptions.merge())
-            }
-        }
+        val dwarfViewFragment = DwarfViewFragment(item)
+        fragmentManager!!.beginTransaction().addToBackStack(null).replace(R.id.content, dwarfViewFragment, "dwarfView").commit()
     }
 
     private lateinit var database: AppDatabase
