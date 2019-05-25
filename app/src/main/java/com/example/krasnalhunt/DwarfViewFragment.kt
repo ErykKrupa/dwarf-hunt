@@ -40,7 +40,7 @@ class DwarfViewFragment : Fragment() {
         view.authorTextView.text = dwarfItem.author
         view.locationTextView.text = dwarfItem.location
         view.addressTextView.text = dwarfItem.address
-        if (dwarfItem.caught) setGraphicToCaught()
+        if (dwarfItem.caught) setGraphicToCaught(view)
         view.imageView.setImageResource(
             resources.getIdentifier(
                 dwarfItem.fileName.dropLast(4),
@@ -77,19 +77,17 @@ class DwarfViewFragment : Fragment() {
         if (catchable) {
             Log.i("DwarfView", "catching dwarf")
             catchDwarf(dwarfItem)
-            setGraphicToCaught()
+            setGraphicToCaught(view!!)
             catchable = false
         }
     }
 
-    private fun setGraphicToCaught() {
-        if (catchable) {
-            view?.apply {
-                caughtButton.setImageResource(R.drawable.ic_check_icon)
-                caughtButton.setOnClickListener { }
-                caughtImageBackground.background = resources.getDrawable(R.color.greenBackground, null)
-                caughtImageBackground.setOnClickListener { }
-            }
+    private fun setGraphicToCaught(view: View) {
+        view.apply {
+            caughtButton.setImageResource(R.drawable.ic_check_icon)
+            caughtButton.setOnClickListener { }
+            caughtImageBackground.background = resources.getDrawable(R.color.greenBackground, null)
+            caughtImageBackground.setOnClickListener { }
         }
     }
 
