@@ -9,8 +9,11 @@ interface DwarfItemDao {
     @Query("SELECT * FROM dwarf_item")
     fun findItems(): LiveData<List<DwarfItem>>
 
+    @Query("SELECT * FROM dwarf_item WHERE name LIKE '%' || :name || '%'")
+    fun findItemsLikeName(name: String): LiveData<List<DwarfItem>>
+
     @Query("SELECT * FROM dwarf_item WHERE id = :id")
-    fun findItem(id: Int): DwarfItem
+    fun findItemById(id: Int): DwarfItem
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertItems(vararg items: DwarfItem)

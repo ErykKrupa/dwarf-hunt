@@ -7,6 +7,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import com.google.android.gms.maps.GoogleMap
 import com.google.firebase.auth.FirebaseAuth
@@ -29,6 +30,14 @@ class MainViewModel(context: Context) : ViewModel() {
     val locationPermissionGranted = MutableLiveData<Boolean>()
     lateinit var map: GoogleMap
 
+    val searchString = MutableLiveData<String?>().apply { value = "" }
+    val filteredItems = Transformations.switchMap(searchString) {
+        when (val s = it) {
+            null, "" -> items
+            else -> database.dwarfItemDao().findItemsLikeName(s)
+        }
+    }
+
     val location = MutableLiveData<Location>()
     val dwarfsWithDistance = MediatorLiveData<List<Pair<DwarfItem, Float>>>().apply {
         fun computeList(dwarfs: List<DwarfItem>?, currentLocation: Location?): List<Pair<DwarfItem, Float>>? {
@@ -45,11 +54,9 @@ class MainViewModel(context: Context) : ViewModel() {
             }
         }
 
-        addSource(items) { value = computeList(it, location.value) }
-        addSource(location) { value = computeList(items.value, it) }
+        addSource(filteredItems) { value = computeList(it, location.value) ?: return@addSource }
+        addSource(location) { value = computeList(filteredItems.value, it) ?: return@addSource }
     }
-
-    val searchString = MutableLiveData<String?>()
 
     fun observeFirestore(activity: AppCompatActivity) {
         firestoreListener?.remove()
@@ -64,7 +71,7 @@ class MainViewModel(context: Context) : ViewModel() {
                                 // TODO: simplify
                                 data?.forEach { (dwarfIdString, caught) ->
                                     val id = dwarfIdString.toInt()
-                                    val dwarf = database.dwarfItemDao().findItem(id)
+                                    val dwarf = database.dwarfItemDao().findItemById(id)
                                     dwarf.caught = caught as Boolean
                                     database.dwarfItemDao().updateItems(dwarf)
                                 }
@@ -79,7 +86,7 @@ class MainViewModel(context: Context) : ViewModel() {
 
     fun updateCaught(dwarfItem: DwarfItem) {
         AsyncTask.execute {
-            val dwarf = database.dwarfItemDao().findItem(dwarfItem.id)
+            val dwarf = database.dwarfItemDao().findItemById(dwarfItem.id)
             if (dwarf.caught) {
                 firestore.collection("caught-dwarfs")
                     .document(auth.currentUser!!.uid).update(mapOf(dwarf.id.toString() to false))

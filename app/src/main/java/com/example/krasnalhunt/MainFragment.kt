@@ -47,7 +47,7 @@ class MainFragment : Fragment(), OnMapReadyCallback {
     @SuppressLint("MissingPermission")
     override fun onMapReady(googleMap: GoogleMap) {
         mainViewModel.map = googleMap
-        mainViewModel.items.observe(this, Observer { dwarfs ->
+        mainViewModel.filteredItems.observe(this, Observer { dwarfs ->
             Log.d("TAG", dwarfs.toString())
             mainViewModel.map.clear()
             currentCircle = null
