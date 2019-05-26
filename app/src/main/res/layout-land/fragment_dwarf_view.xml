@@ -39,7 +39,7 @@
             app:layout_constraintStart_toEndOf="@+id/divider" android:layout_marginTop="8dp"
             android:paddingStart="0dp" android:layout_marginStart="8dp" android:paddingBottom="4dp"/>
     <TextView
-            android:text="@string/author_eng"
+            android:text="@string/author"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/authorLabel"
@@ -64,7 +64,7 @@
             android:layout_marginEnd="8dp" android:layout_marginTop="4dp"
             app:layout_constraintTop_toBottomOf="@+id/locationTextView"/>
     <TextView
-            android:text="@string/address_eng"
+            android:text="@string/address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/addressLabel"
@@ -81,7 +81,7 @@
             app:layout_constraintStart_toEndOf="@+id/locationLabel" android:layout_marginStart="4dp"
             app:layout_constraintEnd_toEndOf="@+id/barrier3" android:layout_marginEnd="8dp"/>
     <TextView
-            android:text="@string/location_eng"
+            android:text="@string/location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/locationLabel"

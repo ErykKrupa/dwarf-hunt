@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dwarf Hunt</string>
+    <string name="address">Adres:</string>
+    <string name="author">Autor:</string>
+    <string name="distance">Odległość:</string>
+    <string name="initializing_app">Inicjowanie aplikacji</string>
+    <string name="location">Położenie:</string>
+    <string name="logout">Wyloguj</string>
+    <string name="name">Imię:</string>
+    <string name="reset">Resetuj</string>
+    <string name="positive_button_text">OK</string>
+    <string name="location_permission_alert_title">Wymagane pozwolenie na dostęp do lokalizacji</string>
+    <string name="location_permission_alert_message_on_dont_show_again">"Ta aplikacja wymaga dostępu do lokalizacji.
+Zezwól aby kontynuować. Możesz ustawić to pozwolenie w: Ustawienia > Uprawnienia aplikacji > Lokalizacja "
+    </string>
+    <string name="location_permission_alert_message">Ta aplikacja wymaga dostępu do lokalizacji. Zezwól aby
+        kontynuować.
+    </string>
+</resources>

@@ -3,11 +3,11 @@
       xmlns:tools="http://schemas.android.com/tools"
       tools:context="pl.dabek.jakub.l4z1.MainActivity">
     <item android:id="@+id/action_logout"
-          android:title="Log out"
+          android:title="@string/logout"
           android:orderInCategory="98"
           app:showAsAction="never"/>
     <item android:id="@+id/action_reset"
-          android:title="Reset"
+          android:title="@string/reset"
           android:orderInCategory="100"
           app:showAsAction="never"/>
 </menu>

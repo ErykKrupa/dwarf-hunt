@@ -1,19 +1,21 @@
 <resources>
     <string name="app_name">Dwarf Hunt</string>
-    <string name="title_activity_maps">Dwarf Hunt</string>
+    <string name="title_activity_maps" translatable="false">Dwarf Hunt</string>
     <string name="location_permission_alert_title">Location Permission Needed</string>
     <string name="location_permission_alert_message">This app needs the location permission. Please accept it to use
         the application.
     </string>
-    <string name="location_permission_alert_message_on_dont_show_again">This app needs the location permission. Please
-        accept it to use
-        the application. You can change it in application settings > application permissions > location
+    <string name="location_permission_alert_message_on_dont_show_again">"This app needs the location permission. Please
+        accept it to use the application. You can change it in application settings > application permissions > location
+        "
     </string>
     <string name="positive_button_text">OK</string>
     <string name="initializing_app">Initializing app</string>
-    <string name="name_eng">Name:</string>
-    <string name="author_eng">Author:</string>
-    <string name="address_eng">Address:</string>
-    <string name="location_eng">Location:</string>
+    <string name="name">Name:</string>
+    <string name="author">Author:</string>
+    <string name="address">Address:</string>
+    <string name="location">Location:</string>
     <string name="distance">Distance:</string>
+    <string name="logout">Log out</string>
+    <string name="reset">Reset</string>
 </resources>
