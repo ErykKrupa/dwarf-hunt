@@ -9,12 +9,13 @@
 
     <ImageView
             android:adjustViewBounds="true"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:src="@drawable/ankaannewroclawdwarf01"
             android:layout_height="306dp" tools:src="@drawable/ankaannewroclawdwarf01"
             android:id="@+id/imageView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.55"
             android:scaleType="centerCrop"/>
     <ImageView
             android:src="@color/colorPrimary"
