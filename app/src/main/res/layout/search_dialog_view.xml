@@ -1,0 +1,43 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:ems="10"
+            android:id="@+id/editText" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/infoLabel" android:hint="@string/search_dialog_prompt"
+            android:layout_marginStart="25dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginEnd="25dp" app:layout_constraintEnd_toEndOf="parent" android:lines="1"/>
+    <TextView
+            android:text="@string/search_dialog_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/infoLabel" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:layout_marginTop="14dp"
+            app:layout_constraintTop_toTopOf="parent"/>
+    <Button
+            android:text="@string/close_button_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button3" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/editText" android:background="@color/colorPrimary"
+            style="@android:style/Widget.DeviceDefault.Button.Borderless"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toStartOf="@+id/button"
+            android:layout_marginEnd="10dp"/>
+    <Button
+            android:text="@string/search_button_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/editText" android:background="@color/colorPrimary"
+            style="@android:style/Widget.DeviceDefault.Button.Borderless"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@+id/button3"
+            app:layout_constraintHorizontal_bias="0.5" android:layout_marginStart="10dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
