@@ -81,6 +81,14 @@ class MainFragment : Fragment(), OnMapReadyCallback {
         mainViewModel.map.setOnInfoWindowClickListener {
             val item = it.tag as DwarfItem
             dwarfViewModel.dwarfItem = item
+
+            val result = floatArrayOf(0f)
+            Location.distanceBetween(
+                mainViewModel.location.value!!.latitude, mainViewModel.location.value!!.longitude,
+                item.coordinates.latitude, item.coordinates.longitude,
+                result
+            )
+            dwarfViewModel.distance = result[0].toInt()
             val dwarfViewFragment = DwarfViewFragment()
             requireActivity().supportFragmentManager.commit {
                 addToBackStack(null)
