@@ -70,4 +70,6 @@ class MainViewModel(context: Context) : ViewModel() {
         firestoreListener?.remove()
         firestoreListener = null
     }
+
+    fun init() = Unit
 }

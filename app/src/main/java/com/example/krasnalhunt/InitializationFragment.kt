@@ -4,8 +4,9 @@ import android.os.AsyncTask
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
-import com.example.krasnalhunt.model.AppDatabase
+import androidx.fragment.app.activityViewModels
 import com.example.krasnalhunt.model.DwarfItem
+import com.example.krasnalhunt.model.MainViewModel
 import com.google.android.gms.maps.model.LatLng
 
 
@@ -34,6 +35,7 @@ class InitializationFragment : Fragment() {
         LatLng(latitude, longitude)
     }
 
+    private val mainViewModel: MainViewModel by activityViewModels()
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -55,7 +57,7 @@ class InitializationFragment : Fragment() {
                         DwarfItem(name, address, coordinates, location, author, fileName, id = index + 1)
                     }
                 }
-                AppDatabase.instance?.dwarfItemDao()?.insertItems(dwarfs.toList())
+                mainViewModel.database.dwarfItemDao().insertItems(dwarfs.toList())
             }
 
             Thread.sleep(3000) //TODO: remove

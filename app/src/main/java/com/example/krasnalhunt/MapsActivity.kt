@@ -98,6 +98,8 @@ class MapsActivity : AppCompatActivity(), InitializationFragment.OnDoneListener,
         val firstLaunch = getSharedPreferences(SHARED_PREFERENCES, Context.MODE_PRIVATE)
             .getBoolean(PREF_FIRST_LAUNCH, true)
 
+        mainViewModel.init()
+
         if (firstLaunch)
             launchInitialization()
         else
