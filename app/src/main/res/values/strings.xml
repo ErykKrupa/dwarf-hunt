@@ -23,5 +23,4 @@
     <string name="logout">Log out</string>
     <string name="reset">Reset</string>
     <string name="nothing_found_message">No dwarf matching given name found</string>
-    <string name="ok_label">OK</string>
 </resources>

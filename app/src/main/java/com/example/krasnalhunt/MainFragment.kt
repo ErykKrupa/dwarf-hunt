@@ -112,7 +112,7 @@ class MainFragment : Fragment(), OnMapReadyCallback {
     private fun showNotFoundDialog() {
         val builder = AlertDialog.Builder(requireContext())
         builder.setMessage(R.string.nothing_found_message)
-        builder.setPositiveButton(R.string.ok_label) { dialog, _ ->
+        builder.setPositiveButton(R.string.positive_button_text) { dialog, _ ->
             dialog.cancel()
         }.show().apply {
             val positiveButton = this.getButton(AlertDialog.BUTTON_POSITIVE)
