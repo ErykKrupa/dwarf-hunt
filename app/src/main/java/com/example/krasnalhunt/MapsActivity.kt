@@ -1,9 +1,11 @@
 package com.example.krasnalhunt
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
+import android.content.IntentSender
 import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationManager
@@ -19,8 +21,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.edit
-import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.commit
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.krasnalhunt.model.AppDatabase
@@ -33,6 +36,9 @@ import com.firebase.ui.auth.IdpResponse
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.gms.common.api.ResolvableApiException
+import com.google.android.gms.location.*
+import com.google.android.gms.tasks.Task
 
 
 const val PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1
@@ -53,12 +59,75 @@ class MapsActivity : AppCompatActivity(), InitializationFragment.OnDoneListener,
         if (mainViewModel.user != null) {
             loadMainFragment()
             getLocationPermission()
+            createLocationRequest()
             loadFirestoreData()
         } else {
             login()
         }
 
         locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager?
+    }
+
+    private val fusedLocationClient: FusedLocationProviderClient by lazy { LocationServices.getFusedLocationProviderClient(this) }
+
+    private val locationCallback: LocationCallback = object : LocationCallback() {
+        override fun onLocationResult(locationResult: LocationResult?) {
+            locationResult ?: return
+            mainViewModel.location.value = locationResult.lastLocation
+        }
+    }
+
+    var locationRequest: LocationRequest? = null
+
+    @SuppressLint("MissingPermission")
+    override fun onResume() {
+        super.onResume()
+
+        locationRequest?.let {
+            fusedLocationClient.requestLocationUpdates(it,
+                locationCallback,
+                null /* Looper */)
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        fusedLocationClient.removeLocationUpdates(locationCallback)
+    }
+
+    @SuppressLint("MissingPermission")
+    private fun createLocationRequest() {
+        mainViewModel.locationPermissionGranted.observe(this, Observer {
+            if (it) {
+                val tmpLocationRequest = LocationRequest.create().apply {
+                    interval = 10_000
+                    fastestInterval = 5_000
+                    priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+                }
+                val builder = LocationSettingsRequest.Builder()
+                    .addLocationRequest(tmpLocationRequest)
+                val client: SettingsClient = LocationServices.getSettingsClient(this)
+                val task: Task<LocationSettingsResponse> = client.checkLocationSettings(builder.build())
+                task.addOnSuccessListener { locationSettingsResponse ->
+                    locationRequest = tmpLocationRequest
+                    if (lifecycle.currentState == Lifecycle.State.RESUMED) {
+                        fusedLocationClient.requestLocationUpdates(tmpLocationRequest,
+                            locationCallback,
+                            null /* Looper */)
+                    }
+                }
+
+                task.addOnFailureListener { exception ->
+                    if (exception is ResolvableApiException){
+                        try {
+                            exception.startResolutionForResult(this@MapsActivity,
+                                PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION)
+                        } catch (sendEx: IntentSender.SendIntentException) {
+                        }
+                    }
+                }
+            }
+        })
     }
 
     private fun loadMainFragment() {

@@ -64,7 +64,7 @@ class MyDwarfItemRecyclerViewAdapter(
         }
 
 //        holder.distanceHolder.text = MapsActivity.dwarfsMap[holder.nameHolder.text.toString()].toString() + " m"
-        holder.distanceHolder.text = item.second.toString() + " m"
+        holder.distanceHolder.text = item.second.toInt().toString() + " m"
 
         with(holder.mView) {
             tag = dwarf
