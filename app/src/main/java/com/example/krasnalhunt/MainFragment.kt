@@ -15,6 +15,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -220,12 +221,25 @@ class MainFragment : Fragment(), OnMapReadyCallback {
                 .setNegativeButton(R.string.close_button_label, DialogInterface.OnClickListener { dialog, _ ->
                     dialog.cancel()
                 }).setView(dialogView).show().apply {
-                    this.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(resources.getColor(R.color.justBlack, null))
-                    this.getButton(AlertDialog.BUTTON_NEGATIVE).background =
+                    val layoutParams = LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                    )
+                    layoutParams.marginStart = 10
+                    layoutParams.marginEnd = 10
+                    layoutParams.weight = 10F
+
+                    val negativeButton = this.getButton(AlertDialog.BUTTON_NEGATIVE)
+                    negativeButton.setTextColor(resources.getColor(R.color.justBlack, null))
+                    negativeButton.background =
                         resources.getDrawable(R.color.yellowBackground, null)
-                    this.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(resources.getColor(R.color.justBlack, null))
-                    this.getButton(AlertDialog.BUTTON_POSITIVE).background =
+                    negativeButton.layoutParams = layoutParams
+
+                    val positiveButton = this.getButton(AlertDialog.BUTTON_POSITIVE)
+                    positiveButton.setTextColor(resources.getColor(R.color.justBlack, null))
+                    positiveButton.background =
                         resources.getDrawable(R.color.yellowBackground, null)
+                    positiveButton.layoutParams = layoutParams
                 }
         }
     }
