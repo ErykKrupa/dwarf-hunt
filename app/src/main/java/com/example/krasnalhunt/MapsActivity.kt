@@ -12,12 +12,14 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.edit
+import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.commit
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -30,6 +32,7 @@ import com.firebase.ui.auth.ErrorCodes
 import com.firebase.ui.auth.IdpResponse
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 
 const val PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1
@@ -107,6 +110,17 @@ class MapsActivity : AppCompatActivity(), InitializationFragment.OnDoneListener,
             postInit()
     }
 
+    override fun onBackPressed() {
+        supportFragmentManager.findFragmentByTag("main")?.view?.findViewById<FrameLayout>(R.id.content_list)?.let { listFrag ->
+            BottomSheetBehavior.from(listFrag)?.run {
+                if (state  == BottomSheetBehavior.STATE_EXPANDED) {
+                    state = BottomSheetBehavior.STATE_HIDDEN
+                    return
+                }
+            }
+        }
+        super.onBackPressed()
+    }
     private fun login() {
         val providers = listOf(
             AuthUI.IdpConfig.EmailBuilder().build()
