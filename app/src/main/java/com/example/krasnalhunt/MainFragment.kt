@@ -4,7 +4,6 @@ package com.example.krasnalhunt
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
-import android.content.DialogInterface
 import android.graphics.Color
 import android.location.Location
 import android.location.LocationListener
@@ -213,34 +212,35 @@ class MainFragment : Fragment(), OnMapReadyCallback {
             val inflater = requireActivity().layoutInflater
             val dialogView = inflater.inflate(R.layout.search_dialog_view, null)
             dialogView.editText.setText(mainViewModel.searchString.value)
-            builder.setPositiveButton(R.string.search_button_label, DialogInterface.OnClickListener { dialog, _ ->
+            builder.setPositiveButton(R.string.search_button_label) { dialog, _ ->
                 mainViewModel.searchString.value = dialogView.editText.text.toString()
                 dialog.cancel()
                 performSearching()
-            })
-                .setNegativeButton(R.string.close_button_label, DialogInterface.OnClickListener { dialog, _ ->
+            }
+                .setNegativeButton(R.string.close_button_label) { dialog, _ ->
                     dialog.cancel()
-                }).setView(dialogView).show().apply {
-                    val layoutParams = LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.WRAP_CONTENT,
-                        LinearLayout.LayoutParams.WRAP_CONTENT
-                    )
-                    layoutParams.marginStart = 10
-                    layoutParams.marginEnd = 10
-                    layoutParams.weight = 10F
-
-                    val negativeButton = this.getButton(AlertDialog.BUTTON_NEGATIVE)
-                    negativeButton.setTextColor(resources.getColor(R.color.justBlack, null))
-                    negativeButton.background =
-                        resources.getDrawable(R.color.yellowBackground, null)
-                    negativeButton.layoutParams = layoutParams
-
-                    val positiveButton = this.getButton(AlertDialog.BUTTON_POSITIVE)
-                    positiveButton.setTextColor(resources.getColor(R.color.justBlack, null))
-                    positiveButton.background =
-                        resources.getDrawable(R.color.yellowBackground, null)
-                    positiveButton.layoutParams = layoutParams
                 }
+            builder.setView(dialogView).show().apply {
+                val layoutParams = LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+                )
+                layoutParams.marginStart = 10
+                layoutParams.marginEnd = 10
+                layoutParams.weight = 10F
+
+                val negativeButton = this.getButton(AlertDialog.BUTTON_NEGATIVE)
+                negativeButton.setTextColor(resources.getColor(R.color.justBlack, null))
+                negativeButton.background =
+                    resources.getDrawable(R.color.yellowBackground, null)
+                negativeButton.layoutParams = layoutParams
+
+                val positiveButton = this.getButton(AlertDialog.BUTTON_POSITIVE)
+                positiveButton.setTextColor(resources.getColor(R.color.justBlack, null))
+                positiveButton.background =
+                    resources.getDrawable(R.color.yellowBackground, null)
+                positiveButton.layoutParams = layoutParams
+            }
         }
     }
 
