@@ -14,7 +14,6 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.krasnalhunt.model.AppDatabase
 import com.example.krasnalhunt.model.DwarfItem
 import com.example.krasnalhunt.model.DwarfViewModel
 import com.example.krasnalhunt.model.MainViewModel
@@ -61,13 +60,9 @@ class DwarfItemListFragment : Fragment(), MyDwarfItemRecyclerViewAdapter.OnListF
 
     override fun onStart() {
         super.onStart()
-        AppDatabase.instance?.let { db ->
-            db.dwarfItemDao()
-                .findItems()
-                .observe(this, Observer { newList ->
-                    mAdapter.updateData(newList)
-                })
-        }
+        mainViewModel.dwarfsWithDistance.observe(this, Observer { newList ->
+            mAdapter.updateData(newList.sortedBy { it.second })
+        })
 
     }
 

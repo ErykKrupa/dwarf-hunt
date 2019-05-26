@@ -19,8 +19,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.commit
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
-import com.example.krasnalhunt.MapsActivity.Companion.dwarfsMap
-import com.example.krasnalhunt.model.DwarfItem
 import com.example.krasnalhunt.model.MainViewModel
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.GoogleMapOptions
@@ -43,7 +41,6 @@ class MainFragment : Fragment(), OnMapReadyCallback {
     @SuppressLint("MissingPermission")
     override fun onMapReady(googleMap: GoogleMap) {
         mainViewModel.map = googleMap
-        var dwarfsList: List<DwarfItem>? = null
         mainViewModel.items.observe(this, Observer { dwarfs ->
             Log.d("TAG", dwarfs.toString())
             mainViewModel.map.clear()
@@ -53,7 +50,6 @@ class MainFragment : Fragment(), OnMapReadyCallback {
                     tag = dwarf
                 }
             }
-            dwarfsList = dwarfs
         })
 
         mainViewModel.map.setOnMarkerClickListener {
@@ -85,14 +81,7 @@ class MainFragment : Fragment(), OnMapReadyCallback {
 
         val locationListener = object : LocationListener {
             override fun onLocationChanged(location: Location) {
-                var result = floatArrayOf(0f)
-                for (dwarf in dwarfsList!!) {
-                    Location.distanceBetween(
-                        location.latitude, location.longitude,
-                        dwarf.coordinates.latitude, dwarf.coordinates.longitude, result
-                    )
-                    dwarfsMap[dwarf.name] = result[0].toInt()
-                }
+                mainViewModel.location.value = location
             }
 
             override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {

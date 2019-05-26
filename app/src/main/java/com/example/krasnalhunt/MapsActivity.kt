@@ -31,6 +31,7 @@ import com.firebase.ui.auth.IdpResponse
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 
+
 const val PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1
 
 class MapsActivity : AppCompatActivity(), InitializationFragment.OnDoneListener, DwarfViewFragment.OnFragmentInteractionListener {
@@ -250,7 +251,6 @@ class MapsActivity : AppCompatActivity(), InitializationFragment.OnDoneListener,
         const val PREF_FIRST_LAUNCH = "first-launch"
         const val SHARED_PREFERENCES = "shared-preferences"
         private const val RC_SIGN_IN = 1
-        var dwarfsMap: MutableMap<String, Int> = hashMapOf()
         var locationManager: LocationManager? = null
     }
 

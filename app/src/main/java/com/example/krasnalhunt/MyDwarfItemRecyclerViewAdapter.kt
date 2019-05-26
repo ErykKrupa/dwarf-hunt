@@ -40,10 +40,11 @@ class MyDwarfItemRecyclerViewAdapter(
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = ald.currentList[position]
-        holder.nameHolder.text = item.name
-        holder.locationHolder.text = item.location
+        val dwarf = item.first
+        holder.nameHolder.text = dwarf.name
+        holder.locationHolder.text = dwarf.location
         val imgResId = holder.imageHolder.resources.getIdentifier(
-            item.fileName.dropLast(4),
+            dwarf.fileName.dropLast(4),
             "drawable",
             holder.imageHolder.context.packageName
         )
@@ -52,7 +53,7 @@ class MyDwarfItemRecyclerViewAdapter(
         } else {
             Picasso.get().load(imgResId).error(R.drawable.ic_block_black_24dp).fit().into(holder.imageHolder)
         }
-        if (item.caught) {
+        if (dwarf.caught) {
             holder.caughtImageHolder.setImageResource(R.drawable.ic_check_icon)
             holder.caughtImageBackground.background =
                 holder.caughtImageBackground.resources.getDrawable(R.color.greenBackground, null)
@@ -62,26 +63,27 @@ class MyDwarfItemRecyclerViewAdapter(
                 holder.caughtImageBackground.resources.getDrawable(R.color.grayBackground, null)
         }
 
-        holder.distanceHolder.text = MapsActivity.dwarfsMap[holder.nameHolder.text.toString()].toString() + " m"
+//        holder.distanceHolder.text = MapsActivity.dwarfsMap[holder.nameHolder.text.toString()].toString() + " m"
+        holder.distanceHolder.text = item.second.toString() + " m"
 
         with(holder.mView) {
-            tag = item
+            tag = dwarf
             setOnClickListener(mOnClickListener)
         }
     }
 
-    private val ald = AsyncListDiffer<DwarfItem>(this, object : DiffUtil.ItemCallback<DwarfItem>() {
-        override fun areContentsTheSame(oldItem: DwarfItem, newItem: DwarfItem): Boolean {
+    private val ald = AsyncListDiffer<Pair<DwarfItem, Float>>(this, object : DiffUtil.ItemCallback<Pair<DwarfItem, Float>>() {
+        override fun areContentsTheSame(oldItem: Pair<DwarfItem, Float>, newItem: Pair<DwarfItem, Float>): Boolean {
             return oldItem == newItem
         }
 
-        override fun areItemsTheSame(oldItem: DwarfItem, newItem: DwarfItem): Boolean {
-            return oldItem.id == newItem.id
+        override fun areItemsTheSame(oldItem: Pair<DwarfItem, Float>, newItem: Pair<DwarfItem, Float>): Boolean {
+            return oldItem.first.id == newItem.first.id
         }
 
     })
 
-    fun updateData(newItems: List<DwarfItem>) {
+    fun updateData(newItems: List<Pair<DwarfItem, Float>>) {
         ald.submitList(newItems)
     }
 

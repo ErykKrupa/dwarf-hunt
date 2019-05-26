@@ -1,9 +1,11 @@
 package com.example.krasnalhunt.model
 
 import android.content.Context
+import android.location.Location
 import android.os.AsyncTask
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.android.gms.maps.GoogleMap
@@ -26,6 +28,26 @@ class MainViewModel(context: Context) : ViewModel() {
 
     val locationPermissionGranted = MutableLiveData<Boolean>()
     lateinit var map: GoogleMap
+
+    val location = MutableLiveData<Location>()
+    val dwarfsWithDistance = MediatorLiveData<List<Pair<DwarfItem, Float>>>().apply {
+        fun computeList(dwarfs: List<DwarfItem>?, currentLocation: Location?): List<Pair<DwarfItem, Float>>? {
+            return dwarfs?.map {
+                currentLocation ?: return@map it to 0f
+
+                val result = floatArrayOf(0f)
+                Location.distanceBetween(
+                    currentLocation.latitude, currentLocation.longitude,
+                    it.coordinates.latitude, it.coordinates.longitude,
+                    result
+                )
+                it to result[0]
+            }
+        }
+
+        addSource(items) { value = computeList(it, location.value) }
+        addSource(location) { value = computeList(items.value, it) }
+    }
 
     fun observeFirestore(activity: AppCompatActivity) {
         firestoreListener?.remove()
