@@ -18,7 +18,7 @@
             android:id="@+id/content_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorAccent"
+            android:background="#FFFFFF"
             app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
             app:behavior_hideable="true"
             app:behavior_peekHeight="0dp"
