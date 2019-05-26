@@ -44,12 +44,13 @@ class DwarfViewFragment : Fragment() {
         view.locationTextView.text = dwarfItem.location
         view.addressTextView.text = dwarfItem.address
         if (dwarfItem.caught) setGraphicToCaught(view)
+        val identifier = resources.getIdentifier(
+            dwarfItem.fileName.dropLast(4),
+            "drawable",
+            context!!.packageName
+        )
         view.imageView.setImageResource(
-            resources.getIdentifier(
-                dwarfItem.fileName.dropLast(4),
-                "drawable",
-                context!!.packageName
-            )
+            if (identifier == 0) R.drawable.no_image else identifier
         )
         view.showOnTheMapButton.setOnClickListener { onShowOnTheMapButtonPressed() }
         view.caughtImageBackground.setOnClickListener { catchButtonClicked(dwarfItem) }

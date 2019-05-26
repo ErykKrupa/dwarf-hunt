@@ -83,7 +83,7 @@ class SingleDwarfMapFragment : Fragment(), OnMapReadyCallback {
         } ?: run {
             val mapFragment = SupportMapFragment.newInstance(
                 GoogleMapOptions()
-                    .camera(CameraPosition.fromLatLngZoom(dwarfViewModel.dwarfItem!!.coordinates, 17.5f))
+                    .camera(CameraPosition.fromLatLngZoom(dwarfViewModel.dwarfItem!!.coordinates, 16.0f))
                     .maxZoomPreference(19.0f)
             )
             childFragmentManager.commit {
