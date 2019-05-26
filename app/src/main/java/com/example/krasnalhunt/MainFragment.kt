@@ -38,6 +38,7 @@ class MainFragment : Fragment(), OnMapReadyCallback {
     private val mainViewModel: MainViewModel by activityViewModels()
 
     private var currentCircle: Circle? = null
+    private var currentBehaviorState = BottomSheetBehavior.STATE_HIDDEN
 
     @SuppressLint("MissingPermission")
     override fun onMapReady(googleMap: GoogleMap) {
@@ -111,7 +112,7 @@ class MainFragment : Fragment(), OnMapReadyCallback {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState.putInt(BOTTOM_SHEET_BEHAVIOR_STATE, bottomSheetBehavior.state)
+        outState.putInt(BOTTOM_SHEET_BEHAVIOR_STATE, currentBehaviorState)
     }
 
     override fun onCreateView(
@@ -157,6 +158,7 @@ class MainFragment : Fragment(), OnMapReadyCallback {
             override fun onSlide(p0: View, p1: Float) = Unit
 
             override fun onStateChanged(p0: View, p1: Int) {
+                currentBehaviorState = p1
                 when (p1) {
                     BottomSheetBehavior.STATE_HIDDEN ->
                         fab.setImageResource(R.drawable.ic_view_list_black_24dp)
