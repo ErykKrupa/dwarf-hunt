@@ -91,13 +91,13 @@
             app:layout_constraintBottom_toBottomOf="@+id/imageView"/>
     <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:id="@+id/showOnTheMapButton"
             android:src="@drawable/ic_place_black_24dp"
             app:layout_constraintBottom_toBottomOf="@+id/addressTextView"
             android:adjustViewBounds="true" android:scaleType="fitCenter" android:background="#00C62828"
             android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="@+id/locationTextView"/>
+            app:layout_constraintTop_toTopOf="@+id/locationTextView"/>
     <androidx.constraintlayout.widget.Barrier android:layout_width="wrap_content" android:layout_height="wrap_content"
                                               android:id="@+id/barrier3" app:barrierDirection="right"
                                               app:constraint_referenced_ids="addressTextView,locationTextView"

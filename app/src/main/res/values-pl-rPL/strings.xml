@@ -21,4 +21,6 @@ Zezwól aby kontynuować. Możesz ustawić to pozwolenie w: Ustawienia > Uprawni
     <string name="search_button_label">Szukaj</string>
     <string name="search_dialog_message">Szukaj krasnala</string>
     <string name="search_dialog_prompt">Imię krasnala</string>
+    <string name="nothing_found_message">Nie znaloeziono krasnala o podanym imieniu</string>
+    <string name="ok_label">Ok</string>
 </resources>

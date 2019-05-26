@@ -6,8 +6,6 @@ import android.app.AlertDialog
 import android.content.Context
 import android.graphics.Color
 import android.location.Location
-import android.location.LocationListener
-import android.location.LocationManager
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -103,28 +101,24 @@ class MainFragment : Fragment(), OnMapReadyCallback {
             }
         })
 
-        val locationListener = object : LocationListener {
-            override fun onLocationChanged(location: Location) {
-                mainViewModel.location.value = location
+        mainViewModel.dwarfsWithDistance.observe(this, Observer {
+            if (it.isEmpty()) {
+                mainViewModel.searchString.value = ""
+                showNotFoundDialog()
             }
+        })
+    }
 
-            override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {
-            }
-
-            override fun onProviderEnabled(provider: String?) {
-            }
-
-            override fun onProviderDisabled(provider: String?) {
-            }
-        }
-        try {
-            MapsActivity.locationManager!!.requestLocationUpdates(
-                LocationManager.NETWORK_PROVIDER,
-                0L,
-                0f,
-                locationListener
-            )
-        } catch (ex: SecurityException) {
+    private fun showNotFoundDialog() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setMessage(R.string.nothing_found_message)
+        builder.setPositiveButton(R.string.ok_label) { dialog, _ ->
+            dialog.cancel()
+        }.show().apply {
+            val positiveButton = this.getButton(AlertDialog.BUTTON_POSITIVE)
+            positiveButton.setTextColor(resources.getColor(R.color.justBlack, null))
+            positiveButton.background =
+                resources.getDrawable(R.color.yellowBackground, null)
         }
     }
 
