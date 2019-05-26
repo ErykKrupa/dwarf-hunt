@@ -42,7 +42,7 @@ class MainViewModel(context: Context) : ViewModel() {
     val dwarfsWithDistance = MediatorLiveData<List<Pair<DwarfItem, Float>>>().apply {
         fun computeList(dwarfs: List<DwarfItem>?, currentLocation: Location?): List<Pair<DwarfItem, Float>>? {
             return dwarfs?.map {
-                currentLocation ?: return@map it to 0f
+                currentLocation ?: return@map it to 100000f
 
                 val result = floatArrayOf(0f)
                 Location.distanceBetween(
