@@ -19,6 +19,8 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.commit
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
+import com.example.krasnalhunt.model.DwarfItem
+import com.example.krasnalhunt.model.DwarfViewModel
 import com.example.krasnalhunt.model.MainViewModel
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.GoogleMapOptions
@@ -34,6 +36,7 @@ class MainFragment : Fragment(), OnMapReadyCallback {
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<*>
 
     private val mainViewModel: MainViewModel by activityViewModels()
+    private val dwarfViewModel: DwarfViewModel by activityViewModels()
 
     private var currentCircle: Circle? = null
     private val currentBehaviorState = MutableLiveData<Int>().apply { value = BottomSheetBehavior.STATE_HIDDEN }
@@ -70,6 +73,16 @@ class MainFragment : Fragment(), OnMapReadyCallback {
         mainViewModel.map.setOnMapClickListener {
             currentCircle?.remove()
             currentCircle = null
+        }
+
+        mainViewModel.map.setOnInfoWindowClickListener{
+            val item = it.tag as DwarfItem
+            dwarfViewModel.dwarfItem = item
+            val dwarfViewFragment = DwarfViewFragment()
+            requireActivity().supportFragmentManager.commit {
+                addToBackStack(null)
+                replace(R.id.content, dwarfViewFragment, "dwarfView")
+            }
         }
 
         mainViewModel.locationPermissionGranted.observe(this, Observer {
