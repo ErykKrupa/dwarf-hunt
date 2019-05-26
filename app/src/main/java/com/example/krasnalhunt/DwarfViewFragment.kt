@@ -30,6 +30,7 @@ class DwarfViewFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         dwarfItem = dwarfViewModel.dwarfItem!!
+        catchable = dwarfViewModel.isCatchable
     }
 
     override fun onCreateView(
@@ -54,6 +55,13 @@ class DwarfViewFragment : Fragment() {
         view.caughtImageBackground.setOnClickListener { catchButtonClicked(dwarfItem) }
         view.caughtButton.setOnClickListener { catchButtonClicked(dwarfItem) }
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        if (catchable) {
+            setCatchable()
+        }
     }
 
     override fun onAttach(context: Context) {
@@ -101,9 +109,8 @@ class DwarfViewFragment : Fragment() {
         listener?.onFragmentInteraction(item)
     }
 
-    fun setCatchable() {
+    private fun setCatchable() {
         if (!dwarfItem.caught) {
-            catchable = true
             view?.let {
                 it.caughtButton.setImageResource(R.drawable.ic_hand_yellow)
                 it.caughtImageBackground.background = resources.getDrawable(R.color.yellowBackground, null)

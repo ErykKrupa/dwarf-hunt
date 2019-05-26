@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.commit
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,14 +19,13 @@ import com.example.krasnalhunt.model.MainViewModel
 
 
 class DwarfItemListFragment : Fragment(), MyDwarfItemRecyclerViewAdapter.OnListFragmentInteractionListener {
+    private val dwarfViewModel: DwarfViewModel by activityViewModels()
 
-    override fun onListFragmentInteraction(item: DwarfItem?) {
+    override fun onListFragmentInteraction(item: Pair<DwarfItem, Float>) {
         Log.d("TAG", "$item clicked")
 
-        if (item == null)
-            return
-
-        ViewModelProviders.of(requireActivity()).get(DwarfViewModel::class.java).dwarfItem = item
+        dwarfViewModel.dwarfItem = item.first
+        dwarfViewModel.distance = item.second.toInt()
         val dwarfViewFragment = DwarfViewFragment()
         requireActivity().supportFragmentManager.commit {
             addToBackStack(null)

@@ -13,20 +13,19 @@ import com.example.krasnalhunt.model.DwarfItem
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_dwarfitem.view.*
 
-
 class MyDwarfItemRecyclerViewAdapter(
     private val mListener: OnListFragmentInteractionListener?
 ) : RecyclerView.Adapter<MyDwarfItemRecyclerViewAdapter.ViewHolder>() {
 
     interface OnListFragmentInteractionListener {
-        fun onListFragmentInteraction(item: DwarfItem?)
+        fun onListFragmentInteraction(item: Pair<DwarfItem, Float>)
     }
 
     private val mOnClickListener: View.OnClickListener
 
     init {
         mOnClickListener = View.OnClickListener { v ->
-            val item = v.tag as DwarfItem
+            val item = v.tag as Pair<DwarfItem, Float>
             mListener?.onListFragmentInteraction(item)
         }
     }
@@ -53,21 +52,24 @@ class MyDwarfItemRecyclerViewAdapter(
         } else {
             Picasso.get().load(imgResId).error(R.drawable.ic_block_black_24dp).fit().into(holder.imageHolder)
         }
+        val distance = item.second.toInt()
         if (dwarf.caught) {
             holder.caughtImageHolder.setImageResource(R.drawable.ic_check_icon)
             holder.caughtImageBackground.background =
                 holder.caughtImageBackground.resources.getDrawable(R.color.greenBackground, null)
+        } else if (distance < 50) {
+            holder.caughtImageHolder.setImageResource(R.drawable.ic_hand_yellow)
+            holder.caughtImageBackground.background =
+                holder.caughtImageBackground.resources.getDrawable(R.color.yellowBackground, null)
         } else {
             holder.caughtImageHolder.setImageResource(R.drawable.ic_check_icon_gray)
             holder.caughtImageBackground.background =
                 holder.caughtImageBackground.resources.getDrawable(R.color.grayBackground, null)
         }
-
-//        holder.distanceHolder.text = MapsActivity.dwarfsMap[holder.nameHolder.text.toString()].toString() + " m"
-        holder.distanceHolder.text = item.second.toInt().toString() + " m"
+        holder.distanceHolder.text = "$distance m"
 
         with(holder.mView) {
-            tag = dwarf
+            tag = item
             setOnClickListener(mOnClickListener)
         }
     }
