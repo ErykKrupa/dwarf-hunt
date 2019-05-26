@@ -1,8 +1,12 @@
 package com.example.krasnalhunt
 
+
 import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
+import android.location.Location
+import android.location.LocationListener
+import android.location.LocationManager
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -14,6 +18,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.commit
 import androidx.lifecycle.Observer
+import com.example.krasnalhunt.MapsActivity.Companion.dwarfsMap
+import com.example.krasnalhunt.model.DwarfItem
 import com.example.krasnalhunt.model.MainViewModel
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.GoogleMapOptions
@@ -22,13 +28,6 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kotlinx.android.synthetic.main.fragment_main.*
-
-
-import android.location.Location
-import android.location.LocationListener
-import android.location.LocationManager
-import com.example.krasnalhunt.MapsActivity.Companion.dwarfsMap
-import com.example.krasnalhunt.model.DwarfItem
 
 class MainFragment : Fragment(), OnMapReadyCallback {
 
