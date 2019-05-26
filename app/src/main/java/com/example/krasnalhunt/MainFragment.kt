@@ -17,6 +17,7 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.commit
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.example.krasnalhunt.MapsActivity.Companion.dwarfsMap
 import com.example.krasnalhunt.model.DwarfItem
@@ -37,7 +38,7 @@ class MainFragment : Fragment(), OnMapReadyCallback {
     private val mainViewModel: MainViewModel by activityViewModels()
 
     private var currentCircle: Circle? = null
-    private var currentBehaviorState = BottomSheetBehavior.STATE_HIDDEN
+    private val currentBehaviorState = MutableLiveData<Int>().apply { value = BottomSheetBehavior.STATE_HIDDEN }
 
     @SuppressLint("MissingPermission")
     override fun onMapReady(googleMap: GoogleMap) {
@@ -111,7 +112,7 @@ class MainFragment : Fragment(), OnMapReadyCallback {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState.putInt(BOTTOM_SHEET_BEHAVIOR_STATE, currentBehaviorState)
+        outState.putInt(BOTTOM_SHEET_BEHAVIOR_STATE, currentBehaviorState.value ?: BottomSheetBehavior.STATE_HIDDEN)
     }
 
     override fun onCreateView(
@@ -153,17 +154,20 @@ class MainFragment : Fragment(), OnMapReadyCallback {
             }
         }
 
+        currentBehaviorState.observe(this, Observer {
+            when (it) {
+                BottomSheetBehavior.STATE_HIDDEN ->
+                    fab.setImageResource(R.drawable.ic_view_list_black_24dp)
+                else ->
+                    fab.setImageResource(R.drawable.ic_map_black_24dp)
+            }
+        })
+
         bottomSheetBehavior.setBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
             override fun onSlide(p0: View, p1: Float) = Unit
 
             override fun onStateChanged(p0: View, p1: Int) {
-                currentBehaviorState = p1
-                when (p1) {
-                    BottomSheetBehavior.STATE_HIDDEN ->
-                        fab.setImageResource(R.drawable.ic_view_list_black_24dp)
-                    else ->
-                        fab.setImageResource(R.drawable.ic_map_black_24dp)
-                }
+                currentBehaviorState.value = p1
             }
         })
 
@@ -172,6 +176,8 @@ class MainFragment : Fragment(), OnMapReadyCallback {
         } else {
             bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
         }
+
+        currentBehaviorState.value = bottomSheetBehavior.state
 
         fab.setOnClickListener {
             bottomSheetBehavior.state = if (bottomSheetBehavior.state == BottomSheetBehavior.STATE_EXPANDED) {
@@ -182,6 +188,11 @@ class MainFragment : Fragment(), OnMapReadyCallback {
         }
 
         fab.show()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        bottomSheetBehavior.state = currentBehaviorState.value ?: BottomSheetBehavior.STATE_HIDDEN
     }
 
     // TODO: Rename method, update argument and hook method into UI event
