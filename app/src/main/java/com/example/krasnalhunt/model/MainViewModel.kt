@@ -49,6 +49,8 @@ class MainViewModel(context: Context) : ViewModel() {
         addSource(location) { value = computeList(items.value, it) }
     }
 
+    val searchString = MutableLiveData<String?>()
+
     fun observeFirestore(activity: AppCompatActivity) {
         firestoreListener?.remove()
         AsyncTask.execute {

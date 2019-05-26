@@ -2,7 +2,9 @@ package com.example.krasnalhunt
 
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.graphics.Color
 import android.location.Location
 import android.location.LocationListener
@@ -29,6 +31,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kotlinx.android.synthetic.main.fragment_main.*
+import kotlinx.android.synthetic.main.search_dialog_view.view.*
 
 class MainFragment : Fragment(), OnMapReadyCallback {
 
@@ -75,7 +78,7 @@ class MainFragment : Fragment(), OnMapReadyCallback {
             currentCircle = null
         }
 
-        mainViewModel.map.setOnInfoWindowClickListener{
+        mainViewModel.map.setOnInfoWindowClickListener {
             val item = it.tag as DwarfItem
             dwarfViewModel.dwarfItem = item
             val dwarfViewFragment = DwarfViewFragment()
@@ -107,7 +110,12 @@ class MainFragment : Fragment(), OnMapReadyCallback {
             }
         }
         try {
-            MapsActivity.locationManager!!.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0L, 0f, locationListener)
+            MapsActivity.locationManager!!.requestLocationUpdates(
+                LocationManager.NETWORK_PROVIDER,
+                0L,
+                0f,
+                locationListener
+            )
         } catch (ex: SecurityException) {
         }
     }
@@ -165,6 +173,14 @@ class MainFragment : Fragment(), OnMapReadyCallback {
             }
         })
 
+        mainViewModel.searchString.observe(this, Observer {
+            if (it == null || it == "") {
+                searchButton.setImageResource(R.drawable.ic_search_black_24dp)
+            } else {
+                searchButton.setImageResource(R.drawable.ic_search_crossed_black_24px)
+            }
+        })
+
         bottomSheetBehavior.setBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
             override fun onSlide(p0: View, p1: Float) = Unit
 
@@ -190,6 +206,32 @@ class MainFragment : Fragment(), OnMapReadyCallback {
         }
 
         fab.show()
+
+        searchButton.setOnClickListener {
+            val builder = AlertDialog.Builder(requireContext())
+            val inflater = requireActivity().layoutInflater
+            val dialogView = inflater.inflate(R.layout.search_dialog_view, null)
+            dialogView.editText.setText(mainViewModel.searchString.value)
+            builder.setPositiveButton(R.string.search_button_label, DialogInterface.OnClickListener { dialog, _ ->
+                mainViewModel.searchString.value = dialogView.editText.text.toString()
+                dialog.cancel()
+                performSearching()
+            })
+                .setNegativeButton(R.string.close_button_label, DialogInterface.OnClickListener { dialog, _ ->
+                    dialog.cancel()
+                }).setView(dialogView).show().apply {
+                    this.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(resources.getColor(R.color.justBlack, null))
+                    this.getButton(AlertDialog.BUTTON_NEGATIVE).background =
+                        resources.getDrawable(R.color.yellowBackground, null)
+                    this.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(resources.getColor(R.color.justBlack, null))
+                    this.getButton(AlertDialog.BUTTON_POSITIVE).background =
+                        resources.getDrawable(R.color.yellowBackground, null)
+                }
+        }
+    }
+
+    private fun performSearching() {
+        //TODO implement
     }
 
     override fun onResume() {

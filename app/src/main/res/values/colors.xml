@@ -8,4 +8,5 @@
     <color name="greenBackground">#409634</color>
     <color name="yellowBackground">#FFED5D</color>
     <color name="yellowBackgroundDark">#D3C24D</color>
+    <color name="justBlack">#000000</color>
 </resources>
