@@ -208,54 +208,49 @@ class MainFragment : Fragment(), OnMapReadyCallback {
         fab.show()
 
         searchButton.setOnClickListener {
-            val builder = AlertDialog.Builder(requireContext())
-            val inflater = requireActivity().layoutInflater
-            val dialogView = inflater.inflate(R.layout.search_dialog_view, null)
-            dialogView.editText.setText(mainViewModel.searchString.value)
-            builder.setPositiveButton(R.string.search_button_label) { dialog, _ ->
-                mainViewModel.searchString.value = dialogView.editText.text.toString()
-                dialog.cancel()
-                performSearching()
-            }
-                .setNegativeButton(R.string.close_button_label) { dialog, _ ->
+            val string = mainViewModel.searchString.value
+            if (string.isNullOrBlank()) {
+                val builder = AlertDialog.Builder(requireContext())
+                val inflater = requireActivity().layoutInflater
+                val dialogView = inflater.inflate(R.layout.search_dialog_view, null)
+                dialogView.editText.setText(mainViewModel.searchString.value)
+                builder.setPositiveButton(R.string.search_button_label) { dialog, _ ->
+                    mainViewModel.searchString.value = dialogView.editText.text.toString()
                     dialog.cancel()
                 }
-            builder.setView(dialogView).show().apply {
-                val layoutParams = LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.WRAP_CONTENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT
-                )
-                layoutParams.marginStart = 10
-                layoutParams.marginEnd = 10
-                layoutParams.weight = 10F
+                    .setNegativeButton(R.string.close_button_label) { dialog, _ ->
+                        dialog.cancel()
+                    }
+                builder.setView(dialogView).show().apply {
+                    val layoutParams = LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                    )
+                    layoutParams.marginStart = 10
+                    layoutParams.marginEnd = 10
+                    layoutParams.weight = 10F
 
-                val negativeButton = this.getButton(AlertDialog.BUTTON_NEGATIVE)
-                negativeButton.setTextColor(resources.getColor(R.color.justBlack, null))
-                negativeButton.background =
-                    resources.getDrawable(R.color.yellowBackground, null)
-                negativeButton.layoutParams = layoutParams
+                    val negativeButton = this.getButton(AlertDialog.BUTTON_NEGATIVE)
+                    negativeButton.setTextColor(resources.getColor(R.color.justBlack, null))
+                    negativeButton.background =
+                        resources.getDrawable(R.color.yellowBackground, null)
+                    negativeButton.layoutParams = layoutParams
 
-                val positiveButton = this.getButton(AlertDialog.BUTTON_POSITIVE)
-                positiveButton.setTextColor(resources.getColor(R.color.justBlack, null))
-                positiveButton.background =
-                    resources.getDrawable(R.color.yellowBackground, null)
-                positiveButton.layoutParams = layoutParams
+                    val positiveButton = this.getButton(AlertDialog.BUTTON_POSITIVE)
+                    positiveButton.setTextColor(resources.getColor(R.color.justBlack, null))
+                    positiveButton.background =
+                        resources.getDrawable(R.color.yellowBackground, null)
+                    positiveButton.layoutParams = layoutParams
+                }
+            } else {
+                mainViewModel.searchString.value = null
             }
         }
-    }
-
-    private fun performSearching() {
-        //TODO implement
     }
 
     override fun onResume() {
         super.onResume()
         bottomSheetBehavior.state = currentBehaviorState.value ?: BottomSheetBehavior.STATE_HIDDEN
-    }
-
-    // TODO: Rename method, update argument and hook method into UI event
-    fun onButtonPressed(uri: Uri) {
-        listener?.onFragmentInteraction(uri)
     }
 
     override fun onAttach(context: Context) {
