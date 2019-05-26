@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.krasnalhunt.model.DwarfItem
 import com.example.krasnalhunt.model.DwarfViewModel
 import com.example.krasnalhunt.model.MainViewModel
+import kotlinx.android.synthetic.main.fragment_dwarfitem_list.view.*
 
 
 class DwarfItemListFragment : Fragment(), MyDwarfItemRecyclerViewAdapter.OnListFragmentInteractionListener {
@@ -41,16 +42,34 @@ class DwarfItemListFragment : Fragment(), MyDwarfItemRecyclerViewAdapter.OnListF
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_dwarfitem_list, container, false)
+        val recyclerView = view.list
 
-        if (view is RecyclerView) {
-            with(view) {
-                layoutManager = LinearLayoutManager(context)
+        if (recyclerView is RecyclerView) {
+            with(recyclerView) {
+                val linearLayoutManager = LinearLayoutManager(context)
+                layoutManager = linearLayoutManager
                 mAdapter = MyDwarfItemRecyclerViewAdapter(this@DwarfItemListFragment)
                 adapter = mAdapter
                 // TODO: decide whether setHasFixedSize(true) is correct
+
+                addOnScrollListener(object : RecyclerView.OnScrollListener() {
+                    override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                        super.onScrolled(recyclerView, dx, dy)
+                        if (linearLayoutManager.findFirstVisibleItemPosition() > 0) {
+                            view.scroll_to_top_button.show()
+                        } else {
+                            view.scroll_to_top_button.hide()
+                        }
+                    }
+                })
+                view.scroll_to_top_button.setOnClickListener {
+                    if (linearLayoutManager.findFirstVisibleItemPosition() > 30)
+                        recyclerView.scrollToPosition(30)
+                    recyclerView.smoothScrollToPosition(0)
+                }
             }
             val decoration = DividerItemDecoration(context, ClipDrawable.HORIZONTAL)
-            view.addItemDecoration(decoration)
+            recyclerView.addItemDecoration(decoration)
         }
 
         return view
