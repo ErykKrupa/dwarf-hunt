@@ -48,9 +48,9 @@ class MyDwarfItemRecyclerViewAdapter(
             holder.imageHolder.context.packageName
         )
         if (imgResId == 0) {
-            Picasso.get().load(R.drawable.ic_block_black_24dp).into(holder.imageHolder)
+            Picasso.get().load(R.drawable.no_image).into(holder.imageHolder)
         } else {
-            Picasso.get().load(imgResId).error(R.drawable.ic_block_black_24dp).fit().into(holder.imageHolder)
+            Picasso.get().load(imgResId).error(R.drawable.no_image).fit().into(holder.imageHolder)
         }
         val distance = item.second.toInt()
         if (dwarf.caught) {
