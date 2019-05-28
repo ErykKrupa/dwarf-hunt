@@ -28,9 +28,9 @@ class InitializationFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_initialization, container, false)
     }
 
-    private fun String.toLatLng() = this.split(Regex("\\D+")).let { tokens ->
-        val latitude = tokens[0].toInt() + (tokens[1].toInt() * (1.0 / 60.0)) + (tokens[2].toInt() * (1.0 / 3600.0))
-        val longitude = tokens[3].toInt() + (tokens[4].toInt() * (1.0 / 60.0)) + (tokens[5].toInt() * (1.0 / 3600.0))
+    private fun String.toLatLng() = this.split(Regex("[^\\d.]+")).let { tokens ->
+        val latitude = tokens[0].toFloat() + (tokens[1].toFloat() * (1.0 / 60.0)) + (tokens[2].toFloat() * (1.0 / 3600.0))
+        val longitude = tokens[3].toFloat() + (tokens[4].toFloat() * (1.0 / 60.0)) + (tokens[5].toFloat() * (1.0 / 3600.0))
 
         LatLng(latitude, longitude)
     }
